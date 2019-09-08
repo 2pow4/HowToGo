@@ -1,1 +1,6 @@
+# MacOS metadata file
+.DS_store
+
+# modules 
 node_modules
+
