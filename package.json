@@ -12,8 +12,10 @@
     "build": "npx webpack",
     "build-watch": "npx webpack --watch"
   },
-  "jest":{
-    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"],
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>src/setupTests.js"
+    ],
     "verbose": true
   },
   "devDependencies": {
