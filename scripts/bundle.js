@@ -94,11 +94,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _SearchBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('app'));
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBar__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('app'));
 
 /***/ }),
 /* 1 */
@@ -8394,6 +8394,9 @@ if (true) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
+/* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_calendar__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(64);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8404,38 +8407,9626 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-var App =
+
+
+
+var SearchBar =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(App, _React$Component);
+  _inherits(SearchBar, _React$Component);
 
-  function App(props) {
-    _classCallCheck(this, App);
+  function SearchBar(props) {
+    var _this;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _classCallCheck(this, SearchBar);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchBar).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (event) {
+      console.log("submit!");
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onDateChange", function (date) {
+      return _this.setState({
+        date: date
+      });
+    });
+
+    _this.state = {
+      // Calendar state
+      date: new Date()
+    };
+    return _this;
   }
 
-  _createClass(App, [{
+  _createClass(SearchBar, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hi! Im App Component :)");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        id: "departure"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        id: "destination"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\uB0A0\uC9DC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        onChange: this.onDateChange,
+        value: this.state.date
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\uC99D\uAC00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\uAC10\uC18C")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        value: "Search"
+      })));
     }
   }]);
 
-  return App;
+  return SearchBar;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+/* harmony default export */ __webpack_exports__["default"] = (SearchBar);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Calendar", {
+  enumerable: true,
+  get: function get() {
+    return _Calendar["default"];
+  }
+});
+Object.defineProperty(exports, "CenturyView", {
+  enumerable: true,
+  get: function get() {
+    return _CenturyView["default"];
+  }
+});
+Object.defineProperty(exports, "DecadeView", {
+  enumerable: true,
+  get: function get() {
+    return _DecadeView["default"];
+  }
+});
+Object.defineProperty(exports, "YearView", {
+  enumerable: true,
+  get: function get() {
+    return _YearView["default"];
+  }
+});
+Object.defineProperty(exports, "MonthView", {
+  enumerable: true,
+  get: function get() {
+    return _MonthView["default"];
+  }
+});
+exports["default"] = void 0;
+
+var _Calendar = _interopRequireDefault(__webpack_require__(14));
+
+var _CenturyView = _interopRequireDefault(__webpack_require__(27));
+
+var _DecadeView = _interopRequireDefault(__webpack_require__(34));
+
+var _YearView = _interopRequireDefault(__webpack_require__(37));
+
+var _MonthView = _interopRequireDefault(__webpack_require__(40));
+
+__webpack_require__(46);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+} // File is created during build phase and placed in dist directory
+// eslint-disable-next-line import/no-unresolved
+
+
+var _default = _Calendar["default"];
+exports["default"] = _default;
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _reactLifecyclesCompat = __webpack_require__(19);
+
+var _mergeClassNames = _interopRequireDefault(__webpack_require__(20));
+
+var _Navigation = _interopRequireDefault(__webpack_require__(21));
+
+var _CenturyView = _interopRequireDefault(__webpack_require__(27));
+
+var _DecadeView = _interopRequireDefault(__webpack_require__(34));
+
+var _YearView = _interopRequireDefault(__webpack_require__(37));
+
+var _MonthView = _interopRequireDefault(__webpack_require__(40));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes2 = __webpack_require__(26);
+
+var _utils = __webpack_require__(31);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};
+
+    if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};
+
+          if (desc.get || desc.set) {
+            Object.defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+    }
+
+    newObj["default"] = obj;
+    return newObj;
+  }
+}
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+var baseClassName = 'react-calendar';
+var allViews = ['century', 'decade', 'year', 'month'];
+var allValueTypes = [].concat(_toConsumableArray(allViews.slice(1)), ['day']);
+
+var datesAreDifferent = function datesAreDifferent(date1, date2) {
+  return date1 && !date2 || !date1 && date2 || date1 && date2 && date1.getTime() !== date2.getTime();
+};
+/**
+ * Returns views array with disallowed values cut off.
+ */
+
+
+var getLimitedViews = function getLimitedViews(minDetail, maxDetail) {
+  return allViews.slice(allViews.indexOf(minDetail), allViews.indexOf(maxDetail) + 1);
+};
+/**
+ * Determines whether a given view is allowed with currently applied settings.
+ */
+
+
+var isViewAllowed = function isViewAllowed(view, minDetail, maxDetail) {
+  var views = getLimitedViews(minDetail, maxDetail);
+  return views.indexOf(view) !== -1;
+};
+/**
+ * Gets either provided view if allowed by minDetail and maxDetail, or gets
+ * the default view if not allowed.
+ */
+
+
+var getView = function getView(view, minDetail, maxDetail) {
+  if (isViewAllowed(view, minDetail, maxDetail)) {
+    return view;
+  }
+
+  return getLimitedViews(minDetail, maxDetail).pop();
+};
+/**
+ * Returns value type that can be returned with currently applied settings.
+ */
+
+
+var getValueType = function getValueType(maxDetail) {
+  return allValueTypes[allViews.indexOf(maxDetail)];
+};
+
+var getValueFrom = function getValueFrom(value) {
+  if (!value) {
+    return null;
+  }
+
+  var rawValueFrom = value instanceof Array && value.length === 2 ? value[0] : value;
+
+  if (!rawValueFrom) {
+    return null;
+  }
+
+  var valueFromDate = new Date(rawValueFrom);
+
+  if (isNaN(valueFromDate.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  return valueFromDate;
+};
+
+var getDetailValueFrom = function getDetailValueFrom(value, minDate, maxDate, maxDetail) {
+  var valueFrom = getValueFrom(value);
+
+  if (!valueFrom) {
+    return null;
+  }
+
+  var detailValueFrom = (0, _dates.getBegin)(getValueType(maxDetail), valueFrom);
+  return (0, _utils.between)(detailValueFrom, minDate, maxDate);
+};
+
+var getValueTo = function getValueTo(value) {
+  if (!value) {
+    return null;
+  }
+
+  var rawValueTo = value instanceof Array && value.length === 2 ? value[1] : value;
+
+  if (!rawValueTo) {
+    return null;
+  }
+
+  var valueToDate = new Date(rawValueTo);
+
+  if (isNaN(valueToDate.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  return valueToDate;
+};
+
+var getDetailValueTo = function getDetailValueTo(value, minDate, maxDate, maxDetail) {
+  var valueTo = getValueTo(value);
+
+  if (!valueTo) {
+    return null;
+  }
+
+  var detailValueTo = (0, _dates.getEnd)(getValueType(maxDetail), valueTo);
+  return (0, _utils.between)(detailValueTo, minDate, maxDate);
+};
+
+var getDetailValueArray = function getDetailValueArray(value, minDate, maxDate, maxDetail) {
+  if (value instanceof Array) {
+    return value;
+  }
+
+  return [getDetailValueFrom(value, minDate, maxDate, maxDetail), getDetailValueTo(value, minDate, maxDate, maxDetail)];
+};
+
+var getActiveStartDate = function getActiveStartDate(props) {
+  var activeStartDate = props.activeStartDate,
+      maxDate = props.maxDate,
+      maxDetail = props.maxDetail,
+      minDate = props.minDate,
+      minDetail = props.minDetail,
+      value = props.value,
+      view = props.view;
+  var rangeType = getView(view, minDetail, maxDetail);
+  var valueFrom = getDetailValueFrom(value, minDate, maxDate, maxDetail) || activeStartDate || new Date();
+  return (0, _dates.getBegin)(rangeType, valueFrom);
+};
+
+var Calendar =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Calendar, _Component);
+
+  function Calendar() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Calendar);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Calendar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _defineProperty(_assertThisInitialized(_this), "setActiveStartDate", function (activeStartDate) {
+      var onActiveDateChange = _this.props.onActiveDateChange;
+
+      _this.setState({
+        activeStartDate: activeStartDate
+      }, function () {
+        var view = _this.state.view;
+        (0, _utils.callIfDefined)(onActiveDateChange, {
+          activeStartDate: activeStartDate,
+          view: view
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "drillDown", function (activeStartDate) {
+      if (!_this.drillDownAvailable) {
+        return;
+      }
+
+      var _this$props = _this.props,
+          maxDetail = _this$props.maxDetail,
+          minDetail = _this$props.minDetail,
+          onDrillDown = _this$props.onDrillDown;
+      var views = getLimitedViews(minDetail, maxDetail);
+
+      _this.setState(function (prevState) {
+        var nextView = views[views.indexOf(prevState.view) + 1];
+        return {
+          activeStartDate: activeStartDate,
+          view: nextView
+        };
+      }, function () {
+        var view = _this.state.view;
+        (0, _utils.callIfDefined)(onDrillDown, {
+          activeStartDate: activeStartDate,
+          view: view
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "drillUp", function () {
+      if (!_this.drillUpAvailable) {
+        return;
+      }
+
+      var _this$props2 = _this.props,
+          maxDetail = _this$props2.maxDetail,
+          minDetail = _this$props2.minDetail,
+          onDrillUp = _this$props2.onDrillUp;
+      var views = getLimitedViews(minDetail, maxDetail);
+
+      _this.setState(function (prevState) {
+        var nextView = views[views.indexOf(prevState.view) - 1];
+        var activeStartDate = (0, _dates.getBegin)(nextView, prevState.activeStartDate);
+        return {
+          activeStartDate: activeStartDate,
+          view: nextView
+        };
+      }, function () {
+        var _this$state = _this.state,
+            activeStartDate = _this$state.activeStartDate,
+            view = _this$state.view;
+        (0, _utils.callIfDefined)(onDrillUp, {
+          activeStartDate: activeStartDate,
+          view: view
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (value) {
+      var _this$props3 = _this.props,
+          onChange = _this$props3.onChange,
+          selectRange = _this$props3.selectRange;
+      var nextValue;
+      var callback;
+
+      if (selectRange) {
+        var previousValue = _this.state.value; // Range selection turned on
+
+        if (!previousValue || [].concat(previousValue).length !== 1 // 0 or 2 - either way we're starting a new array
+        ) {
+            // First value
+            nextValue = (0, _dates.getBegin)(_this.valueType, value);
+          } else {
+          // Second value
+          nextValue = (0, _dates.getValueRange)(_this.valueType, previousValue, value);
+
+          callback = function callback() {
+            return (0, _utils.callIfDefined)(onChange, nextValue);
+          };
+        }
+      } else {
+        // Range selection turned off
+        nextValue = _this.getProcessedValue(value);
+
+        callback = function callback() {
+          return (0, _utils.callIfDefined)(onChange, nextValue);
+        };
+      }
+
+      _this.setState({
+        value: nextValue
+      }, callback);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onMouseOver", function (value) {
+      _this.setState(function (prevState) {
+        if (prevState.hover && prevState.hover.getTime() === value.getTime()) {
+          return null;
+        }
+
+        return {
+          hover: value
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onMouseLeave", function () {
+      _this.setState({
+        hover: null
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(Calendar, [{
+    key: "getProcessedValue",
+
+    /**
+     * Gets current value in a desired format.
+     */
+    value: function getProcessedValue(value) {
+      var _this$props4 = this.props,
+          minDate = _this$props4.minDate,
+          maxDate = _this$props4.maxDate,
+          maxDetail = _this$props4.maxDetail,
+          returnValue = _this$props4.returnValue;
+
+      var processFunction = function () {
+        switch (returnValue) {
+          case 'start':
+            return getDetailValueFrom;
+
+          case 'end':
+            return getDetailValueTo;
+
+          case 'range':
+            return getDetailValueArray;
+
+          default:
+            throw new Error('Invalid returnValue.');
+        }
+      }();
+
+      return processFunction(value, minDate, maxDate, maxDetail);
+    }
+    /**
+     * Called when the user uses navigation buttons.
+     */
+
+  }, {
+    key: "renderContent",
+    value: function renderContent() {
+      var _this$props5 = this.props,
+          calendarType = _this$props5.calendarType,
+          locale = _this$props5.locale,
+          maxDate = _this$props5.maxDate,
+          minDate = _this$props5.minDate,
+          renderChildren = _this$props5.renderChildren,
+          selectRange = _this$props5.selectRange,
+          tileClassName = _this$props5.tileClassName,
+          tileContent = _this$props5.tileContent,
+          tileDisabled = _this$props5.tileDisabled;
+      var _this$state2 = this.state,
+          activeStartDate = _this$state2.activeStartDate,
+          hover = _this$state2.hover,
+          value = _this$state2.value,
+          view = _this$state2.view;
+      var onMouseOver = this.onMouseOver,
+          valueType = this.valueType;
+      var commonProps = {
+        activeStartDate: activeStartDate,
+        hover: hover,
+        locale: locale,
+        maxDate: maxDate,
+        minDate: minDate,
+        onMouseOver: selectRange ? onMouseOver : null,
+        tileClassName: tileClassName,
+        tileContent: tileContent || renderChildren,
+        // For backwards compatibility
+        tileDisabled: tileDisabled,
+        value: value,
+        valueType: valueType
+      };
+      var clickAction = this.drillDownAvailable ? this.drillDown : this.onChange;
+
+      switch (view) {
+        case 'century':
+          {
+            var onClickDecade = this.props.onClickDecade;
+            return _react["default"].createElement(_CenturyView["default"], _extends({
+              onClick: (0, _utils.mergeFunctions)(clickAction, onClickDecade)
+            }, commonProps));
+          }
+
+        case 'decade':
+          {
+            var onClickYear = this.props.onClickYear;
+            return _react["default"].createElement(_DecadeView["default"], _extends({
+              onClick: (0, _utils.mergeFunctions)(clickAction, onClickYear)
+            }, commonProps));
+          }
+
+        case 'year':
+          {
+            var _this$props6 = this.props,
+                formatMonth = _this$props6.formatMonth,
+                onClickMonth = _this$props6.onClickMonth;
+            return _react["default"].createElement(_YearView["default"], _extends({
+              formatMonth: formatMonth,
+              onClick: (0, _utils.mergeFunctions)(clickAction, onClickMonth)
+            }, commonProps));
+          }
+
+        case 'month':
+          {
+            var _this$props7 = this.props,
+                formatShortWeekday = _this$props7.formatShortWeekday,
+                onClickDay = _this$props7.onClickDay,
+                onClickWeekNumber = _this$props7.onClickWeekNumber,
+                showFixedNumberOfWeeks = _this$props7.showFixedNumberOfWeeks,
+                showNeighboringMonth = _this$props7.showNeighboringMonth,
+                showWeekNumbers = _this$props7.showWeekNumbers;
+            var onMouseLeave = this.onMouseLeave;
+            return _react["default"].createElement(_MonthView["default"], _extends({
+              calendarType: calendarType,
+              formatShortWeekday: formatShortWeekday,
+              onClick: (0, _utils.mergeFunctions)(clickAction, onClickDay),
+              onClickWeekNumber: onClickWeekNumber,
+              onMouseLeave: onMouseLeave,
+              showFixedNumberOfWeeks: showFixedNumberOfWeeks,
+              showNeighboringMonth: showNeighboringMonth,
+              showWeekNumbers: showWeekNumbers
+            }, commonProps));
+          }
+
+        default:
+          throw new Error("Invalid view: ".concat(view, "."));
+      }
+    }
+  }, {
+    key: "renderNavigation",
+    value: function renderNavigation() {
+      var showNavigation = this.props.showNavigation;
+
+      if (!showNavigation) {
+        return null;
+      }
+
+      var _this$props8 = this.props,
+          formatMonthYear = _this$props8.formatMonthYear,
+          locale = _this$props8.locale,
+          maxDate = _this$props8.maxDate,
+          maxDetail = _this$props8.maxDetail,
+          minDate = _this$props8.minDate,
+          minDetail = _this$props8.minDetail,
+          navigationAriaLabel = _this$props8.navigationAriaLabel,
+          navigationLabel = _this$props8.navigationLabel,
+          next2AriaLabel = _this$props8.next2AriaLabel,
+          next2Label = _this$props8.next2Label,
+          nextAriaLabel = _this$props8.nextAriaLabel,
+          nextLabel = _this$props8.nextLabel,
+          prev2AriaLabel = _this$props8.prev2AriaLabel,
+          prev2Label = _this$props8.prev2Label,
+          prevAriaLabel = _this$props8.prevAriaLabel,
+          prevLabel = _this$props8.prevLabel;
+      var _this$state3 = this.state,
+          activeStartDate = _this$state3.activeStartDate,
+          view = _this$state3.view;
+      return _react["default"].createElement(_Navigation["default"], {
+        activeStartDate: activeStartDate,
+        drillUp: this.drillUp,
+        formatMonthYear: formatMonthYear,
+        locale: locale,
+        maxDate: maxDate,
+        minDate: minDate,
+        navigationAriaLabel: navigationAriaLabel,
+        navigationLabel: navigationLabel,
+        next2AriaLabel: next2AriaLabel,
+        next2Label: next2Label,
+        nextAriaLabel: nextAriaLabel,
+        nextLabel: nextLabel,
+        prev2AriaLabel: prev2AriaLabel,
+        prev2Label: prev2Label,
+        prevAriaLabel: prevAriaLabel,
+        prevLabel: prevLabel,
+        setActiveStartDate: this.setActiveStartDate,
+        view: view,
+        views: getLimitedViews(minDetail, maxDetail)
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props9 = this.props,
+          className = _this$props9.className,
+          selectRange = _this$props9.selectRange;
+      var value = this.state.value;
+      var onMouseLeave = this.onMouseLeave;
+      var valueArray = [].concat(value);
+      return _react["default"].createElement("div", {
+        className: (0, _mergeClassNames["default"])(baseClassName, selectRange && valueArray.length === 1 && "".concat(baseClassName, "--selectRange"), className)
+      }, this.renderNavigation(), _react["default"].createElement("div", {
+        className: "".concat(baseClassName, "__viewContainer"),
+        onBlur: selectRange ? onMouseLeave : null,
+        onMouseLeave: selectRange ? onMouseLeave : null
+      }, this.renderContent()));
+    }
+  }, {
+    key: "drillDownAvailable",
+    get: function get() {
+      var _this$props10 = this.props,
+          maxDetail = _this$props10.maxDetail,
+          minDetail = _this$props10.minDetail;
+      var view = this.state.view;
+      var views = getLimitedViews(minDetail, maxDetail);
+      return views.indexOf(view) < views.length - 1;
+    }
+  }, {
+    key: "drillUpAvailable",
+    get: function get() {
+      var _this$props11 = this.props,
+          maxDetail = _this$props11.maxDetail,
+          minDetail = _this$props11.minDetail;
+      var view = this.state.view;
+      var views = getLimitedViews(minDetail, maxDetail);
+      return views.indexOf(view) > 0;
+    }
+  }, {
+    key: "valueType",
+    get: function get() {
+      var maxDetail = this.props.maxDetail;
+      return getValueType(maxDetail);
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(nextProps, prevState) {
+      var minDate = nextProps.minDate,
+          maxDate = nextProps.maxDate,
+          minDetail = nextProps.minDetail,
+          maxDetail = nextProps.maxDetail;
+      var nextState = {};
+      /**
+       * If the next activeStartDate is different from the current one, update
+       * activeStartDate (for display) and activeStartDateProps (for future comparisons)
+       */
+
+      var nextActiveStartDate = getActiveStartDate(nextProps);
+
+      if (datesAreDifferent(nextActiveStartDate, prevState.activeStartDateProps)) {
+        nextState.activeStartDate = nextActiveStartDate;
+        nextState.activeStartDateProps = nextActiveStartDate;
+      }
+      /**
+       * If the next view is different from the current one, and the previously set view is not
+       * valid based on minDetail and maxDetail, get a new one.
+       */
+
+
+      var nextView = getView(nextProps.view, minDetail, maxDetail);
+
+      if (nextView !== prevState.viewProps && !isViewAllowed(prevState.view, minDetail, maxDetail)) {
+        nextState.view = nextView;
+        nextState.viewProps = nextView;
+      }
+      /**
+       * If the next value is different from the current one (with an exception of situation in
+       * which values provided are limited by minDate and maxDate so that the dates are the same),
+       * get a new one.
+       */
+
+
+      var values = [nextProps.value, prevState.valueProps];
+
+      if (nextState.view // Allowed view changed
+      || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
+        return getValueFrom(value, minDate, maxDate, maxDetail);
+      }))) || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
+        return getValueTo(value, minDate, maxDate, maxDetail);
+      })))) {
+        nextState.value = nextProps.value;
+        nextState.valueProps = nextProps.value;
+      }
+
+      if (!nextProps.selectRange && prevState.hover) {
+        nextState.hover = null;
+      }
+
+      return nextState;
+    }
+  }]);
+
+  return Calendar;
+}(_react.Component);
+
+exports["default"] = Calendar;
+Calendar.defaultProps = {
+  maxDetail: 'month',
+  minDetail: 'century',
+  returnValue: 'start',
+  showNavigation: true,
+  showNeighboringMonth: true,
+  view: 'month'
+};
+Calendar.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date),
+  calendarType: _propTypes2.isCalendarType,
+  className: _propTypes2.isClassName,
+  formatMonth: _propTypes["default"].func,
+  formatMonthYear: _propTypes["default"].func,
+  formatShortWeekday: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  maxDate: _propTypes2.isMaxDate,
+  maxDetail: _propTypes["default"].oneOf(allViews),
+  minDate: _propTypes2.isMinDate,
+  minDetail: _propTypes["default"].oneOf(allViews),
+  navigationAriaLabel: _propTypes["default"].string,
+  navigationLabel: _propTypes["default"].func,
+  next2AriaLabel: _propTypes["default"].string,
+  next2Label: _propTypes["default"].node,
+  nextAriaLabel: _propTypes["default"].string,
+  nextLabel: _propTypes["default"].node,
+  onActiveDateChange: _propTypes["default"].func,
+  onChange: _propTypes["default"].func,
+  onClickDay: _propTypes["default"].func,
+  onClickDecade: _propTypes["default"].func,
+  onClickMonth: _propTypes["default"].func,
+  onClickWeekNumber: _propTypes["default"].func,
+  onClickYear: _propTypes["default"].func,
+  onDrillDown: _propTypes["default"].func,
+  onDrillUp: _propTypes["default"].func,
+  prev2AriaLabel: _propTypes["default"].string,
+  prev2Label: _propTypes["default"].node,
+  prevAriaLabel: _propTypes["default"].string,
+  prevLabel: _propTypes["default"].node,
+  renderChildren: _propTypes["default"].func,
+  // For backwards compatibility
+  returnValue: _propTypes["default"].oneOf(['start', 'end', 'range']),
+  selectRange: _propTypes["default"].bool,
+  showFixedNumberOfWeeks: _propTypes["default"].bool,
+  showNavigation: _propTypes["default"].bool,
+  showNeighboringMonth: _propTypes["default"].bool,
+  showWeekNumbers: _propTypes["default"].bool,
+  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes2.isClassName]),
+  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
+  tileDisabled: _propTypes["default"].func,
+  value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes2.isValue]),
+  view: _propTypes["default"].oneOf(allViews)
+};
+(0, _reactLifecyclesCompat.polyfill)(Calendar);
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+if (true) {
+  var ReactIs = __webpack_require__(16); // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+
+
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(18)(ReactIs.isElement, throwOnDirectAccess);
+} else {}
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(17);
+}
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v16.9.0
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+if (true) {
+  (function () {
+    'use strict';
+
+    Object.defineProperty(exports, '__esModule', {
+      value: true
+    }); // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+
+    var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+
+    function isValidElementType(type) {
+      return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+      type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE);
+    }
+    /**
+     * Forked from fbjs/warning:
+     * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
+     *
+     * Only change is we use console.warn instead of console.error,
+     * and do nothing when 'console' is not supported.
+     * This really simplifies the code.
+     * ---
+     * Similar to invariant but only logs a warning if the condition is not met.
+     * This can be used to log issues in development environments in critical
+     * paths. Removing the logging code for production environments will keep the
+     * same logic and follow the same code paths.
+     */
+
+
+    var lowPriorityWarning = function () {};
+
+    {
+      var printWarning = function (format) {
+        for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+          args[_key - 1] = arguments[_key];
+        }
+
+        var argIndex = 0;
+        var message = 'Warning: ' + format.replace(/%s/g, function () {
+          return args[argIndex++];
+        });
+
+        if (typeof console !== 'undefined') {
+          console.warn(message);
+        }
+
+        try {
+          // --- Welcome to debugging React ---
+          // This error was thrown as a convenience so that you can use this stack
+          // to find the callsite that caused this warning to fire.
+          throw new Error(message);
+        } catch (x) {}
+      };
+
+      lowPriorityWarning = function (condition, format) {
+        if (format === undefined) {
+          throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
+        }
+
+        if (!condition) {
+          for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+            args[_key2 - 2] = arguments[_key2];
+          }
+
+          printWarning.apply(undefined, [format].concat(args));
+        }
+      };
+    }
+    var lowPriorityWarning$1 = lowPriorityWarning;
+
+    function typeOf(object) {
+      if (typeof object === 'object' && object !== null) {
+        var $$typeof = object.$$typeof;
+
+        switch ($$typeof) {
+          case REACT_ELEMENT_TYPE:
+            var type = object.type;
+
+            switch (type) {
+              case REACT_ASYNC_MODE_TYPE:
+              case REACT_CONCURRENT_MODE_TYPE:
+              case REACT_FRAGMENT_TYPE:
+              case REACT_PROFILER_TYPE:
+              case REACT_STRICT_MODE_TYPE:
+              case REACT_SUSPENSE_TYPE:
+                return type;
+
+              default:
+                var $$typeofType = type && type.$$typeof;
+
+                switch ($$typeofType) {
+                  case REACT_CONTEXT_TYPE:
+                  case REACT_FORWARD_REF_TYPE:
+                  case REACT_PROVIDER_TYPE:
+                    return $$typeofType;
+
+                  default:
+                    return $$typeof;
+                }
+
+            }
+
+          case REACT_LAZY_TYPE:
+          case REACT_MEMO_TYPE:
+          case REACT_PORTAL_TYPE:
+            return $$typeof;
+        }
+      }
+
+      return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+
+
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+    function isAsyncMode(object) {
+      {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+          hasWarnedAboutDeprecatedIsAsyncMode = true;
+          lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+        }
+      }
+      return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+
+    function isConcurrentMode(object) {
+      return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+
+    function isContextConsumer(object) {
+      return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+
+    function isContextProvider(object) {
+      return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+
+    function isElement(object) {
+      return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+
+    function isForwardRef(object) {
+      return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+
+    function isFragment(object) {
+      return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+
+    function isLazy(object) {
+      return typeOf(object) === REACT_LAZY_TYPE;
+    }
+
+    function isMemo(object) {
+      return typeOf(object) === REACT_MEMO_TYPE;
+    }
+
+    function isPortal(object) {
+      return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+
+    function isProfiler(object) {
+      return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+
+    function isStrictMode(object) {
+      return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+
+    function isSuspense(object) {
+      return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+
+    exports.typeOf = typeOf;
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isValidElementType = isValidElementType;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+  })();
+}
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var ReactIs = __webpack_require__(16);
+
+var assign = __webpack_require__(3);
+
+var ReactPropTypesSecret = __webpack_require__(5);
+
+var checkPropTypes = __webpack_require__(4);
+
+var has = Function.call.bind(Object.prototype.hasOwnProperty);
+
+var printWarning = function () {};
+
+if (true) {
+  printWarning = function (text) {
+    var message = 'Warning: ' + text;
+
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+module.exports = function (isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+
+  var ANONYMOUS = '<<anonymous>>'; // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker
+  };
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+
+  /*eslint-disable no-self-compare*/
+
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+
+
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  } // Make `instanceof Error` still work for returned errors.
+
+
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (true) {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if ( true && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+
+          if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+          manualPropTypeWarningCount < 3) {
+            printWarning('You are manually calling a React.PropTypes validation ' + 'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' + 'and will throw in the standalone `prop-types` package. ' + 'You may be seeing this warning due to a third-party PropTypes ' + 'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.');
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+
+      var propValue = props[propName];
+
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+
+      if (!ReactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (true) {
+        if (arguments.length > 1) {
+          printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
+        } else {
+          printWarning('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+
+        if (type === 'symbol') {
+          return String(value);
+        }
+
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+
+      for (var key in propValue) {
+        if (has(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : undefined;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+
+      if (typeof checker !== 'function') {
+        printWarning('Invalid argument supplied to oneOfType. Expected an array of check functions, but ' + 'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.');
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+
+        if (!checker) {
+          continue;
+        }
+
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+
+        if (error) {
+          return error;
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      } // We need to check all keys in case some are required but missing from
+      // props.
+
+
+      var allKeys = assign({}, props[propName], shapeTypes);
+
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+
+        if (!checker) {
+          return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' + '\nBad object: ' + JSON.stringify(props[propName], null, '  ') + '\nValid keys: ' + JSON.stringify(Object.keys(shapeTypes), null, '  '));
+        }
+
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+
+        if (error) {
+          return error;
+        }
+      }
+
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+
+      case 'boolean':
+        return !propValue;
+
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    } // falsy value can't be a Symbol
+
+
+    if (!propValue) {
+      return false;
+    } // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+
+
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    } // Fallback for non-spec compliant Symbols which are polyfilled.
+
+
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  } // Equivalent of `typeof` but with special handling for array and regexp.
+
+
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+
+    return propType;
+  } // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+
+
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+
+    var propType = getPropType(propValue);
+
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+
+    return propType;
+  } // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+
+
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+
+      default:
+        return type;
+    }
+  } // Returns class name of the object, if any.
+
+
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polyfill", function() { return polyfill; });
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+function componentWillMount() {
+  // Call this.constructor.gDSFP to support sub-classes.
+  var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
+
+  if (state !== null && state !== undefined) {
+    this.setState(state);
+  }
+}
+
+function componentWillReceiveProps(nextProps) {
+  // Call this.constructor.gDSFP to support sub-classes.
+  // Use the setState() updater to ensure state isn't stale in certain edge cases.
+  function updater(prevState) {
+    var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
+    return state !== null && state !== undefined ? state : null;
+  } // Binding "this" is important for shallow renderer support.
+
+
+  this.setState(updater.bind(this));
+}
+
+function componentWillUpdate(nextProps, nextState) {
+  try {
+    var prevProps = this.props;
+    var prevState = this.state;
+    this.props = nextProps;
+    this.state = nextState;
+    this.__reactInternalSnapshotFlag = true;
+    this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(prevProps, prevState);
+  } finally {
+    this.props = prevProps;
+    this.state = prevState;
+  }
+} // React may warn about cWM/cWRP/cWU methods being deprecated.
+// Add a flag to suppress these warnings for this special case.
+
+
+componentWillMount.__suppressDeprecationWarning = true;
+componentWillReceiveProps.__suppressDeprecationWarning = true;
+componentWillUpdate.__suppressDeprecationWarning = true;
+
+function polyfill(Component) {
+  var prototype = Component.prototype;
+
+  if (!prototype || !prototype.isReactComponent) {
+    throw new Error('Can only polyfill class components');
+  }
+
+  if (typeof Component.getDerivedStateFromProps !== 'function' && typeof prototype.getSnapshotBeforeUpdate !== 'function') {
+    return Component;
+  } // If new component APIs are defined, "unsafe" lifecycles won't be called.
+  // Error if any of these lifecycles are present,
+  // Because they would work differently between older and newer (16.3+) versions of React.
+
+
+  var foundWillMountName = null;
+  var foundWillReceivePropsName = null;
+  var foundWillUpdateName = null;
+
+  if (typeof prototype.componentWillMount === 'function') {
+    foundWillMountName = 'componentWillMount';
+  } else if (typeof prototype.UNSAFE_componentWillMount === 'function') {
+    foundWillMountName = 'UNSAFE_componentWillMount';
+  }
+
+  if (typeof prototype.componentWillReceiveProps === 'function') {
+    foundWillReceivePropsName = 'componentWillReceiveProps';
+  } else if (typeof prototype.UNSAFE_componentWillReceiveProps === 'function') {
+    foundWillReceivePropsName = 'UNSAFE_componentWillReceiveProps';
+  }
+
+  if (typeof prototype.componentWillUpdate === 'function') {
+    foundWillUpdateName = 'componentWillUpdate';
+  } else if (typeof prototype.UNSAFE_componentWillUpdate === 'function') {
+    foundWillUpdateName = 'UNSAFE_componentWillUpdate';
+  }
+
+  if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
+    var componentName = Component.displayName || Component.name;
+    var newApiName = typeof Component.getDerivedStateFromProps === 'function' ? 'getDerivedStateFromProps()' : 'getSnapshotBeforeUpdate()';
+    throw Error('Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n' + componentName + ' uses ' + newApiName + ' but also contains the following legacy lifecycles:' + (foundWillMountName !== null ? '\n  ' + foundWillMountName : '') + (foundWillReceivePropsName !== null ? '\n  ' + foundWillReceivePropsName : '') + (foundWillUpdateName !== null ? '\n  ' + foundWillUpdateName : '') + '\n\nThe above lifecycles should be removed. Learn more about this warning here:\n' + 'https://fb.me/react-async-component-lifecycle-hooks');
+  } // React <= 16.2 does not support static getDerivedStateFromProps.
+  // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
+  // Newer versions of React will ignore these lifecycles if gDSFP exists.
+
+
+  if (typeof Component.getDerivedStateFromProps === 'function') {
+    prototype.componentWillMount = componentWillMount;
+    prototype.componentWillReceiveProps = componentWillReceiveProps;
+  } // React <= 16.2 does not support getSnapshotBeforeUpdate.
+  // As a workaround, use cWU to invoke the new lifecycle.
+  // Newer versions of React will ignore that lifecycle if gSBU exists.
+
+
+  if (typeof prototype.getSnapshotBeforeUpdate === 'function') {
+    if (typeof prototype.componentDidUpdate !== 'function') {
+      throw new Error('Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype');
+    }
+
+    prototype.componentWillUpdate = componentWillUpdate;
+    var componentDidUpdate = prototype.componentDidUpdate;
+
+    prototype.componentDidUpdate = function componentDidUpdatePolyfill(prevProps, prevState, maybeSnapshot) {
+      // 16.3+ will not execute our will-update method;
+      // It will pass a snapshot value to did-update though.
+      // Older versions will require our polyfilled will-update value.
+      // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
+      // Because for <= 15.x versions this might be a "prevContext" object.
+      // We also can't just check "__reactInternalSnapshot",
+      // Because get-snapshot might return a falsy value.
+      // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
+      var snapshot = this.__reactInternalSnapshotFlag ? this.__reactInternalSnapshot : maybeSnapshot;
+      componentDidUpdate.call(this, prevProps, prevState, snapshot);
+    };
+  }
+
+  return Component;
+}
+
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = mergeClassNames;
+
+function mergeClassNames() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return args.reduce(function (classList, arg) {
+    return typeof arg === 'string' || arg instanceof Array ? classList.concat(arg) : classList;
+  }, []).filter(Boolean).join(' ');
+}
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Navigation;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _dates = __webpack_require__(22);
+
+var _dateFormatter = __webpack_require__(23);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+var className = 'react-calendar__navigation';
+
+function Navigation(_ref) {
+  var date = _ref.activeStartDate,
+      drillUp = _ref.drillUp,
+      formatMonthYear = _ref.formatMonthYear,
+      locale = _ref.locale,
+      maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      navigationAriaLabel = _ref.navigationAriaLabel,
+      navigationLabel = _ref.navigationLabel,
+      next2AriaLabel = _ref.next2AriaLabel,
+      next2Label = _ref.next2Label,
+      nextAriaLabel = _ref.nextAriaLabel,
+      nextLabel = _ref.nextLabel,
+      prev2AriaLabel = _ref.prev2AriaLabel,
+      prev2Label = _ref.prev2Label,
+      prevAriaLabel = _ref.prevAriaLabel,
+      prevLabel = _ref.prevLabel,
+      setActiveStartDate = _ref.setActiveStartDate,
+      view = _ref.view,
+      views = _ref.views;
+  var drillUpAvailable = views.indexOf(view) > 0;
+  var shouldShowPrevNext2Buttons = view !== 'century';
+  var previousActiveStartDate = (0, _dates.getBeginPrevious)(view, date);
+  var previousActiveStartDate2 = shouldShowPrevNext2Buttons && (0, _dates.getBeginPrevious2)(view, date);
+  var nextActiveStartDate = (0, _dates.getBeginNext)(view, date);
+  var nextActiveStartDate2 = shouldShowPrevNext2Buttons && (0, _dates.getBeginNext2)(view, date);
+
+  var prevButtonDisabled = function () {
+    if (previousActiveStartDate.getFullYear() < 1000) {
+      return true;
+    }
+
+    var previousActiveEndDate = (0, _dates.getEndPrevious)(view, date);
+    return minDate && minDate >= previousActiveEndDate;
+  }();
+
+  var prev2ButtonDisabled = shouldShowPrevNext2Buttons && function () {
+    if (previousActiveStartDate2.getFullYear() < 1000) {
+      return true;
+    }
+
+    var previousActiveEndDate = (0, _dates.getEndPrevious2)(view, date);
+    return minDate && minDate >= previousActiveEndDate;
+  }();
+
+  var nextButtonDisabled = maxDate && maxDate <= nextActiveStartDate;
+  var next2ButtonDisabled = shouldShowPrevNext2Buttons && maxDate && maxDate <= nextActiveStartDate2;
+
+  function onClickPrevious() {
+    setActiveStartDate(previousActiveStartDate);
+  }
+
+  function onClickPrevious2() {
+    setActiveStartDate(previousActiveStartDate2);
+  }
+
+  function onClickNext() {
+    setActiveStartDate(nextActiveStartDate);
+  }
+
+  function onClickNext2() {
+    setActiveStartDate(nextActiveStartDate2);
+  }
+
+  var label = function () {
+    switch (view) {
+      case 'century':
+        return (0, _dates.getCenturyLabel)(date);
+
+      case 'decade':
+        return (0, _dates.getDecadeLabel)(date);
+
+      case 'year':
+        return (0, _dates.getYear)(date);
+
+      case 'month':
+        return formatMonthYear(locale, date);
+
+      default:
+        throw new Error("Invalid view: ".concat(view, "."));
+    }
+  }();
+
+  return _react["default"].createElement("div", {
+    className: className,
+    style: {
+      display: 'flex'
+    }
+  }, prev2Label !== null && shouldShowPrevNext2Buttons && _react["default"].createElement("button", {
+    "aria-label": prev2AriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__prev2-button"),
+    disabled: prev2ButtonDisabled,
+    onClick: onClickPrevious2,
+    type: "button"
+  }, prev2Label), _react["default"].createElement("button", {
+    "aria-label": prevAriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__prev-button"),
+    disabled: prevButtonDisabled,
+    onClick: onClickPrevious,
+    type: "button"
+  }, prevLabel), _react["default"].createElement("button", {
+    "aria-label": navigationAriaLabel,
+    className: "react-calendar__navigation__label",
+    disabled: !drillUpAvailable,
+    onClick: drillUp,
+    style: {
+      flexGrow: 1
+    },
+    type: "button"
+  }, navigationLabel ? navigationLabel({
+    date: date,
+    view: view,
+    label: label
+  }) : label), _react["default"].createElement("button", {
+    "aria-label": nextAriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__next-button"),
+    disabled: nextButtonDisabled,
+    onClick: onClickNext,
+    type: "button"
+  }, nextLabel), next2Label !== null && shouldShowPrevNext2Buttons && _react["default"].createElement("button", {
+    "aria-label": next2AriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__next2-button"),
+    disabled: next2ButtonDisabled,
+    onClick: onClickNext2,
+    type: "button"
+  }, next2Label));
+}
+
+Navigation.defaultProps = {
+  formatMonthYear: _dateFormatter.formatMonthYear,
+  navigationAriaLabel: '',
+  next2AriaLabel: '',
+  next2Label: '»',
+  nextAriaLabel: '',
+  nextLabel: '›',
+  prev2AriaLabel: '',
+  prev2Label: '«',
+  prevAriaLabel: '',
+  prevLabel: '‹'
+};
+Navigation.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  drillUp: _propTypes["default"].func.isRequired,
+  formatMonthYear: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  maxDate: _propTypes["default"].instanceOf(Date),
+  minDate: _propTypes["default"].instanceOf(Date),
+  navigationAriaLabel: _propTypes["default"].string,
+  navigationLabel: _propTypes["default"].func,
+  next2AriaLabel: _propTypes["default"].string,
+  next2Label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  nextAriaLabel: _propTypes["default"].string,
+  nextLabel: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  prev2AriaLabel: _propTypes["default"].string,
+  prev2Label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  prevAriaLabel: _propTypes["default"].string,
+  prevLabel: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  setActiveStartDate: _propTypes["default"].func.isRequired,
+  view: _propTypes2.isView.isRequired,
+  views: _propTypes2.isViews.isRequired
+};
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getYear = getYear;
+exports.getMonth = getMonth;
+exports.getMonthIndex = getMonthIndex;
+exports.getDay = getDay;
+exports.getDayOfWeek = getDayOfWeek;
+exports.getBeginOfCenturyYear = getBeginOfCenturyYear;
+exports.getBeginOfCentury = getBeginOfCentury;
+exports.getEndOfCentury = getEndOfCentury;
+exports.getCenturyRange = getCenturyRange;
+exports.getBeginOfPreviousCentury = getBeginOfPreviousCentury;
+exports.getEndOfPreviousCentury = getEndOfPreviousCentury;
+exports.getBeginOfNextCentury = getBeginOfNextCentury;
+exports.getBeginOfDecadeYear = getBeginOfDecadeYear;
+exports.getBeginOfDecade = getBeginOfDecade;
+exports.getEndOfDecade = getEndOfDecade;
+exports.getDecadeRange = getDecadeRange;
+exports.getBeginOfPreviousDecade = getBeginOfPreviousDecade;
+exports.getEndOfPreviousDecade = getEndOfPreviousDecade;
+exports.getBeginOfNextDecade = getBeginOfNextDecade;
+exports.getBeginOfYear = getBeginOfYear;
+exports.getEndOfYear = getEndOfYear;
+exports.getYearRange = getYearRange;
+exports.getBeginOfPreviousYear = getBeginOfPreviousYear;
+exports.getEndOfPreviousYear = getEndOfPreviousYear;
+exports.getBeginOfNextYear = getBeginOfNextYear;
+exports.getBeginOfMonth = getBeginOfMonth;
+exports.getEndOfMonth = getEndOfMonth;
+exports.getBeginOfWeek = getBeginOfWeek;
+exports.getMonthRange = getMonthRange;
+exports.getBeginOfPreviousMonth = getBeginOfPreviousMonth;
+exports.getEndOfPreviousMonth = getEndOfPreviousMonth;
+exports.getBeginOfNextMonth = getBeginOfNextMonth;
+exports.getBeginOfDay = getBeginOfDay;
+exports.getEndOfDay = getEndOfDay;
+exports.getDayRange = getDayRange;
+exports.getWeekNumber = getWeekNumber;
+exports.getBegin = getBegin;
+exports.getBeginPrevious = getBeginPrevious;
+exports.getBeginNext = getBeginNext;
+exports.getEnd = getEnd;
+exports.getEndPrevious = getEndPrevious;
+exports.getRange = getRange;
+exports.getValueRange = getValueRange;
+exports.getDaysInMonth = getDaysInMonth;
+exports.getCenturyLabel = getCenturyLabel;
+exports.getDecadeLabel = getDecadeLabel;
+exports.isWeekend = isWeekend;
+exports.getISOLocalMonth = getISOLocalMonth;
+exports.getISOLocalDate = getISOLocalDate;
+exports.getEndPrevious2 = exports.getBeginNext2 = exports.getBeginPrevious2 = void 0;
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+function _iterableToArrayLimit(arr, i) {
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+var _map = _toConsumableArray(Array(7)).map(function (el, index) {
+  return index;
+}),
+    _map2 = _slicedToArray(_map, 7),
+    // eslint-disable-next-line no-unused-vars
+SUNDAY = _map2[0],
+    MONDAY = _map2[1],
+    TUESDAY = _map2[2],
+    WEDNESDAY = _map2[3],
+    THURSDAY = _map2[4],
+    FRIDAY = _map2[5],
+    SATURDAY = _map2[6];
+/* Simple getters - getting a property of a given point in time */
+
+
+function getYear(date) {
+  if (date instanceof Date) {
+    return date.getFullYear();
+  }
+
+  if (typeof date === 'number') {
+    return date;
+  }
+
+  var year = parseInt(date, 10);
+
+  if (typeof date === 'string' && !isNaN(year)) {
+    return year;
+  }
+
+  throw new Error("Failed to get year from date: ".concat(date, "."));
+}
+
+function getMonth(date) {
+  return date.getMonth() + 1;
+}
+
+function getMonthIndex(date) {
+  return date.getMonth();
+}
+
+function getDay(date) {
+  return date.getDate();
+}
+
+function getDayOfWeek(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var weekday = date.getDay();
+
+  switch (calendarType) {
+    case 'ISO 8601':
+      // Shifts days of the week so that Monday is 0, Sunday is 6
+      return (weekday + 6) % 7;
+
+    case 'Arabic':
+      return (weekday + 1) % 7;
+
+    case 'Hebrew':
+    case 'US':
+      return weekday;
+
+    default:
+      throw new Error('Unsupported calendar type.');
+  }
+}
+/* Complex getters - getting a property somehow related to a given point in time */
+
+
+function getBeginOfCenturyYear(date) {
+  var year = getYear(date) - 1;
+  return year + -year % 100 + 1;
+}
+
+function getBeginOfCentury(date) {
+  var beginOfCenturyYear = getBeginOfCenturyYear(date);
+  return new Date(beginOfCenturyYear, 0, 1);
+}
+
+function getEndOfCentury(date) {
+  var beginOfCenturyYear = getBeginOfCenturyYear(date);
+  return new Date(beginOfCenturyYear + 100, 0, 1, 0, 0, 0, -1);
+}
+
+function getCenturyRange(date) {
+  return [getBeginOfCentury(date), getEndOfCentury(date)];
+}
+
+function getBeginOfPreviousCentury(date) {
+  var previousCenturyYear = getYear(date) - 100;
+  return getBeginOfCentury(previousCenturyYear);
+}
+
+function getEndOfPreviousCentury(date) {
+  var previousCenturyYear = getYear(date) - 100;
+  return getEndOfCentury(previousCenturyYear);
+}
+
+function getBeginOfNextCentury(date) {
+  var nextCenturyYear = getYear(date) + 100;
+  return getBeginOfCentury(nextCenturyYear);
+}
+
+function getBeginOfDecadeYear(date) {
+  var year = getYear(date) - 1;
+  return year + -year % 10 + 1;
+}
+
+function getBeginOfDecade(date) {
+  var beginOfDecadeYear = getBeginOfDecadeYear(date);
+  return new Date(beginOfDecadeYear, 0, 1);
+}
+
+function getEndOfDecade(date) {
+  var beginOfDecadeYear = getBeginOfDecadeYear(date);
+  return new Date(beginOfDecadeYear + 10, 0, 1, 0, 0, 0, -1);
+}
+
+function getDecadeRange(date) {
+  return [getBeginOfDecade(date), getEndOfDecade(date)];
+}
+
+function getBeginOfPreviousDecade(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+  var previousDecadeYear = getBeginOfDecadeYear(date) - offset;
+  return getBeginOfDecade(previousDecadeYear);
+}
+
+function getEndOfPreviousDecade(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+  var previousDecadeYear = getBeginOfDecadeYear(date) - offset;
+  return getEndOfDecade(previousDecadeYear);
+}
+
+function getBeginOfNextDecade(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+  var nextDecadeYear = getBeginOfDecadeYear(date) + offset;
+  return getBeginOfDecade(nextDecadeYear);
+}
+/**
+ * Returns the beginning of a given year.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getBeginOfYear(date) {
+  var year = getYear(date);
+  return new Date(year, 0, 1);
+}
+/**
+ * Returns the end of a given year.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getEndOfYear(date) {
+  var year = getYear(date);
+  return new Date(year + 1, 0, 1, 0, 0, 0, -1);
+}
+/**
+ * Returns an array with the beginning and the end of a given year.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getYearRange(date) {
+  return [getBeginOfYear(date), getEndOfYear(date)];
+}
+
+function getBeginOfPreviousYear(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousYear = getYear(date) - offset;
+  return getBeginOfYear(previousYear);
+}
+
+function getEndOfPreviousYear(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousYear = getYear(date) - offset;
+  return getEndOfYear(previousYear);
+}
+
+function getBeginOfNextYear(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var nextYear = getYear(date) + offset;
+  return getBeginOfYear(nextYear);
+}
+/**
+ * Returns the beginning of a given month.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getBeginOfMonth(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  return new Date(year, monthIndex, 1);
+}
+/**
+ * Returns the end of a given month.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getEndOfMonth(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  return new Date(year, monthIndex + 1, 1, 0, 0, 0, -1);
+}
+/**
+ * Returns the beginning of a given week.
+ *
+ * @param {Date} date Date.
+ * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
+ */
+
+
+function getBeginOfWeek(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  var day = date.getDate() - getDayOfWeek(date, calendarType);
+  return new Date(year, monthIndex, day);
+}
+/**
+ * Returns an array with the beginning and the end of a given month.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getMonthRange(date) {
+  return [getBeginOfMonth(date), getEndOfMonth(date)];
+}
+
+function getDifferentMonth(date, offset) {
+  var year = getYear(date);
+  var previousMonthIndex = getMonthIndex(date) + offset;
+  return new Date(year, previousMonthIndex, 1);
+}
+
+function getBeginOfPreviousMonth(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousMonth = getDifferentMonth(date, -offset);
+  return getBeginOfMonth(previousMonth);
+}
+
+function getEndOfPreviousMonth(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousMonth = getDifferentMonth(date, -offset);
+  return getEndOfMonth(previousMonth);
+}
+
+function getBeginOfNextMonth(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var nextMonth = getDifferentMonth(date, offset);
+  return getBeginOfMonth(nextMonth);
+}
+
+function getBeginOfDay(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  var day = getDay(date);
+  return new Date(year, monthIndex, day);
+}
+
+function getEndOfDay(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  var day = getDay(date);
+  return new Date(year, monthIndex, day + 1, 0, 0, 0, -1);
+}
+/**
+ * Returns an array with the beginning and the end of a given day.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getDayRange(date) {
+  return [getBeginOfDay(date), getEndOfDay(date)];
+}
+/**
+ * Gets week number according to ISO 8601 or US standard.
+ * In ISO 8601, Arabic and Hebrew week 1 is the one with January 4.
+ * In US calendar week 1 is the one with January 1.
+ *
+ * @param {Date} date Date.
+ * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
+ */
+
+
+function getWeekNumber(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var calendarTypeForWeekNumber = calendarType === 'US' ? 'US' : 'ISO 8601';
+  var beginOfWeek = getBeginOfWeek(date, calendarTypeForWeekNumber);
+  var year = getYear(date) + 1;
+  var dayInWeekOne;
+  var beginOfFirstWeek; // Look for the first week one that does not come after a given date
+
+  do {
+    dayInWeekOne = new Date(year, 0, calendarTypeForWeekNumber === 'ISO 8601' ? 4 : 1);
+    beginOfFirstWeek = getBeginOfWeek(dayInWeekOne, calendarTypeForWeekNumber);
+    year -= 1;
+  } while (date - beginOfFirstWeek < 0);
+
+  return Math.round((beginOfWeek - beginOfFirstWeek) / (8.64e7 * 7)) + 1;
+}
+/**
+ * Returns the beginning of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+
+function getBegin(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getBeginOfCentury(date);
+
+    case 'decade':
+      return getBeginOfDecade(date);
+
+    case 'year':
+      return getBeginOfYear(date);
+
+    case 'month':
+      return getBeginOfMonth(date);
+
+    case 'day':
+      return getBeginOfDay(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+function getBeginPrevious(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getBeginOfPreviousCentury(date);
+
+    case 'decade':
+      return getBeginOfPreviousDecade(date);
+
+    case 'year':
+      return getBeginOfPreviousYear(date);
+
+    case 'month':
+      return getBeginOfPreviousMonth(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+function getBeginNext(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getBeginOfNextCentury(date);
+
+    case 'decade':
+      return getBeginOfNextDecade(date);
+
+    case 'year':
+      return getBeginOfNextYear(date);
+
+    case 'month':
+      return getBeginOfNextMonth(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+var getBeginPrevious2 = function getBeginPrevious2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return getBeginOfPreviousDecade(date, 100);
+
+    case 'year':
+      return getBeginOfPreviousYear(date, 10);
+
+    case 'month':
+      return getBeginOfPreviousMonth(date, 12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+
+exports.getBeginPrevious2 = getBeginPrevious2;
+
+var getBeginNext2 = function getBeginNext2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return getBeginOfNextDecade(date, 100);
+
+    case 'year':
+      return getBeginOfNextYear(date, 10);
+
+    case 'month':
+      return getBeginOfNextMonth(date, 12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+/**
+ * Returns the end of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+
+exports.getBeginNext2 = getBeginNext2;
+
+function getEnd(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getEndOfCentury(date);
+
+    case 'decade':
+      return getEndOfDecade(date);
+
+    case 'year':
+      return getEndOfYear(date);
+
+    case 'month':
+      return getEndOfMonth(date);
+
+    case 'day':
+      return getEndOfDay(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+function getEndPrevious(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getEndOfPreviousCentury(date);
+
+    case 'decade':
+      return getEndOfPreviousDecade(date);
+
+    case 'year':
+      return getEndOfPreviousYear(date);
+
+    case 'month':
+      return getEndOfPreviousMonth(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+var getEndPrevious2 = function getEndPrevious2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return getEndOfPreviousDecade(date, 100);
+
+    case 'year':
+      return getEndOfPreviousYear(date, 10);
+
+    case 'month':
+      return getEndOfPreviousMonth(date, 12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+/**
+ * Returns an array with the beginning and the end of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+
+exports.getEndPrevious2 = getEndPrevious2;
+
+function getRange(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getCenturyRange(date);
+
+    case 'decade':
+      return getDecadeRange(date);
+
+    case 'year':
+      return getYearRange(date);
+
+    case 'month':
+      return getMonthRange(date);
+
+    case 'day':
+      return getDayRange(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+/**
+ * Creates a range out of two values, ensuring they are in order and covering entire period ranges.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date1 First date.
+ * @param {Date} date2 Second date.
+ */
+
+
+function getValueRange(rangeType, date1, date2) {
+  var rawNextValue = [date1, date2].sort(function (a, b) {
+    return a - b;
+  });
+  return [getBegin(rangeType, rawNextValue[0]), getEnd(rangeType, rawNextValue[1])];
+}
+/**
+ * Returns a number of days in a month of a given date.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getDaysInMonth(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  return new Date(year, monthIndex + 1, 0).getDate();
+}
+
+function toYearLabel(_ref) {
+  var _ref2 = _slicedToArray(_ref, 2),
+      start = _ref2[0],
+      end = _ref2[1];
+
+  return "".concat(getYear(start), " \u2013 ").concat(getYear(end));
+}
+/**
+ * Returns a string labelling a century of a given date.
+ * For example, for 2017 it will return 2001-2100.
+ *
+ * @param {Date|String|Number} date Date or a year as a string or as a number.
+ */
+
+
+function getCenturyLabel(date) {
+  return toYearLabel(getCenturyRange(date));
+}
+/**
+ * Returns a string labelling a century of a given date.
+ * For example, for 2017 it will return 2011-2020.
+ *
+ * @param {Date|String|Number} date Date or a year as a string or as a number.
+ */
+
+
+function getDecadeLabel(date) {
+  return toYearLabel(getDecadeRange(date));
+}
+/**
+ * Returns a boolean determining whether a given date is on Saturday or Sunday.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function isWeekend(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var weekday = date.getDay();
+
+  switch (calendarType) {
+    case 'Arabic':
+    case 'Hebrew':
+      return weekday === FRIDAY || weekday === SATURDAY;
+
+    case 'ISO 8601':
+    case 'US':
+      return weekday === SATURDAY || weekday === SUNDAY;
+
+    default:
+      throw new Error('Unsupported calendar type.');
+  }
+}
+/**
+ * Returns local month in ISO-like format (YYYY-MM).
+ */
+
+
+function getISOLocalMonth(value) {
+  if (!value) {
+    return value;
+  }
+
+  var date = new Date(value);
+
+  if (isNaN(date.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  var year = getYear(date);
+  var month = "0".concat(getMonth(date)).slice(-2);
+  return "".concat(year, "-").concat(month);
+}
+/**
+ * Returns local date in ISO-like format (YYYY-MM-DD).
+ */
+
+
+function getISOLocalDate(value) {
+  if (!value) {
+    return value;
+  }
+
+  var date = new Date(value);
+
+  if (isNaN(date.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  var year = getYear(date);
+  var month = "0".concat(getMonth(date)).slice(-2);
+  var day = "0".concat(getDay(date)).slice(-2);
+  return "".concat(year, "-").concat(month, "-").concat(day);
+}
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.formatShortWeekday = exports.formatWeekday = exports.formatMonth = exports.formatMonthYear = exports.formatLongDate = exports.formatDate = void 0;
+
+var _getUserLocale = _interopRequireDefault(__webpack_require__(24));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function getFormatter(options) {
+  return function (locale, date) {
+    return date.toLocaleString(locale || (0, _getUserLocale["default"])(), options);
+  };
+}
+/**
+ * Changes the hour in a Date to ensure right date formatting even if DST is messed up.
+ * Workaround for bug in WebKit and Firefox with historical dates.
+ * For more details, see:
+ * https://bugs.chromium.org/p/chromium/issues/detail?id=750465
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=1385643
+ *
+ * @param {Date} date Date.
+ */
+
+
+function toSafeHour(date) {
+  var safeDate = new Date(date);
+  return new Date(safeDate.setHours(12));
+}
+
+function getSafeFormatter(options) {
+  return function (locale, date) {
+    return getFormatter(options)(locale, toSafeHour(date));
+  };
+}
+
+var formatDateOptions = {
+  day: 'numeric',
+  month: 'numeric',
+  year: 'numeric'
+};
+var formatLongDateOptions = {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+};
+var formatMonthYearOptions = {
+  month: 'long',
+  year: 'numeric'
+};
+var formatMonthOptions = {
+  month: 'long'
+};
+var formatWeekdayOptions = {
+  weekday: 'long'
+};
+var formatShortWeekdayOptions = {
+  weekday: 'short'
+};
+var formatDate = getSafeFormatter(formatDateOptions);
+exports.formatDate = formatDate;
+var formatLongDate = getSafeFormatter(formatLongDateOptions);
+exports.formatLongDate = formatLongDate;
+var formatMonthYear = getSafeFormatter(formatMonthYearOptions);
+exports.formatMonthYear = formatMonthYear;
+var formatMonth = getSafeFormatter(formatMonthOptions);
+exports.formatMonth = formatMonth;
+var formatWeekday = getSafeFormatter(formatWeekdayOptions);
+exports.formatWeekday = formatWeekday;
+var formatShortWeekday = getSafeFormatter(formatShortWeekdayOptions);
+exports.formatShortWeekday = formatShortWeekday;
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = exports.getUserLocale = exports.getUserLocales = void 0;
+
+var _lodash = _interopRequireDefault(__webpack_require__(25));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function filterDuplicates(arr) {
+  return arr.filter(function (el, index, self) {
+    return self.indexOf(el) === index;
+  });
+}
+
+function fixLowercaseProperties(arr) {
+  return arr.map(function (el) {
+    if (!el || el.indexOf('-') === -1 || el.toLowerCase() !== el) {
+      return el;
+    }
+
+    var splitEl = el.split('-');
+    return "".concat(splitEl[0], "-").concat(splitEl[1].toUpperCase());
+  });
+}
+
+var getUserLocales = (0, _lodash["default"])(function () {
+  var languageList = [];
+
+  if (typeof window !== 'undefined') {
+    if (window.navigator.languages) {
+      languageList = languageList.concat(window.navigator.languages);
+    }
+
+    if (window.navigator.language) {
+      languageList.push(window.navigator.language);
+    }
+
+    if (window.navigator.userLanguage) {
+      languageList.push(window.navigator.userLanguage);
+    }
+
+    if (window.navigator.browserLanguage) {
+      languageList.push(window.navigator.browserLanguage);
+    }
+
+    if (window.navigator.systemLanguage) {
+      languageList.push(window.navigator.systemLanguage);
+    }
+  }
+
+  languageList.push('en-US'); // Fallback
+
+  return fixLowercaseProperties(filterDuplicates(languageList));
+});
+exports.getUserLocales = getUserLocales;
+var getUserLocale = (0, _lodash["default"])(function () {
+  return getUserLocales()[0];
+});
+exports.getUserLocale = getUserLocale;
+var _default = getUserLocale;
+exports["default"] = _default;
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+/** Used as references for various `Number` constants. */
+
+var INFINITY = 1 / 0,
+    MAX_INTEGER = 1.7976931348623157e+308,
+    NAN = 0 / 0;
+/** `Object#toString` result references. */
+
+var symbolTag = '[object Symbol]';
+/** Used to match leading and trailing whitespace. */
+
+var reTrim = /^\s+|\s+$/g;
+/** Used to detect bad signed hexadecimal string values. */
+
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+/** Used to detect binary string values. */
+
+var reIsBinary = /^0b[01]+$/i;
+/** Used to detect octal string values. */
+
+var reIsOctal = /^0o[0-7]+$/i;
+/** Built-in method references without a dependency on `root`. */
+
+var freeParseInt = parseInt;
+/** Used for built-in method references. */
+
+var objectProto = Object.prototype;
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+
+var objectToString = objectProto.toString;
+/**
+ * Creates a function that invokes `func`, with the `this` binding and arguments
+ * of the created function, while it's called less than `n` times. Subsequent
+ * calls to the created function return the result of the last `func` invocation.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Function
+ * @param {number} n The number of calls at which `func` is no longer invoked.
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new restricted function.
+ * @example
+ *
+ * jQuery(element).on('click', _.before(5, addContactToList));
+ * // => Allows adding up to 4 contacts to the list.
+ */
+
+function before(n, func) {
+  var result;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+
+  n = toInteger(n);
+  return function () {
+    if (--n > 0) {
+      result = func.apply(this, arguments);
+    }
+
+    if (n <= 1) {
+      func = undefined;
+    }
+
+    return result;
+  };
+}
+/**
+ * Creates a function that is restricted to invoking `func` once. Repeat calls
+ * to the function return the value of the first invocation. The `func` is
+ * invoked with the `this` binding and arguments of the created function.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new restricted function.
+ * @example
+ *
+ * var initialize = _.once(createApplication);
+ * initialize();
+ * initialize();
+ * // => `createApplication` is invoked once
+ */
+
+
+function once(func) {
+  return before(2, func);
+}
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+
+
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+
+
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+
+
+function isSymbol(value) {
+  return typeof value == 'symbol' || isObjectLike(value) && objectToString.call(value) == symbolTag;
+}
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+
+
+function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+
+  value = toNumber(value);
+
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = value < 0 ? -1 : 1;
+    return sign * MAX_INTEGER;
+  }
+
+  return value === value ? value : 0;
+}
+/**
+ * Converts `value` to an integer.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toInteger(3.2);
+ * // => 3
+ *
+ * _.toInteger(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toInteger(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toInteger('3.2');
+ * // => 3
+ */
+
+
+function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+  return result === result ? remainder ? result - remainder : result : 0;
+}
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+
+
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+
+  if (isSymbol(value)) {
+    return NAN;
+  }
+
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? other + '' : other;
+  }
+
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return isBinary || reIsOctal.test(value) ? freeParseInt(value.slice(2), isBinary ? 2 : 8) : reIsBadHex.test(value) ? NAN : +value;
+}
+
+module.exports = once;
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.tileProps = exports.tileGroupProps = exports.isView = exports.isClassName = exports.isViews = exports.isValue = exports.isMaxDate = exports.isMinDate = exports.isCalendarType = void 0;
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+var calendarTypes = ['ISO 8601', 'US', 'Arabic', 'Hebrew'];
+var allViews = ['century', 'decade', 'year', 'month'];
+
+var isCalendarType = _propTypes["default"].oneOf(calendarTypes);
+
+exports.isCalendarType = isCalendarType;
+
+var isMinDate = function isMinDate(props, propName, componentName) {
+  var minDate = props[propName];
+
+  if (minDate) {
+    if (!(minDate instanceof Date)) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+    }
+
+    var maxDate = props.maxDate;
+
+    if (maxDate && minDate > maxDate) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, minDate cannot be larger than maxDate."));
+    }
+  } // Everything is fine
+
+
+  return null;
+};
+
+exports.isMinDate = isMinDate;
+
+var isMaxDate = function isMaxDate(props, propName, componentName) {
+  var maxDate = props[propName];
+
+  if (maxDate) {
+    if (!(maxDate instanceof Date)) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+    }
+
+    var minDate = props.minDate;
+
+    if (minDate && maxDate < minDate) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, maxDate cannot be smaller than minDate."));
+    }
+  } // Everything is fine
+
+
+  return null;
+};
+
+exports.isMaxDate = isMaxDate;
+
+var isValue = _propTypes["default"].oneOfType([_propTypes["default"].instanceOf(Date), _propTypes["default"].arrayOf(_propTypes["default"].instanceOf(Date))]);
+
+exports.isValue = isValue;
+
+var isViews = _propTypes["default"].arrayOf(_propTypes["default"].oneOf(allViews));
+
+exports.isViews = isViews;
+
+var isClassName = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string)]);
+
+exports.isClassName = isClassName;
+
+var isView = function isView(props, propName, componentName) {
+  var view = props[propName];
+  var views = props.views;
+  var allowedViews = views || allViews;
+
+  if (view !== undefined && allowedViews.indexOf(view) === -1) {
+    return new Error("Invalid prop `".concat(propName, "` of value `").concat(view, "` supplied to `").concat(componentName, "`, expected one of [").concat(allowedViews.map(function (a) {
+      return "\"".concat(a, "\"");
+    }).join(', '), "]."));
+  } // Everything is fine
+
+
+  return null;
+};
+
+exports.isView = isView;
+
+isView.isRequired = function (props, propName, componentName) {
+  var view = props[propName];
+
+  if (!view) {
+    return new Error("The prop `".concat(propName, "` is marked as required in `").concat(componentName, "`, but its value is `").concat(view, "`."));
+  }
+
+  return isView(props, propName, componentName);
+};
+
+var tileGroupProps = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  hover: _propTypes["default"].instanceOf(Date),
+  locale: _propTypes["default"].string,
+  maxDate: isMaxDate,
+  minDate: isMinDate,
+  onClick: _propTypes["default"].func,
+  onMouseOver: _propTypes["default"].func,
+  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, isClassName]),
+  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
+  value: isValue,
+  valueType: _propTypes["default"].string
+};
+exports.tileGroupProps = tileGroupProps;
+var tileProps = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  classes: _propTypes["default"].arrayOf(_propTypes["default"].string).isRequired,
+  date: _propTypes["default"].instanceOf(Date).isRequired,
+  locale: _propTypes["default"].string,
+  maxDate: isMaxDate,
+  minDate: isMinDate,
+  onClick: _propTypes["default"].func,
+  onMouseOver: _propTypes["default"].func,
+  style: _propTypes["default"].objectOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
+  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, isClassName]),
+  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
+  tileDisabled: _propTypes["default"].func
+};
+exports.tileProps = tileProps;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = CenturyView;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _Decades = _interopRequireDefault(__webpack_require__(28));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function CenturyView(props) {
+  function renderDecades() {
+    return _react["default"].createElement(_Decades["default"], props);
+  }
+
+  return _react["default"].createElement("div", {
+    className: "react-calendar__century-view"
+  }, renderDecades());
+}
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Decades;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _TileGroup = _interopRequireDefault(__webpack_require__(29));
+
+var _Decade = _interopRequireDefault(__webpack_require__(32));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function Decades(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = (0, _dates.getBeginOfCenturyYear)(activeStartDate);
+  var end = start + 99;
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
+    className: "react-calendar__century-view__decades",
+    dateTransform: _dates.getBeginOfDecade,
+    dateType: "decade",
+    end: end,
+    start: start,
+    step: 10,
+    tile: _Decade["default"]
+  }));
+}
+
+Decades.propTypes = _objectSpread({}, _propTypes.tileGroupProps);
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = TileGroup;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _Flex = _interopRequireDefault(__webpack_require__(30));
+
+var _utils = __webpack_require__(31);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function TileGroup(_ref) {
+  var className = _ref.className,
+      count = _ref.count,
+      dateTransform = _ref.dateTransform,
+      dateType = _ref.dateType,
+      end = _ref.end,
+      hover = _ref.hover,
+      offset = _ref.offset,
+      start = _ref.start,
+      step = _ref.step,
+      Tile = _ref.tile,
+      value = _ref.value,
+      valueType = _ref.valueType,
+      tileProps = _objectWithoutProperties(_ref, ["className", "count", "dateTransform", "dateType", "end", "hover", "offset", "start", "step", "tile", "value", "valueType"]);
+
+  var tiles = [];
+
+  for (var point = start; point <= end; point += step) {
+    var date = dateTransform(point);
+    tiles.push(_react["default"].createElement(Tile, _extends({
+      key: date.getTime(),
+      classes: (0, _utils.getTileClasses)({
+        value: value,
+        valueType: valueType,
+        date: date,
+        dateType: dateType,
+        hover: hover
+      }),
+      date: date,
+      point: point
+    }, tileProps)));
+  }
+
+  return _react["default"].createElement(_Flex["default"], {
+    className: className,
+    count: count,
+    offset: offset,
+    wrap: true
+  }, tiles);
+}
+
+TileGroup.propTypes = _objectSpread({}, _propTypes2.tileGroupProps, {
+  activeStartDate: _propTypes["default"].instanceOf(Date),
+  count: _propTypes["default"].number,
+  dateTransform: _propTypes["default"].func.isRequired,
+  offset: _propTypes["default"].number,
+  step: _propTypes["default"].number,
+  tile: _propTypes["default"].func.isRequired
+});
+TileGroup.defaultProps = {
+  count: 3,
+  step: 1
+};
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Flex;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function toPercent(num) {
+  return "".concat(num, "%");
+}
+
+function Flex(_ref) {
+  var children = _ref.children,
+      className = _ref.className,
+      direction = _ref.direction,
+      count = _ref.count,
+      offset = _ref.offset,
+      style = _ref.style,
+      wrap = _ref.wrap,
+      otherProps = _objectWithoutProperties(_ref, ["children", "className", "direction", "count", "offset", "style", "wrap"]);
+
+  return _react["default"].createElement("div", _extends({
+    className: className,
+    style: _objectSpread({
+      display: 'flex',
+      flexDirection: direction,
+      flexWrap: wrap ? 'wrap' : 'no-wrap'
+    }, style)
+  }, otherProps), _react["default"].Children.map(children, function (child, index) {
+    return _react["default"].cloneElement(child, _objectSpread({}, child.props, {
+      style: {
+        flexBasis: toPercent(100 / count),
+        maxWidth: toPercent(100 / count),
+        overflow: 'hidden',
+        marginLeft: offset && index === 0 ? toPercent(100 * offset / count) : null
+      }
+    }));
+  }));
+}
+
+Flex.propTypes = {
+  children: _propTypes["default"].node,
+  className: _propTypes["default"].string,
+  count: _propTypes["default"].number.isRequired,
+  direction: _propTypes["default"].string,
+  offset: _propTypes["default"].number,
+  style: _propTypes["default"].objectOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
+  wrap: _propTypes["default"].bool
+};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getTileClasses = exports.between = exports.doRangesOverlap = exports.isRangeWithinRange = exports.isValueWithinRange = exports.callIfDefined = exports.mergeFunctions = void 0;
+
+var _dates = __webpack_require__(22);
+/**
+ * Returns a function that, when called, calls all the functions
+ * passed to it, applying its arguments to them.
+ *
+ * @param {Function[]} functions
+ */
+
+
+var mergeFunctions = function mergeFunctions() {
+  for (var _len = arguments.length, functions = new Array(_len), _key = 0; _key < _len; _key++) {
+    functions[_key] = arguments[_key];
+  }
+
+  return function () {
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    return functions.filter(Boolean).forEach(function (f) {
+      return f.apply(void 0, args);
+    });
+  };
+};
+/**
+ * Calls a function, if it's defined, with specified arguments
+ * @param {Function} fn
+ * @param {Object} args
+ */
+
+
+exports.mergeFunctions = mergeFunctions;
+
+var callIfDefined = function callIfDefined(fn) {
+  if (fn && typeof fn === 'function') {
+    for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+      args[_key3 - 1] = arguments[_key3];
+    }
+
+    fn.apply(void 0, args);
+  }
+};
+
+exports.callIfDefined = callIfDefined;
+
+var isValueWithinRange = function isValueWithinRange(value, range) {
+  return range[0] <= value && range[1] >= value;
+};
+
+exports.isValueWithinRange = isValueWithinRange;
+
+var isRangeWithinRange = function isRangeWithinRange(greaterRange, smallerRange) {
+  return greaterRange[0] <= smallerRange[0] && greaterRange[1] >= smallerRange[1];
+};
+
+exports.isRangeWithinRange = isRangeWithinRange;
+
+var doRangesOverlap = function doRangesOverlap(range1, range2) {
+  return isValueWithinRange(range1[0], range2) || isValueWithinRange(range1[1], range2);
+};
+/**
+ * Returns a value no smaller than min and no larger than max.
+ *
+ * @param {*} value Value to return.
+ * @param {*} min Minimum return value.
+ * @param {*} max Maximum return value.
+ */
+
+
+exports.doRangesOverlap = doRangesOverlap;
+
+var between = function between(value, min, max) {
+  if (min && min > value) {
+    return min;
+  }
+
+  if (max && max < value) {
+    return max;
+  }
+
+  return value;
+};
+
+exports.between = between;
+
+var getTileClasses = function getTileClasses() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      value = _ref.value,
+      valueType = _ref.valueType,
+      date = _ref.date,
+      dateType = _ref.dateType,
+      hover = _ref.hover;
+
+  var className = 'react-calendar__tile';
+  var classes = [className];
+
+  if (!date) {
+    return classes;
+  }
+
+  if (!(date instanceof Array) && !dateType) {
+    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
+  }
+
+  var now = new Date();
+  var dateRange = date instanceof Array ? date : (0, _dates.getRange)(dateType, date);
+
+  if (isValueWithinRange(now, dateRange)) {
+    classes.push("".concat(className, "--now"));
+  }
+
+  if (!value) {
+    return classes;
+  }
+
+  if (!(value instanceof Array) && !valueType) {
+    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
+  }
+
+  var valueRange = value instanceof Array ? value : (0, _dates.getRange)(valueType, value);
+
+  if (isRangeWithinRange(valueRange, dateRange)) {
+    classes.push("".concat(className, "--active"));
+  } else if (doRangesOverlap(valueRange, dateRange)) {
+    classes.push("".concat(className, "--hasActive"));
+  } else if (hover && ( // Date before value
+  dateRange[1] < valueRange[0] && doRangesOverlap(dateRange, [hover, valueRange[0]]) || // Date after value
+  dateRange[0] > valueRange[1] && doRangesOverlap(dateRange, [valueRange[1], hover]))) {
+    classes.push("".concat(className, "--hover"));
+  }
+
+  var isRangeStart = isValueWithinRange(valueRange[0], dateRange);
+  var isRangeEnd = isValueWithinRange(valueRange[1], dateRange);
+
+  if (isRangeStart) {
+    classes.push("".concat(className, "--rangeStart"));
+  }
+
+  if (isRangeEnd) {
+    classes.push("".concat(className, "--rangeEnd"));
+  }
+
+  if (isRangeStart && isRangeEnd) {
+    classes.push("".concat(className, "--rangeBothEnds"));
+  }
+
+  return classes;
+};
+
+exports.getTileClasses = getTileClasses;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Decade;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _Tile = _interopRequireDefault(__webpack_require__(33));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var className = 'react-calendar__century-view__decades__decade';
+
+function Decade(_ref) {
+  var classes = _ref.classes,
+      point = _ref.point,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "point"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    maxDateTransform: _dates.getEndOfDecade,
+    minDateTransform: _dates.getBeginOfDecade,
+    view: "century"
+  }), (0, _dates.getDecadeLabel)(point));
+}
+
+Decade.propTypes = _objectSpread({}, _propTypes2.tileProps, {
+  point: _propTypes["default"].number.isRequired
+});
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _mergeClassNames = _interopRequireDefault(__webpack_require__(20));
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};
+
+    if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};
+
+          if (desc.get || desc.set) {
+            Object.defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+    }
+
+    newObj.default = obj;
+    return newObj;
+  }
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+var Tile =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Tile, _Component);
+
+  function Tile() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Tile);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Tile)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    return _this;
+  }
+
+  _createClass(Tile, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          activeStartDate = _this$props.activeStartDate,
+          children = _this$props.children,
+          classes = _this$props.classes,
+          date = _this$props.date,
+          formatAbbr = _this$props.formatAbbr,
+          locale = _this$props.locale,
+          maxDate = _this$props.maxDate,
+          maxDateTransform = _this$props.maxDateTransform,
+          minDate = _this$props.minDate,
+          minDateTransform = _this$props.minDateTransform,
+          onClick = _this$props.onClick,
+          onMouseOver = _this$props.onMouseOver,
+          style = _this$props.style,
+          tileDisabled = _this$props.tileDisabled,
+          view = _this$props.view;
+      var _this$state = this.state,
+          tileClassName = _this$state.tileClassName,
+          tileContent = _this$state.tileContent;
+      return _react["default"].createElement("button", {
+        className: (0, _mergeClassNames["default"])(classes, tileClassName),
+        disabled: minDate && minDateTransform(minDate) > date || maxDate && maxDateTransform(maxDate) < date || tileDisabled && tileDisabled({
+          activeStartDate: activeStartDate,
+          date: date,
+          view: view
+        }),
+        onClick: onClick && function () {
+          return onClick(date);
+        },
+        onFocus: onMouseOver && function () {
+          return onMouseOver(date);
+        },
+        onMouseOver: onMouseOver && function () {
+          return onMouseOver(date);
+        },
+        style: style,
+        type: "button"
+      }, formatAbbr ? _react["default"].createElement("abbr", {
+        "aria-label": formatAbbr(locale, date)
+      }, children) : children, tileContent);
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(nextProps, prevState) {
+      var date = nextProps.date,
+          tileClassName = nextProps.tileClassName,
+          tileContent = nextProps.tileContent,
+          view = nextProps.view;
+      var nextState = {};
+
+      if (tileClassName !== prevState.tileClassNameProps) {
+        nextState.tileClassName = typeof tileClassName === 'function' ? tileClassName({
+          date: date,
+          view: view
+        }) : tileClassName;
+        nextState.tileClassNameProps = tileClassName;
+      }
+
+      if (tileContent !== prevState.tileContentProps) {
+        nextState.tileContent = typeof tileContent === 'function' ? tileContent({
+          date: date,
+          view: view
+        }) : tileContent;
+        nextState.tileContentProps = tileContent;
+      }
+
+      return nextState;
+    }
+  }]);
+
+  return Tile;
+}(_react.Component);
+
+exports["default"] = Tile;
+Tile.propTypes = _objectSpread({}, _propTypes2.tileProps, {
+  children: _propTypes["default"].node.isRequired,
+  formatAbbr: _propTypes["default"].func,
+  maxDateTransform: _propTypes["default"].func.isRequired,
+  minDateTransform: _propTypes["default"].func.isRequired
+});
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = DecadeView;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _Years = _interopRequireDefault(__webpack_require__(35));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function DecadeView(props) {
+  function renderYears() {
+    return _react["default"].createElement(_Years["default"], props);
+  }
+
+  return _react["default"].createElement("div", {
+    className: "react-calendar__decade-view"
+  }, renderYears());
+}
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Years;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _TileGroup = _interopRequireDefault(__webpack_require__(29));
+
+var _Year = _interopRequireDefault(__webpack_require__(36));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function Years(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = (0, _dates.getBeginOfDecadeYear)(activeStartDate);
+  var end = start + 9;
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
+    className: "react-calendar__decade-view__years",
+    dateTransform: function dateTransform(year) {
+      return new Date(year, 0, 1);
+    },
+    dateType: "year",
+    end: end,
+    start: start,
+    tile: _Year["default"]
+  }));
+}
+
+Years.propTypes = _objectSpread({}, _propTypes.tileGroupProps);
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Year;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _Tile = _interopRequireDefault(__webpack_require__(33));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var className = 'react-calendar__decade-view__years__year';
+
+function Year(_ref) {
+  var classes = _ref.classes,
+      point = _ref.point,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "point"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    maxDateTransform: _dates.getEndOfYear,
+    minDateTransform: _dates.getBeginOfYear,
+    view: "decade"
+  }), point);
+}
+
+Year.propTypes = _objectSpread({}, _propTypes2.tileProps, {
+  point: _propTypes["default"].number.isRequired
+});
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = YearView;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _Months = _interopRequireDefault(__webpack_require__(38));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function YearView(props) {
+  function renderMonths() {
+    return _react["default"].createElement(_Months["default"], props);
+  }
+
+  return _react["default"].createElement("div", {
+    className: "react-calendar__year-view"
+  }, renderMonths());
+}
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Months;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _TileGroup = _interopRequireDefault(__webpack_require__(29));
+
+var _Month = _interopRequireDefault(__webpack_require__(39));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function Months(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = 0;
+  var end = 11;
+  var year = (0, _dates.getYear)(activeStartDate);
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
+    className: "react-calendar__year-view__months",
+    dateTransform: function dateTransform(monthIndex) {
+      return new Date(year, monthIndex, 1);
+    },
+    dateType: "month",
+    end: end,
+    start: start,
+    tile: _Month["default"]
+  }));
+}
+
+Months.propTypes = _objectSpread({}, _propTypes2.tileGroupProps, {
+  locale: _propTypes["default"].string
+});
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Month;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _Tile = _interopRequireDefault(__webpack_require__(33));
+
+var _dates = __webpack_require__(22);
+
+var _dateFormatter = __webpack_require__(23);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var className = 'react-calendar__year-view__months__month';
+
+function Month(_ref) {
+  var classes = _ref.classes,
+      date = _ref.date,
+      formatMonth = _ref.formatMonth,
+      locale = _ref.locale,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "date", "formatMonth", "locale"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    date: date,
+    formatAbbr: _dateFormatter.formatMonthYear,
+    locale: locale,
+    maxDateTransform: _dates.getEndOfMonth,
+    minDateTransform: _dates.getBeginOfMonth,
+    view: "year"
+  }), formatMonth(locale, date));
+}
+
+Month.defaultProps = {
+  formatMonth: _dateFormatter.formatMonth
+};
+Month.propTypes = _objectSpread({}, _propTypes2.tileProps, {
+  formatMonth: _propTypes["default"].func
+});
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = MonthView;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _Days = _interopRequireDefault(__webpack_require__(41));
+
+var _Weekdays = _interopRequireDefault(__webpack_require__(43));
+
+var _WeekNumbers = _interopRequireDefault(__webpack_require__(44));
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function MonthView(props) {
+  var activeStartDate = props.activeStartDate,
+      locale = props.locale,
+      onMouseLeave = props.onMouseLeave,
+      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
+
+  var calendarTypeProps = props.calendarType,
+      formatShortWeekday = props.formatShortWeekday,
+      onClickWeekNumber = props.onClickWeekNumber,
+      showWeekNumbers = props.showWeekNumbers,
+      childProps = _objectWithoutProperties(props, ["calendarType", "formatShortWeekday", "onClickWeekNumber", "showWeekNumbers"]);
+
+  var calendarType = function () {
+    if (calendarTypeProps) {
+      return calendarTypeProps;
+    }
+
+    switch (locale) {
+      case 'en-CA':
+      case 'en-US':
+      case 'es-AR':
+      case 'es-BO':
+      case 'es-CL':
+      case 'es-CO':
+      case 'es-CR':
+      case 'es-DO':
+      case 'es-EC':
+      case 'es-GT':
+      case 'es-HN':
+      case 'es-MX':
+      case 'es-NI':
+      case 'es-PA':
+      case 'es-PE':
+      case 'es-PR':
+      case 'es-SV':
+      case 'es-VE':
+      case 'pt-BR':
+        return 'US';
+      // ar-LB, ar-MA intentionally missing
+
+      case 'ar':
+      case 'ar-AE':
+      case 'ar-BH':
+      case 'ar-DZ':
+      case 'ar-EG':
+      case 'ar-IQ':
+      case 'ar-JO':
+      case 'ar-KW':
+      case 'ar-LY':
+      case 'ar-OM':
+      case 'ar-QA':
+      case 'ar-SA':
+      case 'ar-SD':
+      case 'ar-SY':
+      case 'ar-YE':
+      case 'dv':
+      case 'dv-MV':
+      case 'ps':
+      case 'ps-AR':
+        return 'Arabic';
+
+      case 'he':
+      case 'he-IL':
+        return 'Hebrew';
+
+      default:
+        return 'ISO 8601';
+    }
+  }();
+
+  function renderWeekdays() {
+    return _react["default"].createElement(_Weekdays["default"], {
+      calendarType: calendarType,
+      formatShortWeekday: formatShortWeekday,
+      locale: locale,
+      onMouseLeave: onMouseLeave
+    });
+  }
+
+  function renderWeekNumbers() {
+    if (!showWeekNumbers) {
+      return null;
+    }
+
+    return _react["default"].createElement(_WeekNumbers["default"], {
+      activeStartDate: activeStartDate,
+      calendarType: calendarType,
+      onClickWeekNumber: onClickWeekNumber,
+      onMouseLeave: onMouseLeave,
+      showFixedNumberOfWeeks: showFixedNumberOfWeeks
+    });
+  }
+
+  function renderDays() {
+    return _react["default"].createElement(_Days["default"], _extends({
+      calendarType: calendarType
+    }, childProps));
+  }
+
+  var className = 'react-calendar__month-view';
+  return _react["default"].createElement("div", {
+    className: [className, showWeekNumbers ? "".concat(className, "--weekNumbers") : ''].join(' ')
+  }, _react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'flex-end'
+    }
+  }, renderWeekNumbers(), _react["default"].createElement("div", {
+    style: {
+      flexGrow: 1,
+      width: '100%'
+    }
+  }, renderWeekdays(), renderDays())));
+}
+
+MonthView.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  calendarType: _propTypes2.isCalendarType,
+  formatShortWeekday: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  maxDate: _propTypes2.isMaxDate,
+  minDate: _propTypes2.isMinDate,
+  onChange: _propTypes["default"].func,
+  onClickWeekNumber: _propTypes["default"].func,
+  onMouseLeave: _propTypes["default"].func,
+  setActiveRange: _propTypes["default"].func,
+  showFixedNumberOfWeeks: _propTypes["default"].bool,
+  showNeighboringMonth: _propTypes["default"].bool,
+  showWeekNumbers: _propTypes["default"].bool,
+  value: _propTypes2.isValue,
+  valueType: _propTypes["default"].string
+};
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Days;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _TileGroup = _interopRequireDefault(__webpack_require__(29));
+
+var _Day = _interopRequireDefault(__webpack_require__(42));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function Days(props) {
+  var activeStartDate = props.activeStartDate,
+      calendarType = props.calendarType;
+
+  var showFixedNumberOfWeeks = props.showFixedNumberOfWeeks,
+      showNeighboringMonth = props.showNeighboringMonth,
+      otherProps = _objectWithoutProperties(props, ["showFixedNumberOfWeeks", "showNeighboringMonth"]);
+
+  var year = (0, _dates.getYear)(activeStartDate);
+  var monthIndex = (0, _dates.getMonthIndex)(activeStartDate);
+  var hasFixedNumberOfWeeks = showFixedNumberOfWeeks || showNeighboringMonth;
+  var dayOfWeek = (0, _dates.getDayOfWeek)(activeStartDate, calendarType);
+  var offset = hasFixedNumberOfWeeks ? 0 : dayOfWeek;
+  /**
+   * Defines on which day of the month the grid shall start. If we simply show current
+   * month, we obviously start on day one, but if showNeighboringMonth is set to
+   * true, we need to find the beginning of the week the first day of the month is in.
+   */
+
+  var start = (hasFixedNumberOfWeeks ? -dayOfWeek : 0) + 1;
+  /**
+   * Defines on which day of the month the grid shall end. If we simply show current
+   * month, we need to stop on the last day of the month, but if showNeighboringMonth
+   * is set to true, we need to find the end of the week the last day of the month is in.
+   */
+
+  var end = function () {
+    if (showFixedNumberOfWeeks) {
+      // Always show 6 weeks
+      return start + 6 * 7 - 1;
+    }
+
+    var daysInMonth = (0, _dates.getDaysInMonth)(activeStartDate);
+
+    if (showNeighboringMonth) {
+      var activeEndDate = new Date(year, monthIndex, daysInMonth);
+      return daysInMonth + (7 - (0, _dates.getDayOfWeek)(activeEndDate, calendarType) - 1);
+    }
+
+    return daysInMonth;
+  }();
+
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, otherProps, {
+    className: "react-calendar__month-view__days",
+    count: 7,
+    currentMonthIndex: monthIndex,
+    dateTransform: function dateTransform(day) {
+      return new Date(year, monthIndex, day);
+    },
+    dateType: "day",
+    end: end,
+    offset: offset,
+    start: start,
+    tile: _Day["default"]
+  }));
+}
+
+Days.propTypes = _objectSpread({
+  calendarType: _propTypes2.isCalendarType.isRequired,
+  showFixedNumberOfWeeks: _propTypes["default"].bool,
+  showNeighboringMonth: _propTypes["default"].bool
+}, _propTypes2.tileGroupProps);
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Day;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _Tile = _interopRequireDefault(__webpack_require__(33));
+
+var _dates = __webpack_require__(22);
+
+var _dateFormatter = __webpack_require__(23);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var className = 'react-calendar__month-view__days__day';
+
+function Day(_ref) {
+  var calendarType = _ref.calendarType,
+      classes = _ref.classes,
+      currentMonthIndex = _ref.currentMonthIndex,
+      date = _ref.date,
+      otherProps = _objectWithoutProperties(_ref, ["calendarType", "classes", "currentMonthIndex", "date"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className, (0, _dates.isWeekend)(date, calendarType) ? "".concat(className, "--weekend") : null, date.getMonth() !== currentMonthIndex ? "".concat(className, "--neighboringMonth") : null),
+    date: date,
+    formatAbbr: _dateFormatter.formatLongDate,
+    maxDateTransform: _dates.getEndOfDay,
+    minDateTransform: _dates.getBeginOfDay,
+    view: "month"
+  }), (0, _dates.getDay)(date));
+}
+
+Day.propTypes = _objectSpread({}, _propTypes2.tileProps, {
+  currentMonthIndex: _propTypes["default"].number.isRequired
+});
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Weekdays;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _Flex = _interopRequireDefault(__webpack_require__(30));
+
+var _dates = __webpack_require__(22);
+
+var _dateFormatter = __webpack_require__(23);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function Weekdays(props) {
+  var calendarType = props.calendarType,
+      formatShortWeekday = props.formatShortWeekday,
+      locale = props.locale,
+      onMouseLeave = props.onMouseLeave;
+  var anyDate = new Date();
+  var beginOfMonth = (0, _dates.getBeginOfMonth)(anyDate);
+  var year = (0, _dates.getYear)(beginOfMonth);
+  var monthIndex = (0, _dates.getMonthIndex)(beginOfMonth);
+  var weekdays = [];
+
+  for (var weekday = 1; weekday <= 7; weekday += 1) {
+    var weekdayDate = new Date(year, monthIndex, weekday - (0, _dates.getDayOfWeek)(beginOfMonth, calendarType));
+    var abbr = (0, _dateFormatter.formatWeekday)(locale, weekdayDate);
+    weekdays.push(_react["default"].createElement("div", {
+      key: weekday,
+      className: "react-calendar__month-view__weekdays__weekday"
+    }, _react["default"].createElement("abbr", {
+      "aria-label": abbr,
+      title: abbr
+    }, formatShortWeekday(locale, weekdayDate).replace('.', ''))));
+  }
+
+  return _react["default"].createElement(_Flex["default"], {
+    className: "react-calendar__month-view__weekdays",
+    count: 7,
+    onFocus: onMouseLeave,
+    onMouseOver: onMouseLeave
+  }, weekdays);
+}
+
+Weekdays.defaultProps = {
+  formatShortWeekday: _dateFormatter.formatShortWeekday
+};
+Weekdays.propTypes = {
+  calendarType: _propTypes2.isCalendarType.isRequired,
+  formatShortWeekday: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  onMouseLeave: _propTypes["default"].func
+};
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = WeekNumbers;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+var _WeekNumber = _interopRequireDefault(__webpack_require__(45));
+
+var _Flex = _interopRequireDefault(__webpack_require__(30));
+
+var _dates = __webpack_require__(22);
+
+var _propTypes2 = __webpack_require__(26);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function WeekNumbers(props) {
+  var activeStartDate = props.activeStartDate,
+      calendarType = props.calendarType,
+      onClickWeekNumber = props.onClickWeekNumber,
+      onMouseLeave = props.onMouseLeave,
+      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
+
+  var numberOfWeeks = function () {
+    if (showFixedNumberOfWeeks) {
+      return 6;
+    }
+
+    var numberOfDays = (0, _dates.getDaysInMonth)(activeStartDate);
+    var startWeekday = (0, _dates.getDayOfWeek)(activeStartDate, calendarType);
+    var days = numberOfDays - (7 - startWeekday);
+    return 1 + Math.ceil(days / 7);
+  }();
+
+  var dates = function () {
+    var year = (0, _dates.getYear)(activeStartDate);
+    var monthIndex = (0, _dates.getMonthIndex)(activeStartDate);
+    var day = (0, _dates.getDay)(activeStartDate);
+    var result = [];
+
+    for (var index = 0; index < numberOfWeeks; index += 1) {
+      result.push((0, _dates.getBeginOfWeek)(new Date(year, monthIndex, day + index * 7), calendarType));
+    }
+
+    return result;
+  }();
+
+  var weekNumbers = dates.map(function (date) {
+    return (0, _dates.getWeekNumber)(date, calendarType);
+  });
+  return _react["default"].createElement(_Flex["default"], {
+    className: "react-calendar__month-view__weekNumbers",
+    count: numberOfWeeks,
+    direction: "column",
+    onFocus: onMouseLeave,
+    onMouseOver: onMouseLeave,
+    style: {
+      flexBasis: 'calc(100% * (1 / 8)',
+      flexShrink: 0
+    }
+  }, weekNumbers.map(function (weekNumber, weekIndex) {
+    return _react["default"].createElement(_WeekNumber["default"], {
+      key: weekNumber,
+      date: dates[weekIndex],
+      onClickWeekNumber: onClickWeekNumber,
+      weekNumber: weekNumber
+    });
+  }));
+}
+
+WeekNumbers.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  calendarType: _propTypes2.isCalendarType.isRequired,
+  onClickWeekNumber: _propTypes["default"].func,
+  onMouseLeave: _propTypes["default"].func,
+  showFixedNumberOfWeeks: _propTypes["default"].bool
+};
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = WeekNumber;
+
+var _react = _interopRequireDefault(__webpack_require__(1));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(15));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function WeekNumber(_ref) {
+  var date = _ref.date,
+      onClickWeekNumber = _ref.onClickWeekNumber,
+      weekNumber = _ref.weekNumber;
+  return onClickWeekNumber ? _react["default"].createElement("button", {
+    className: "react-calendar__tile",
+    onClick: function onClick() {
+      return onClickWeekNumber(weekNumber, date);
+    },
+    style: {
+      flexGrow: 1
+    },
+    type: "button"
+  }, _react["default"].createElement("span", null, weekNumber)) : _react["default"].createElement("div", {
+    className: "react-calendar__tile",
+    style: {
+      flexGrow: 1
+    }
+  }, _react["default"].createElement("span", null, weekNumber));
+}
+
+WeekNumber.propTypes = {
+  date: _propTypes["default"].instanceOf(Date).isRequired,
+  onClickWeekNumber: _propTypes["default"].func,
+  weekNumber: _propTypes["default"].number.isRequired
+};
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(47);
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(49)(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(48)(false);
+// Module
+exports.push([module.i, ".react-calendar {\n  width: 350px;\n  max-width: 100%;\n  background: white;\n  border: 1px solid #a0a096;\n  font-family: Arial, Helvetica, sans-serif;\n  line-height: 1.125em;\n}\n.react-calendar,\n.react-calendar *,\n.react-calendar *:before,\n.react-calendar *:after {\n  -moz-box-sizing: border-box;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.react-calendar button {\n  margin: 0;\n  border: 0;\n  outline: none;\n}\n.react-calendar button:enabled:hover {\n  cursor: pointer;\n}\n.react-calendar__navigation {\n  height: 44px;\n  margin-bottom: 1em;\n}\n.react-calendar__navigation button {\n  min-width: 44px;\n  background: none;\n}\n.react-calendar__navigation button:enabled:hover,\n.react-calendar__navigation button:enabled:focus {\n  background-color: #e6e6e6;\n}\n.react-calendar__navigation button[disabled] {\n  background-color: #f0f0f0;\n}\n.react-calendar__month-view__weekdays {\n  text-align: center;\n  text-transform: uppercase;\n  font-weight: bold;\n  font-size: 0.75em;\n}\n.react-calendar__month-view__weekdays__weekday {\n  padding: 0.5em;\n}\n.react-calendar__month-view__weekNumbers {\n  font-weight: bold;\n}\n.react-calendar__month-view__weekNumbers .react-calendar__tile {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 0.75em;\n  padding: calc(0.75em / 0.75) calc(0.5em / 0.75);\n}\n.react-calendar__month-view__days__day--weekend {\n  color: #d10000;\n}\n.react-calendar__month-view__days__day--neighboringMonth {\n  color: #757575;\n}\n.react-calendar__year-view .react-calendar__tile,\n.react-calendar__decade-view .react-calendar__tile,\n.react-calendar__century-view .react-calendar__tile {\n  padding: 2em 0.5em;\n}\n.react-calendar__tile {\n  max-width: 100%;\n  text-align: center;\n  padding: 0.75em 0.5em;\n  background: none;\n}\n.react-calendar__tile:disabled {\n  background-color: #f0f0f0;\n}\n.react-calendar__tile:enabled:hover,\n.react-calendar__tile:enabled:focus {\n  background-color: #e6e6e6;\n}\n.react-calendar__tile--hasActive {\n  background: #76baff;\n}\n.react-calendar__tile--hasActive:enabled:hover,\n.react-calendar__tile--hasActive:enabled:focus {\n  background: #a9d4ff;\n}\n.react-calendar__tile--active {\n  background: #006edc;\n  color: white;\n}\n.react-calendar__tile--active:enabled:hover,\n.react-calendar__tile--active:enabled:focus {\n  background: #1087ff;\n}\n.react-calendar--selectRange .react-calendar__tile--hover {\n  background-color: #e6e6e6;\n}\n", ""]);
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], "{").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      // eslint-disable-next-line prefer-destructuring
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = modules[_i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = "(".concat(item[2], ") and (").concat(mediaQuery, ")");
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot).concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var stylesInDom = {};
+
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
+
+    return memo;
+  };
+}();
+
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
+
+      memo[target] = styleTarget;
+    }
+
+    return memo[target];
+  };
+}();
+
+function listToStyles(list, options) {
+  var styles = [];
+  var newStyles = {};
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var css = item[1];
+    var media = item[2];
+    var sourceMap = item[3];
+    var part = {
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    };
+
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = {
+        id: id,
+        parts: [part]
+      });
+    } else {
+      newStyles[id].parts.push(part);
+    }
+  }
+
+  return styles;
+}
+
+function addStylesToDom(styles, options) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i];
+    var domStyle = stylesInDom[item.id];
+    var j = 0;
+
+    if (domStyle) {
+      domStyle.refs++;
+
+      for (; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j]);
+      }
+
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j], options));
+      }
+    } else {
+      var parts = [];
+
+      for (; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j], options));
+      }
+
+      stylesInDom[item.id] = {
+        id: item.id,
+        refs: 1,
+        parts: parts
+      };
+    }
+  }
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+
+  if (typeof options.attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : undefined;
+
+    if (nonce) {
+      options.attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(options.attributes).forEach(function (key) {
+    style.setAttribute(key, options.attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  }
+
+  if (sourceMap && btoa) {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var singleton = null;
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
+  }
+
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {};
+  options.attributes = typeof options.attributes === 'object' ? options.attributes : {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
+  }
+
+  var styles = listToStyles(list, options);
+  addStylesToDom(styles, options);
+  return function update(newList) {
+    var mayRemove = [];
+
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i];
+      var domStyle = stylesInDom[item.id];
+
+      if (domStyle) {
+        domStyle.refs--;
+        mayRemove.push(domStyle);
+      }
+    }
+
+    if (newList) {
+      var newStyles = listToStyles(newList, options);
+      addStylesToDom(newStyles, options);
+    }
+
+    for (var _i = 0; _i < mayRemove.length; _i++) {
+      var _domStyle = mayRemove[_i];
+
+      if (_domStyle.refs === 0) {
+        for (var j = 0; j < _domStyle.parts.length; j++) {
+          _domStyle.parts[j]();
+        }
+
+        delete stylesInDom[_domStyle.id];
+      }
+    }
+  };
+};
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(51).default;
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _arrays = __webpack_require__(52);
+
+var _arrays2 = _interopRequireDefault(_arrays);
+
+var _reactAutowhatever = __webpack_require__(53);
+
+var _reactAutowhatever2 = _interopRequireDefault(_reactAutowhatever);
+
+var _theme = __webpack_require__(62);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var alwaysTrue = function alwaysTrue() {
+  return true;
+};
+
+var defaultShouldRenderSuggestions = function defaultShouldRenderSuggestions(value) {
+  return value.trim().length > 0;
+};
+
+var defaultRenderSuggestionsContainer = function defaultRenderSuggestionsContainer(_ref) {
+  var containerProps = _ref.containerProps,
+      children = _ref.children;
+  return _react2.default.createElement('div', containerProps, children);
+};
+
+var Autosuggest = function (_Component) {
+  _inherits(Autosuggest, _Component);
+
+  function Autosuggest(_ref2) {
+    var alwaysRenderSuggestions = _ref2.alwaysRenderSuggestions;
+
+    _classCallCheck(this, Autosuggest);
+
+    var _this = _possibleConstructorReturn(this, (Autosuggest.__proto__ || Object.getPrototypeOf(Autosuggest)).call(this));
+
+    _initialiseProps.call(_this);
+
+    _this.state = {
+      isFocused: false,
+      isCollapsed: !alwaysRenderSuggestions,
+      highlightedSectionIndex: null,
+      highlightedSuggestionIndex: null,
+      highlightedSuggestion: null,
+      valueBeforeUpDown: null
+    };
+    _this.justPressedUpDown = false;
+    _this.justMouseEntered = false;
+    _this.pressedSuggestion = null;
+    return _this;
+  }
+
+  _createClass(Autosuggest, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      document.addEventListener('mousedown', this.onDocumentMouseDown);
+      document.addEventListener('mouseup', this.onDocumentMouseUp);
+      this.input = this.autowhatever.input;
+      this.suggestionsContainer = this.autowhatever.itemsContainer;
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if ((0, _arrays2.default)(nextProps.suggestions, this.props.suggestions)) {
+        if (nextProps.highlightFirstSuggestion && nextProps.suggestions.length > 0 && this.justPressedUpDown === false && this.justMouseEntered === false) {
+          this.highlightFirstSuggestion();
+        }
+      } else {
+        if (this.willRenderSuggestions(nextProps)) {
+          if (this.state.isCollapsed && !this.justSelectedSuggestion) {
+            this.revealSuggestions();
+          }
+        } else {
+          this.resetHighlightedSuggestion();
+        }
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      var _props = this.props,
+          suggestions = _props.suggestions,
+          onSuggestionHighlighted = _props.onSuggestionHighlighted,
+          highlightFirstSuggestion = _props.highlightFirstSuggestion;
+
+      if (!(0, _arrays2.default)(suggestions, prevProps.suggestions) && suggestions.length > 0 && highlightFirstSuggestion) {
+        this.highlightFirstSuggestion();
+        return;
+      }
+
+      if (onSuggestionHighlighted) {
+        var highlightedSuggestion = this.getHighlightedSuggestion();
+        var prevHighlightedSuggestion = prevState.highlightedSuggestion;
+
+        if (highlightedSuggestion != prevHighlightedSuggestion) {
+          onSuggestionHighlighted({
+            suggestion: highlightedSuggestion
+          });
+        }
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      document.removeEventListener('mousedown', this.onDocumentMouseDown);
+      document.removeEventListener('mouseup', this.onDocumentMouseUp);
+    }
+  }, {
+    key: 'updateHighlightedSuggestion',
+    value: function updateHighlightedSuggestion(sectionIndex, suggestionIndex, prevValue) {
+      var _this2 = this;
+
+      this.setState(function (state) {
+        var valueBeforeUpDown = state.valueBeforeUpDown;
+
+        if (suggestionIndex === null) {
+          valueBeforeUpDown = null;
+        } else if (valueBeforeUpDown === null && typeof prevValue !== 'undefined') {
+          valueBeforeUpDown = prevValue;
+        }
+
+        return {
+          highlightedSectionIndex: sectionIndex,
+          highlightedSuggestionIndex: suggestionIndex,
+          highlightedSuggestion: suggestionIndex === null ? null : _this2.getSuggestion(sectionIndex, suggestionIndex),
+          valueBeforeUpDown: valueBeforeUpDown
+        };
+      });
+    }
+  }, {
+    key: 'resetHighlightedSuggestion',
+    value: function resetHighlightedSuggestion() {
+      var shouldResetValueBeforeUpDown = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+      this.setState(function (state) {
+        var valueBeforeUpDown = state.valueBeforeUpDown;
+        return {
+          highlightedSectionIndex: null,
+          highlightedSuggestionIndex: null,
+          highlightedSuggestion: null,
+          valueBeforeUpDown: shouldResetValueBeforeUpDown ? null : valueBeforeUpDown
+        };
+      });
+    }
+  }, {
+    key: 'revealSuggestions',
+    value: function revealSuggestions() {
+      this.setState({
+        isCollapsed: false
+      });
+    }
+  }, {
+    key: 'closeSuggestions',
+    value: function closeSuggestions() {
+      this.setState({
+        highlightedSectionIndex: null,
+        highlightedSuggestionIndex: null,
+        highlightedSuggestion: null,
+        valueBeforeUpDown: null,
+        isCollapsed: true
+      });
+    }
+  }, {
+    key: 'getSuggestion',
+    value: function getSuggestion(sectionIndex, suggestionIndex) {
+      var _props2 = this.props,
+          suggestions = _props2.suggestions,
+          multiSection = _props2.multiSection,
+          getSectionSuggestions = _props2.getSectionSuggestions;
+
+      if (multiSection) {
+        return getSectionSuggestions(suggestions[sectionIndex])[suggestionIndex];
+      }
+
+      return suggestions[suggestionIndex];
+    }
+  }, {
+    key: 'getHighlightedSuggestion',
+    value: function getHighlightedSuggestion() {
+      var _state = this.state,
+          highlightedSectionIndex = _state.highlightedSectionIndex,
+          highlightedSuggestionIndex = _state.highlightedSuggestionIndex;
+
+      if (highlightedSuggestionIndex === null) {
+        return null;
+      }
+
+      return this.getSuggestion(highlightedSectionIndex, highlightedSuggestionIndex);
+    }
+  }, {
+    key: 'getSuggestionValueByIndex',
+    value: function getSuggestionValueByIndex(sectionIndex, suggestionIndex) {
+      var getSuggestionValue = this.props.getSuggestionValue;
+      return getSuggestionValue(this.getSuggestion(sectionIndex, suggestionIndex));
+    }
+  }, {
+    key: 'getSuggestionIndices',
+    value: function getSuggestionIndices(suggestionElement) {
+      var sectionIndex = suggestionElement.getAttribute('data-section-index');
+      var suggestionIndex = suggestionElement.getAttribute('data-suggestion-index');
+      return {
+        sectionIndex: typeof sectionIndex === 'string' ? parseInt(sectionIndex, 10) : null,
+        suggestionIndex: parseInt(suggestionIndex, 10)
+      };
+    }
+  }, {
+    key: 'findSuggestionElement',
+    value: function findSuggestionElement(startNode) {
+      var node = startNode;
+
+      do {
+        if (node.getAttribute('data-suggestion-index') !== null) {
+          return node;
+        }
+
+        node = node.parentNode;
+      } while (node !== null);
+
+      console.error('Clicked element:', startNode); // eslint-disable-line no-console
+
+      throw new Error("Couldn't find suggestion element");
+    }
+  }, {
+    key: 'maybeCallOnChange',
+    value: function maybeCallOnChange(event, newValue, method) {
+      var _props$inputProps = this.props.inputProps,
+          value = _props$inputProps.value,
+          onChange = _props$inputProps.onChange;
+
+      if (newValue !== value) {
+        onChange(event, {
+          newValue: newValue,
+          method: method
+        });
+      }
+    }
+  }, {
+    key: 'willRenderSuggestions',
+    value: function willRenderSuggestions(props) {
+      var suggestions = props.suggestions,
+          inputProps = props.inputProps,
+          shouldRenderSuggestions = props.shouldRenderSuggestions;
+      var value = inputProps.value;
+      return suggestions.length > 0 && shouldRenderSuggestions(value);
+    }
+  }, {
+    key: 'getQuery',
+    value: function getQuery() {
+      var inputProps = this.props.inputProps;
+      var value = inputProps.value;
+      var valueBeforeUpDown = this.state.valueBeforeUpDown;
+      return (valueBeforeUpDown === null ? value : valueBeforeUpDown).trim();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      var _props3 = this.props,
+          suggestions = _props3.suggestions,
+          renderInputComponent = _props3.renderInputComponent,
+          onSuggestionsFetchRequested = _props3.onSuggestionsFetchRequested,
+          renderSuggestion = _props3.renderSuggestion,
+          inputProps = _props3.inputProps,
+          multiSection = _props3.multiSection,
+          renderSectionTitle = _props3.renderSectionTitle,
+          id = _props3.id,
+          getSectionSuggestions = _props3.getSectionSuggestions,
+          theme = _props3.theme,
+          getSuggestionValue = _props3.getSuggestionValue,
+          alwaysRenderSuggestions = _props3.alwaysRenderSuggestions,
+          highlightFirstSuggestion = _props3.highlightFirstSuggestion;
+      var _state2 = this.state,
+          isFocused = _state2.isFocused,
+          isCollapsed = _state2.isCollapsed,
+          highlightedSectionIndex = _state2.highlightedSectionIndex,
+          highlightedSuggestionIndex = _state2.highlightedSuggestionIndex,
+          valueBeforeUpDown = _state2.valueBeforeUpDown;
+      var shouldRenderSuggestions = alwaysRenderSuggestions ? alwaysTrue : this.props.shouldRenderSuggestions;
+      var value = inputProps.value,
+          _onFocus = inputProps.onFocus,
+          _onKeyDown = inputProps.onKeyDown;
+      var willRenderSuggestions = this.willRenderSuggestions(this.props);
+      var isOpen = alwaysRenderSuggestions || isFocused && !isCollapsed && willRenderSuggestions;
+      var items = isOpen ? suggestions : [];
+
+      var autowhateverInputProps = _extends({}, inputProps, {
+        onFocus: function onFocus(event) {
+          if (!_this3.justSelectedSuggestion && !_this3.justClickedOnSuggestionsContainer) {
+            var shouldRender = shouldRenderSuggestions(value);
+
+            _this3.setState({
+              isFocused: true,
+              isCollapsed: !shouldRender
+            });
+
+            _onFocus && _onFocus(event);
+
+            if (shouldRender) {
+              onSuggestionsFetchRequested({
+                value: value,
+                reason: 'input-focused'
+              });
+            }
+          }
+        },
+        onBlur: function onBlur(event) {
+          if (_this3.justClickedOnSuggestionsContainer) {
+            _this3.input.focus();
+
+            return;
+          }
+
+          _this3.blurEvent = event;
+
+          if (!_this3.justSelectedSuggestion) {
+            _this3.onBlur();
+
+            _this3.onSuggestionsClearRequested();
+          }
+        },
+        onChange: function onChange(event) {
+          var value = event.target.value;
+          var shouldRender = shouldRenderSuggestions(value);
+
+          _this3.maybeCallOnChange(event, value, 'type');
+
+          if (_this3.suggestionsContainer) {
+            _this3.suggestionsContainer.scrollTop = 0;
+          }
+
+          _this3.setState(_extends({}, highlightFirstSuggestion ? {} : {
+            highlightedSectionIndex: null,
+            highlightedSuggestionIndex: null,
+            highlightedSuggestion: null
+          }, {
+            valueBeforeUpDown: null,
+            isCollapsed: !shouldRender
+          }));
+
+          if (shouldRender) {
+            onSuggestionsFetchRequested({
+              value: value,
+              reason: 'input-changed'
+            });
+          } else {
+            _this3.onSuggestionsClearRequested();
+          }
+        },
+        onKeyDown: function onKeyDown(event, data) {
+          var keyCode = event.keyCode;
+
+          switch (keyCode) {
+            case 40: // ArrowDown
+
+            case 38:
+              // ArrowUp
+              if (isCollapsed) {
+                if (shouldRenderSuggestions(value)) {
+                  onSuggestionsFetchRequested({
+                    value: value,
+                    reason: 'suggestions-revealed'
+                  });
+
+                  _this3.revealSuggestions();
+                }
+              } else if (suggestions.length > 0) {
+                var newHighlightedSectionIndex = data.newHighlightedSectionIndex,
+                    newHighlightedItemIndex = data.newHighlightedItemIndex;
+                var newValue = void 0;
+
+                if (newHighlightedItemIndex === null) {
+                  // valueBeforeUpDown can be null if, for example, user
+                  // hovers on the first suggestion and then pressed Up.
+                  // If that happens, use the original input value.
+                  newValue = valueBeforeUpDown === null ? value : valueBeforeUpDown;
+                } else {
+                  newValue = _this3.getSuggestionValueByIndex(newHighlightedSectionIndex, newHighlightedItemIndex);
+                }
+
+                _this3.updateHighlightedSuggestion(newHighlightedSectionIndex, newHighlightedItemIndex, value);
+
+                _this3.maybeCallOnChange(event, newValue, keyCode === 40 ? 'down' : 'up');
+              }
+
+              event.preventDefault(); // Prevents the cursor from moving
+
+              _this3.justPressedUpDown = true;
+              setTimeout(function () {
+                _this3.justPressedUpDown = false;
+              });
+              break;
+            // Enter
+
+            case 13:
+              {
+                // See #388
+                if (event.keyCode === 229) {
+                  break;
+                }
+
+                var highlightedSuggestion = _this3.getHighlightedSuggestion();
+
+                if (isOpen && !alwaysRenderSuggestions) {
+                  _this3.closeSuggestions();
+                }
+
+                if (highlightedSuggestion != null) {
+                  var _newValue = getSuggestionValue(highlightedSuggestion);
+
+                  _this3.maybeCallOnChange(event, _newValue, 'enter');
+
+                  _this3.onSuggestionSelected(event, {
+                    suggestion: highlightedSuggestion,
+                    suggestionValue: _newValue,
+                    suggestionIndex: highlightedSuggestionIndex,
+                    sectionIndex: highlightedSectionIndex,
+                    method: 'enter'
+                  });
+
+                  _this3.justSelectedSuggestion = true;
+                  setTimeout(function () {
+                    _this3.justSelectedSuggestion = false;
+                  });
+                }
+
+                break;
+              }
+            // Escape
+
+            case 27:
+              {
+                if (isOpen) {
+                  // If input.type === 'search', the browser clears the input
+                  // when Escape is pressed. We want to disable this default
+                  // behaviour so that, when suggestions are shown, we just hide
+                  // them, without clearing the input.
+                  event.preventDefault();
+                }
+
+                var willCloseSuggestions = isOpen && !alwaysRenderSuggestions;
+
+                if (valueBeforeUpDown === null) {
+                  // Didn't interact with Up/Down
+                  if (!willCloseSuggestions) {
+                    var _newValue2 = '';
+
+                    _this3.maybeCallOnChange(event, _newValue2, 'escape');
+
+                    if (shouldRenderSuggestions(_newValue2)) {
+                      onSuggestionsFetchRequested({
+                        value: _newValue2,
+                        reason: 'escape-pressed'
+                      });
+                    } else {
+                      _this3.onSuggestionsClearRequested();
+                    }
+                  }
+                } else {
+                  // Interacted with Up/Down
+                  _this3.maybeCallOnChange(event, valueBeforeUpDown, 'escape');
+                }
+
+                if (willCloseSuggestions) {
+                  _this3.onSuggestionsClearRequested();
+
+                  _this3.closeSuggestions();
+                } else {
+                  _this3.resetHighlightedSuggestion();
+                }
+
+                break;
+              }
+          }
+
+          _onKeyDown && _onKeyDown(event);
+        }
+      });
+
+      var renderSuggestionData = {
+        query: this.getQuery()
+      };
+      return _react2.default.createElement(_reactAutowhatever2.default, {
+        multiSection: multiSection,
+        items: items,
+        renderInputComponent: renderInputComponent,
+        renderItemsContainer: this.renderSuggestionsContainer,
+        renderItem: renderSuggestion,
+        renderItemData: renderSuggestionData,
+        renderSectionTitle: renderSectionTitle,
+        getSectionItems: getSectionSuggestions,
+        highlightedSectionIndex: highlightedSectionIndex,
+        highlightedItemIndex: highlightedSuggestionIndex,
+        inputProps: autowhateverInputProps,
+        itemProps: this.itemProps,
+        theme: (0, _theme.mapToAutowhateverTheme)(theme),
+        id: id,
+        ref: this.storeAutowhateverRef
+      });
+    }
+  }]);
+
+  return Autosuggest;
+}(_react.Component);
+
+Autosuggest.propTypes = {
+  suggestions: _propTypes2.default.array.isRequired,
+  onSuggestionsFetchRequested: function onSuggestionsFetchRequested(props, propName) {
+    var onSuggestionsFetchRequested = props[propName];
+
+    if (typeof onSuggestionsFetchRequested !== 'function') {
+      throw new Error("'onSuggestionsFetchRequested' must be implemented. See: https://github.com/moroshko/react-autosuggest#onSuggestionsFetchRequestedProp");
+    }
+  },
+  onSuggestionsClearRequested: function onSuggestionsClearRequested(props, propName) {
+    var onSuggestionsClearRequested = props[propName];
+
+    if (props.alwaysRenderSuggestions === false && typeof onSuggestionsClearRequested !== 'function') {
+      throw new Error("'onSuggestionsClearRequested' must be implemented. See: https://github.com/moroshko/react-autosuggest#onSuggestionsClearRequestedProp");
+    }
+  },
+  onSuggestionSelected: _propTypes2.default.func,
+  onSuggestionHighlighted: _propTypes2.default.func,
+  renderInputComponent: _propTypes2.default.func,
+  renderSuggestionsContainer: _propTypes2.default.func,
+  getSuggestionValue: _propTypes2.default.func.isRequired,
+  renderSuggestion: _propTypes2.default.func.isRequired,
+  inputProps: function inputProps(props, propName) {
+    var inputProps = props[propName];
+
+    if (!inputProps.hasOwnProperty('value')) {
+      throw new Error("'inputProps' must have 'value'.");
+    }
+
+    if (!inputProps.hasOwnProperty('onChange')) {
+      throw new Error("'inputProps' must have 'onChange'.");
+    }
+  },
+  shouldRenderSuggestions: _propTypes2.default.func,
+  alwaysRenderSuggestions: _propTypes2.default.bool,
+  multiSection: _propTypes2.default.bool,
+  renderSectionTitle: function renderSectionTitle(props, propName) {
+    var renderSectionTitle = props[propName];
+
+    if (props.multiSection === true && typeof renderSectionTitle !== 'function') {
+      throw new Error("'renderSectionTitle' must be implemented. See: https://github.com/moroshko/react-autosuggest#renderSectionTitleProp");
+    }
+  },
+  getSectionSuggestions: function getSectionSuggestions(props, propName) {
+    var getSectionSuggestions = props[propName];
+
+    if (props.multiSection === true && typeof getSectionSuggestions !== 'function') {
+      throw new Error("'getSectionSuggestions' must be implemented. See: https://github.com/moroshko/react-autosuggest#getSectionSuggestionsProp");
+    }
+  },
+  focusInputOnSuggestionClick: _propTypes2.default.bool,
+  highlightFirstSuggestion: _propTypes2.default.bool,
+  theme: _propTypes2.default.object,
+  id: _propTypes2.default.string
+};
+Autosuggest.defaultProps = {
+  renderSuggestionsContainer: defaultRenderSuggestionsContainer,
+  shouldRenderSuggestions: defaultShouldRenderSuggestions,
+  alwaysRenderSuggestions: false,
+  multiSection: false,
+  focusInputOnSuggestionClick: true,
+  highlightFirstSuggestion: false,
+  theme: _theme.defaultTheme,
+  id: '1'
+};
+
+var _initialiseProps = function _initialiseProps() {
+  var _this4 = this;
+
+  this.onDocumentMouseDown = function (event) {
+    _this4.justClickedOnSuggestionsContainer = false;
+    var node = event.detail && event.detail.target || // This is for testing only. Please show me a better way to emulate this.
+    event.target;
+
+    while (node !== null && node !== document) {
+      if (node.getAttribute('data-suggestion-index') !== null) {
+        // Suggestion was clicked
+        return;
+      }
+
+      if (node === _this4.suggestionsContainer) {
+        // Something else inside suggestions container was clicked
+        _this4.justClickedOnSuggestionsContainer = true;
+        return;
+      }
+
+      node = node.parentNode;
+    }
+  };
+
+  this.storeAutowhateverRef = function (autowhatever) {
+    if (autowhatever !== null) {
+      _this4.autowhatever = autowhatever;
+    }
+  };
+
+  this.onSuggestionMouseEnter = function (event, _ref3) {
+    var sectionIndex = _ref3.sectionIndex,
+        itemIndex = _ref3.itemIndex;
+
+    _this4.updateHighlightedSuggestion(sectionIndex, itemIndex);
+
+    if (event.target === _this4.pressedSuggestion) {
+      _this4.justSelectedSuggestion = true;
+    }
+
+    _this4.justMouseEntered = true;
+    setTimeout(function () {
+      _this4.justMouseEntered = false;
+    });
+  };
+
+  this.highlightFirstSuggestion = function () {
+    _this4.updateHighlightedSuggestion(_this4.props.multiSection ? 0 : null, 0);
+  };
+
+  this.onDocumentMouseUp = function () {
+    if (_this4.pressedSuggestion && !_this4.justSelectedSuggestion) {
+      _this4.input.focus();
+    }
+
+    _this4.pressedSuggestion = null;
+  };
+
+  this.onSuggestionMouseDown = function (event) {
+    // Checking if this.justSelectedSuggestion is already true to not duplicate touch events in chrome
+    // See: https://github.com/facebook/react/issues/9809#issuecomment-413978405
+    if (!_this4.justSelectedSuggestion) {
+      _this4.justSelectedSuggestion = true;
+      _this4.pressedSuggestion = event.target;
+    }
+  };
+
+  this.onSuggestionsClearRequested = function () {
+    var onSuggestionsClearRequested = _this4.props.onSuggestionsClearRequested;
+    onSuggestionsClearRequested && onSuggestionsClearRequested();
+  };
+
+  this.onSuggestionSelected = function (event, data) {
+    var _props4 = _this4.props,
+        alwaysRenderSuggestions = _props4.alwaysRenderSuggestions,
+        onSuggestionSelected = _props4.onSuggestionSelected,
+        onSuggestionsFetchRequested = _props4.onSuggestionsFetchRequested;
+    onSuggestionSelected && onSuggestionSelected(event, data);
+
+    if (alwaysRenderSuggestions) {
+      onSuggestionsFetchRequested({
+        value: data.suggestionValue,
+        reason: 'suggestion-selected'
+      });
+    } else {
+      _this4.onSuggestionsClearRequested();
+    }
+
+    _this4.resetHighlightedSuggestion();
+  };
+
+  this.onSuggestionClick = function (event) {
+    var _props5 = _this4.props,
+        alwaysRenderSuggestions = _props5.alwaysRenderSuggestions,
+        focusInputOnSuggestionClick = _props5.focusInputOnSuggestionClick;
+
+    var _getSuggestionIndices = _this4.getSuggestionIndices(_this4.findSuggestionElement(event.target)),
+        sectionIndex = _getSuggestionIndices.sectionIndex,
+        suggestionIndex = _getSuggestionIndices.suggestionIndex;
+
+    var clickedSuggestion = _this4.getSuggestion(sectionIndex, suggestionIndex);
+
+    var clickedSuggestionValue = _this4.props.getSuggestionValue(clickedSuggestion);
+
+    _this4.maybeCallOnChange(event, clickedSuggestionValue, 'click');
+
+    _this4.onSuggestionSelected(event, {
+      suggestion: clickedSuggestion,
+      suggestionValue: clickedSuggestionValue,
+      suggestionIndex: suggestionIndex,
+      sectionIndex: sectionIndex,
+      method: 'click'
+    });
+
+    if (!alwaysRenderSuggestions) {
+      _this4.closeSuggestions();
+    }
+
+    if (focusInputOnSuggestionClick === true) {
+      _this4.input.focus();
+    } else {
+      _this4.onBlur();
+    }
+
+    setTimeout(function () {
+      _this4.justSelectedSuggestion = false;
+    });
+  };
+
+  this.onBlur = function () {
+    var _props6 = _this4.props,
+        inputProps = _props6.inputProps,
+        shouldRenderSuggestions = _props6.shouldRenderSuggestions;
+    var value = inputProps.value,
+        onBlur = inputProps.onBlur;
+
+    var highlightedSuggestion = _this4.getHighlightedSuggestion();
+
+    var shouldRender = shouldRenderSuggestions(value);
+
+    _this4.setState({
+      isFocused: false,
+      highlightedSectionIndex: null,
+      highlightedSuggestionIndex: null,
+      highlightedSuggestion: null,
+      valueBeforeUpDown: null,
+      isCollapsed: !shouldRender
+    });
+
+    onBlur && onBlur(_this4.blurEvent, {
+      highlightedSuggestion: highlightedSuggestion
+    });
+  };
+
+  this.onSuggestionMouseLeave = function (event) {
+    _this4.resetHighlightedSuggestion(false); // shouldResetValueBeforeUpDown
+
+
+    if (_this4.justSelectedSuggestion && event.target === _this4.pressedSuggestion) {
+      _this4.justSelectedSuggestion = false;
+    }
+  };
+
+  this.onSuggestionTouchStart = function () {
+    _this4.justSelectedSuggestion = true; // todo: event.preventDefault when https://github.com/facebook/react/issues/2043
+    // todo: gets released so onSuggestionMouseDown won't fire in chrome
+  };
+
+  this.onSuggestionTouchMove = function () {
+    _this4.justSelectedSuggestion = false;
+    _this4.pressedSuggestion = null;
+
+    _this4.input.focus();
+  };
+
+  this.itemProps = function (_ref4) {
+    var sectionIndex = _ref4.sectionIndex,
+        itemIndex = _ref4.itemIndex;
+    return {
+      'data-section-index': sectionIndex,
+      'data-suggestion-index': itemIndex,
+      onMouseEnter: _this4.onSuggestionMouseEnter,
+      onMouseLeave: _this4.onSuggestionMouseLeave,
+      onMouseDown: _this4.onSuggestionMouseDown,
+      onTouchStart: _this4.onSuggestionTouchStart,
+      onTouchMove: _this4.onSuggestionTouchMove,
+      onClick: _this4.onSuggestionClick
+    };
+  };
+
+  this.renderSuggestionsContainer = function (_ref5) {
+    var containerProps = _ref5.containerProps,
+        children = _ref5.children;
+    var renderSuggestionsContainer = _this4.props.renderSuggestionsContainer;
+    return renderSuggestionsContainer({
+      containerProps: containerProps,
+      children: children,
+      query: _this4.getQuery()
+    });
+  };
+};
+
+exports.default = Autosuggest;
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function shallowEqualArrays(arrA, arrB) {
+  if (arrA === arrB) {
+    return true;
+  }
+
+  if (!arrA || !arrB) {
+    return false;
+  }
+
+  var len = arrA.length;
+
+  if (arrB.length !== len) {
+    return false;
+  }
+
+  for (var i = 0; i < len; i++) {
+    if (arrA[i] !== arrB[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+module.exports = shallowEqualArrays;
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(54).default;
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var _slicedToArray = function () {
+  function sliceIterator(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"]) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  return function (arr, i) {
+    if (Array.isArray(arr)) {
+      return arr;
+    } else if (Symbol.iterator in Object(arr)) {
+      return sliceIterator(arr, i);
+    } else {
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+  };
+}();
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _sectionIterator = __webpack_require__(55);
+
+var _sectionIterator2 = _interopRequireDefault(_sectionIterator);
+
+var _reactThemeable = __webpack_require__(56);
+
+var _reactThemeable2 = _interopRequireDefault(_reactThemeable);
+
+var _SectionTitle = __webpack_require__(58);
+
+var _SectionTitle2 = _interopRequireDefault(_SectionTitle);
+
+var _ItemsList = __webpack_require__(60);
+
+var _ItemsList2 = _interopRequireDefault(_ItemsList);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var emptyObject = {};
+
+var defaultRenderInputComponent = function defaultRenderInputComponent(props) {
+  return _react2.default.createElement('input', props);
+};
+
+var defaultRenderItemsContainer = function defaultRenderItemsContainer(_ref) {
+  var containerProps = _ref.containerProps,
+      children = _ref.children;
+  return _react2.default.createElement('div', containerProps, children);
+};
+
+var defaultTheme = {
+  container: 'react-autowhatever__container',
+  containerOpen: 'react-autowhatever__container--open',
+  input: 'react-autowhatever__input',
+  inputOpen: 'react-autowhatever__input--open',
+  inputFocused: 'react-autowhatever__input--focused',
+  itemsContainer: 'react-autowhatever__items-container',
+  itemsContainerOpen: 'react-autowhatever__items-container--open',
+  itemsList: 'react-autowhatever__items-list',
+  item: 'react-autowhatever__item',
+  itemFirst: 'react-autowhatever__item--first',
+  itemHighlighted: 'react-autowhatever__item--highlighted',
+  sectionContainer: 'react-autowhatever__section-container',
+  sectionContainerFirst: 'react-autowhatever__section-container--first',
+  sectionTitle: 'react-autowhatever__section-title'
+};
+
+var Autowhatever = function (_Component) {
+  _inherits(Autowhatever, _Component);
+
+  function Autowhatever(props) {
+    _classCallCheck(this, Autowhatever);
+
+    var _this = _possibleConstructorReturn(this, (Autowhatever.__proto__ || Object.getPrototypeOf(Autowhatever)).call(this, props));
+
+    _this.storeInputReference = function (input) {
+      if (input !== null) {
+        _this.input = input;
+      }
+    };
+
+    _this.storeItemsContainerReference = function (itemsContainer) {
+      if (itemsContainer !== null) {
+        _this.itemsContainer = itemsContainer;
+      }
+    };
+
+    _this.onHighlightedItemChange = function (highlightedItem) {
+      _this.highlightedItem = highlightedItem;
+    };
+
+    _this.getItemId = function (sectionIndex, itemIndex) {
+      if (itemIndex === null) {
+        return null;
+      }
+
+      var id = _this.props.id;
+      var section = sectionIndex === null ? '' : 'section-' + sectionIndex;
+      return 'react-autowhatever-' + id + '-' + section + '-item-' + itemIndex;
+    };
+
+    _this.onFocus = function (event) {
+      var inputProps = _this.props.inputProps;
+
+      _this.setState({
+        isInputFocused: true
+      });
+
+      inputProps.onFocus && inputProps.onFocus(event);
+    };
+
+    _this.onBlur = function (event) {
+      var inputProps = _this.props.inputProps;
+
+      _this.setState({
+        isInputFocused: false
+      });
+
+      inputProps.onBlur && inputProps.onBlur(event);
+    };
+
+    _this.onKeyDown = function (event) {
+      var _this$props = _this.props,
+          inputProps = _this$props.inputProps,
+          highlightedSectionIndex = _this$props.highlightedSectionIndex,
+          highlightedItemIndex = _this$props.highlightedItemIndex;
+
+      switch (event.key) {
+        case 'ArrowDown':
+        case 'ArrowUp':
+          {
+            var nextPrev = event.key === 'ArrowDown' ? 'next' : 'prev';
+
+            var _this$sectionIterator = _this.sectionIterator[nextPrev]([highlightedSectionIndex, highlightedItemIndex]),
+                _this$sectionIterator2 = _slicedToArray(_this$sectionIterator, 2),
+                newHighlightedSectionIndex = _this$sectionIterator2[0],
+                newHighlightedItemIndex = _this$sectionIterator2[1];
+
+            inputProps.onKeyDown(event, {
+              newHighlightedSectionIndex: newHighlightedSectionIndex,
+              newHighlightedItemIndex: newHighlightedItemIndex
+            });
+            break;
+          }
+
+        default:
+          inputProps.onKeyDown(event, {
+            highlightedSectionIndex: highlightedSectionIndex,
+            highlightedItemIndex: highlightedItemIndex
+          });
+      }
+    };
+
+    _this.highlightedItem = null;
+    _this.state = {
+      isInputFocused: false
+    };
+
+    _this.setSectionsItems(props);
+
+    _this.setSectionIterator(props);
+
+    _this.setTheme(props);
+
+    return _this;
+  }
+
+  _createClass(Autowhatever, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.ensureHighlightedItemIsVisible();
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.items !== this.props.items) {
+        this.setSectionsItems(nextProps);
+      }
+
+      if (nextProps.items !== this.props.items || nextProps.multiSection !== this.props.multiSection) {
+        this.setSectionIterator(nextProps);
+      }
+
+      if (nextProps.theme !== this.props.theme) {
+        this.setTheme(nextProps);
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this.ensureHighlightedItemIsVisible();
+    }
+  }, {
+    key: 'setSectionsItems',
+    value: function setSectionsItems(props) {
+      if (props.multiSection) {
+        this.sectionsItems = props.items.map(function (section) {
+          return props.getSectionItems(section);
+        });
+        this.sectionsLengths = this.sectionsItems.map(function (items) {
+          return items.length;
+        });
+        this.allSectionsAreEmpty = this.sectionsLengths.every(function (itemsCount) {
+          return itemsCount === 0;
+        });
+      }
+    }
+  }, {
+    key: 'setSectionIterator',
+    value: function setSectionIterator(props) {
+      this.sectionIterator = (0, _sectionIterator2.default)({
+        multiSection: props.multiSection,
+        data: props.multiSection ? this.sectionsLengths : props.items.length
+      });
+    }
+  }, {
+    key: 'setTheme',
+    value: function setTheme(props) {
+      this.theme = (0, _reactThemeable2.default)(props.theme);
+    }
+  }, {
+    key: 'renderSections',
+    value: function renderSections() {
+      var _this2 = this;
+
+      if (this.allSectionsAreEmpty) {
+        return null;
+      }
+
+      var theme = this.theme;
+      var _props = this.props,
+          id = _props.id,
+          items = _props.items,
+          renderItem = _props.renderItem,
+          renderItemData = _props.renderItemData,
+          renderSectionTitle = _props.renderSectionTitle,
+          highlightedSectionIndex = _props.highlightedSectionIndex,
+          highlightedItemIndex = _props.highlightedItemIndex,
+          itemProps = _props.itemProps;
+      return items.map(function (section, sectionIndex) {
+        var keyPrefix = 'react-autowhatever-' + id + '-';
+        var sectionKeyPrefix = keyPrefix + 'section-' + sectionIndex + '-';
+        var isFirstSection = sectionIndex === 0; // `key` is provided by theme()
+
+        /* eslint-disable react/jsx-key */
+
+        return _react2.default.createElement('div', theme(sectionKeyPrefix + 'container', 'sectionContainer', isFirstSection && 'sectionContainerFirst'), _react2.default.createElement(_SectionTitle2.default, {
+          section: section,
+          renderSectionTitle: renderSectionTitle,
+          theme: theme,
+          sectionKeyPrefix: sectionKeyPrefix
+        }), _react2.default.createElement(_ItemsList2.default, {
+          items: _this2.sectionsItems[sectionIndex],
+          itemProps: itemProps,
+          renderItem: renderItem,
+          renderItemData: renderItemData,
+          sectionIndex: sectionIndex,
+          highlightedItemIndex: highlightedSectionIndex === sectionIndex ? highlightedItemIndex : null,
+          onHighlightedItemChange: _this2.onHighlightedItemChange,
+          getItemId: _this2.getItemId,
+          theme: theme,
+          keyPrefix: keyPrefix,
+          ref: _this2.storeItemsListReference
+        }));
+        /* eslint-enable react/jsx-key */
+      });
+    }
+  }, {
+    key: 'renderItems',
+    value: function renderItems() {
+      var items = this.props.items;
+
+      if (items.length === 0) {
+        return null;
+      }
+
+      var theme = this.theme;
+      var _props2 = this.props,
+          id = _props2.id,
+          renderItem = _props2.renderItem,
+          renderItemData = _props2.renderItemData,
+          highlightedSectionIndex = _props2.highlightedSectionIndex,
+          highlightedItemIndex = _props2.highlightedItemIndex,
+          itemProps = _props2.itemProps;
+      return _react2.default.createElement(_ItemsList2.default, {
+        items: items,
+        itemProps: itemProps,
+        renderItem: renderItem,
+        renderItemData: renderItemData,
+        highlightedItemIndex: highlightedSectionIndex === null ? highlightedItemIndex : null,
+        onHighlightedItemChange: this.onHighlightedItemChange,
+        getItemId: this.getItemId,
+        theme: theme,
+        keyPrefix: 'react-autowhatever-' + id + '-'
+      });
+    }
+  }, {
+    key: 'ensureHighlightedItemIsVisible',
+    value: function ensureHighlightedItemIsVisible() {
+      var highlightedItem = this.highlightedItem;
+
+      if (!highlightedItem) {
+        return;
+      }
+
+      var itemsContainer = this.itemsContainer;
+      var itemOffsetRelativeToContainer = highlightedItem.offsetParent === itemsContainer ? highlightedItem.offsetTop : highlightedItem.offsetTop - itemsContainer.offsetTop;
+      var scrollTop = itemsContainer.scrollTop; // Top of the visible area
+
+      if (itemOffsetRelativeToContainer < scrollTop) {
+        // Item is off the top of the visible area
+        scrollTop = itemOffsetRelativeToContainer;
+      } else if (itemOffsetRelativeToContainer + highlightedItem.offsetHeight > scrollTop + itemsContainer.offsetHeight) {
+        // Item is off the bottom of the visible area
+        scrollTop = itemOffsetRelativeToContainer + highlightedItem.offsetHeight - itemsContainer.offsetHeight;
+      }
+
+      if (scrollTop !== itemsContainer.scrollTop) {
+        itemsContainer.scrollTop = scrollTop;
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var theme = this.theme;
+      var _props3 = this.props,
+          id = _props3.id,
+          multiSection = _props3.multiSection,
+          renderInputComponent = _props3.renderInputComponent,
+          renderItemsContainer = _props3.renderItemsContainer,
+          highlightedSectionIndex = _props3.highlightedSectionIndex,
+          highlightedItemIndex = _props3.highlightedItemIndex;
+      var isInputFocused = this.state.isInputFocused;
+      var renderedItems = multiSection ? this.renderSections() : this.renderItems();
+      var isOpen = renderedItems !== null;
+      var ariaActivedescendant = this.getItemId(highlightedSectionIndex, highlightedItemIndex);
+      var itemsContainerId = 'react-autowhatever-' + id;
+
+      var containerProps = _extends({
+        role: 'combobox',
+        'aria-haspopup': 'listbox',
+        'aria-owns': itemsContainerId,
+        'aria-expanded': isOpen
+      }, theme('react-autowhatever-' + id + '-container', 'container', isOpen && 'containerOpen'), this.props.containerProps);
+
+      var inputComponent = renderInputComponent(_extends({
+        type: 'text',
+        value: '',
+        autoComplete: 'off',
+        'aria-autocomplete': 'list',
+        'aria-controls': itemsContainerId,
+        'aria-activedescendant': ariaActivedescendant
+      }, theme('react-autowhatever-' + id + '-input', 'input', isOpen && 'inputOpen', isInputFocused && 'inputFocused'), this.props.inputProps, {
+        onFocus: this.onFocus,
+        onBlur: this.onBlur,
+        onKeyDown: this.props.inputProps.onKeyDown && this.onKeyDown,
+        ref: this.storeInputReference
+      }));
+      var itemsContainer = renderItemsContainer({
+        containerProps: _extends({
+          id: itemsContainerId,
+          role: 'listbox'
+        }, theme('react-autowhatever-' + id + '-items-container', 'itemsContainer', isOpen && 'itemsContainerOpen'), {
+          ref: this.storeItemsContainerReference
+        }),
+        children: renderedItems
+      });
+      return _react2.default.createElement('div', containerProps, inputComponent, itemsContainer);
+    }
+  }]);
+
+  return Autowhatever;
+}(_react.Component);
+
+Autowhatever.propTypes = {
+  id: _propTypes2.default.string,
+  // Used in aria-* attributes. If multiple Autowhatever's are rendered on a page, they must have unique ids.
+  multiSection: _propTypes2.default.bool,
+  // Indicates whether a multi section layout should be rendered.
+  renderInputComponent: _propTypes2.default.func,
+  // When specified, it is used to render the input element.
+  renderItemsContainer: _propTypes2.default.func,
+  // Renders the items container.
+  items: _propTypes2.default.array.isRequired,
+  // Array of items or sections to render.
+  renderItem: _propTypes2.default.func,
+  // This function renders a single item.
+  renderItemData: _propTypes2.default.object,
+  // Arbitrary data that will be passed to renderItem()
+  renderSectionTitle: _propTypes2.default.func,
+  // This function gets a section and renders its title.
+  getSectionItems: _propTypes2.default.func,
+  // This function gets a section and returns its items, which will be passed into `renderItem` for rendering.
+  containerProps: _propTypes2.default.object,
+  // Arbitrary container props
+  inputProps: _propTypes2.default.object,
+  // Arbitrary input props
+  itemProps: _propTypes2.default.oneOfType([// Arbitrary item props
+  _propTypes2.default.object, _propTypes2.default.func]),
+  highlightedSectionIndex: _propTypes2.default.number,
+  // Section index of the highlighted item
+  highlightedItemIndex: _propTypes2.default.number,
+  // Highlighted item index (within a section)
+  theme: _propTypes2.default.oneOfType([// Styles. See: https://github.com/markdalgleish/react-themeable
+  _propTypes2.default.object, _propTypes2.default.array])
+};
+Autowhatever.defaultProps = {
+  id: '1',
+  multiSection: false,
+  renderInputComponent: defaultRenderInputComponent,
+  renderItemsContainer: defaultRenderItemsContainer,
+  renderItem: function renderItem() {
+    throw new Error('`renderItem` must be provided');
+  },
+  renderItemData: emptyObject,
+  renderSectionTitle: function renderSectionTitle() {
+    throw new Error('`renderSectionTitle` must be provided');
+  },
+  getSectionItems: function getSectionItems() {
+    throw new Error('`getSectionItems` must be provided');
+  },
+  containerProps: emptyObject,
+  inputProps: emptyObject,
+  itemProps: emptyObject,
+  highlightedSectionIndex: null,
+  highlightedItemIndex: null,
+  theme: defaultTheme
+};
+exports.default = Autowhatever;
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _slicedToArray = function () {
+  function sliceIterator(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"]) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  return function (arr, i) {
+    if (Array.isArray(arr)) {
+      return arr;
+    } else if (Symbol.iterator in Object(arr)) {
+      return sliceIterator(arr, i);
+    } else {
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+  };
+}();
+
+module.exports = function (_ref) {
+  var data = _ref.data;
+  var multiSection = _ref.multiSection;
+
+  function nextNonEmptySectionIndex(sectionIndex) {
+    if (sectionIndex === null) {
+      sectionIndex = 0;
+    } else {
+      sectionIndex++;
+    }
+
+    while (sectionIndex < data.length && data[sectionIndex] === 0) {
+      sectionIndex++;
+    }
+
+    return sectionIndex === data.length ? null : sectionIndex;
+  }
+
+  function prevNonEmptySectionIndex(sectionIndex) {
+    if (sectionIndex === null) {
+      sectionIndex = data.length - 1;
+    } else {
+      sectionIndex--;
+    }
+
+    while (sectionIndex >= 0 && data[sectionIndex] === 0) {
+      sectionIndex--;
+    }
+
+    return sectionIndex === -1 ? null : sectionIndex;
+  }
+
+  function next(position) {
+    var _position = _slicedToArray(position, 2);
+
+    var sectionIndex = _position[0];
+    var itemIndex = _position[1];
+
+    if (multiSection) {
+      if (itemIndex === null || itemIndex === data[sectionIndex] - 1) {
+        sectionIndex = nextNonEmptySectionIndex(sectionIndex);
+
+        if (sectionIndex === null) {
+          return [null, null];
+        }
+
+        return [sectionIndex, 0];
+      }
+
+      return [sectionIndex, itemIndex + 1];
+    }
+
+    if (data === 0 || itemIndex === data - 1) {
+      return [null, null];
+    }
+
+    if (itemIndex === null) {
+      return [null, 0];
+    }
+
+    return [null, itemIndex + 1];
+  }
+
+  function prev(position) {
+    var _position2 = _slicedToArray(position, 2);
+
+    var sectionIndex = _position2[0];
+    var itemIndex = _position2[1];
+
+    if (multiSection) {
+      if (itemIndex === null || itemIndex === 0) {
+        sectionIndex = prevNonEmptySectionIndex(sectionIndex);
+
+        if (sectionIndex === null) {
+          return [null, null];
+        }
+
+        return [sectionIndex, data[sectionIndex] - 1];
+      }
+
+      return [sectionIndex, itemIndex - 1];
+    }
+
+    if (data === 0 || itemIndex === 0) {
+      return [null, null];
+    }
+
+    if (itemIndex === null) {
+      return [null, data - 1];
+    }
+
+    return [null, itemIndex - 1];
+  }
+
+  function isLast(position) {
+    return next(position)[1] === null;
+  }
+
+  return {
+    next: next,
+    prev: prev,
+    isLast: isLast
+  };
+};
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+var _slicedToArray = function () {
+  function sliceIterator(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i['return']) _i['return']();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  return function (arr, i) {
+    if (Array.isArray(arr)) {
+      return arr;
+    } else if (Symbol.iterator in Object(arr)) {
+      return sliceIterator(arr, i);
+    } else {
+      throw new TypeError('Invalid attempt to destructure non-iterable instance');
+    }
+  };
+}();
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    'default': obj
+  };
+}
+
+function _toConsumableArray(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+    return arr2;
+  } else {
+    return Array.from(arr);
+  }
+}
+
+var _objectAssign = __webpack_require__(57);
+
+var _objectAssign2 = _interopRequireDefault(_objectAssign);
+
+var truthy = function truthy(x) {
+  return x;
+};
+
+exports['default'] = function (input) {
+  var _ref = Array.isArray(input) && input.length === 2 ? input : [input, null];
+
+  var _ref2 = _slicedToArray(_ref, 2);
+
+  var theme = _ref2[0];
+  var classNameDecorator = _ref2[1];
+  return function (key) {
+    for (var _len = arguments.length, names = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      names[_key - 1] = arguments[_key];
+    }
+
+    var styles = names.map(function (name) {
+      return theme[name];
+    }).filter(truthy);
+    return typeof styles[0] === 'string' || typeof classNameDecorator === 'function' ? {
+      key: key,
+      className: classNameDecorator ? classNameDecorator.apply(undefined, _toConsumableArray(styles)) : styles.join(' ')
+    } : {
+      key: key,
+      style: _objectAssign2['default'].apply(undefined, [{}].concat(_toConsumableArray(styles)))
+    };
+  };
+};
+
+module.exports = exports['default'];
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function ToObject(val) {
+  if (val == null) {
+    throw new TypeError('Object.assign cannot be called with null or undefined');
+  }
+
+  return Object(val);
+}
+
+function ownEnumerableKeys(obj) {
+  var keys = Object.getOwnPropertyNames(obj);
+
+  if (Object.getOwnPropertySymbols) {
+    keys = keys.concat(Object.getOwnPropertySymbols(obj));
+  }
+
+  return keys.filter(function (key) {
+    return propIsEnumerable.call(obj, key);
+  });
+}
+
+module.exports = Object.assign || function (target, source) {
+  var from;
+  var keys;
+  var to = ToObject(target);
+
+  for (var s = 1; s < arguments.length; s++) {
+    from = arguments[s];
+    keys = ownEnumerableKeys(Object(from));
+
+    for (var i = 0; i < keys.length; i++) {
+      to[keys[i]] = from[keys[i]];
+    }
+  }
+
+  return to;
+};
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _compareObjects = __webpack_require__(59);
+
+var _compareObjects2 = _interopRequireDefault(_compareObjects);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var SectionTitle = function (_Component) {
+  _inherits(SectionTitle, _Component);
+
+  function SectionTitle() {
+    _classCallCheck(this, SectionTitle);
+
+    return _possibleConstructorReturn(this, (SectionTitle.__proto__ || Object.getPrototypeOf(SectionTitle)).apply(this, arguments));
+  }
+
+  _createClass(SectionTitle, [{
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps) {
+      return (0, _compareObjects2.default)(nextProps, this.props);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          section = _props.section,
+          renderSectionTitle = _props.renderSectionTitle,
+          theme = _props.theme,
+          sectionKeyPrefix = _props.sectionKeyPrefix;
+      var sectionTitle = renderSectionTitle(section);
+
+      if (!sectionTitle) {
+        return null;
+      }
+
+      return _react2.default.createElement('div', theme(sectionKeyPrefix + 'title', 'sectionTitle'), sectionTitle);
+    }
+  }]);
+
+  return SectionTitle;
+}(_react.Component);
+
+SectionTitle.propTypes = {
+  section: _propTypes2.default.any.isRequired,
+  renderSectionTitle: _propTypes2.default.func.isRequired,
+  theme: _propTypes2.default.func.isRequired,
+  sectionKeyPrefix: _propTypes2.default.string.isRequired
+};
+exports.default = SectionTitle;
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+exports.default = compareObjects;
+
+function compareObjects(objA, objB) {
+  var keys = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+  if (objA === objB) {
+    return false;
+  }
+
+  var aKeys = Object.keys(objA);
+  var bKeys = Object.keys(objB);
+
+  if (aKeys.length !== bKeys.length) {
+    return true;
+  }
+
+  var keysMap = {};
+  var i = void 0,
+      len = void 0;
+
+  for (i = 0, len = keys.length; i < len; i++) {
+    keysMap[keys[i]] = true;
+  }
+
+  for (i = 0, len = aKeys.length; i < len; i++) {
+    var key = aKeys[i];
+    var aValue = objA[key];
+    var bValue = objB[key];
+
+    if (aValue === bValue) {
+      continue;
+    }
+
+    if (!keysMap[key] || aValue === null || bValue === null || (typeof aValue === 'undefined' ? 'undefined' : _typeof(aValue)) !== 'object' || (typeof bValue === 'undefined' ? 'undefined' : _typeof(bValue)) !== 'object') {
+      return true;
+    }
+
+    var aValueKeys = Object.keys(aValue);
+    var bValueKeys = Object.keys(bValue);
+
+    if (aValueKeys.length !== bValueKeys.length) {
+      return true;
+    }
+
+    for (var n = 0, length = aValueKeys.length; n < length; n++) {
+      var aValueKey = aValueKeys[n];
+
+      if (aValue[aValueKey] !== bValue[aValueKey]) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Item = __webpack_require__(61);
+
+var _Item2 = _interopRequireDefault(_Item);
+
+var _compareObjects = __webpack_require__(59);
+
+var _compareObjects2 = _interopRequireDefault(_compareObjects);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var ItemsList = function (_Component) {
+  _inherits(ItemsList, _Component);
+
+  function ItemsList() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ItemsList);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ItemsList.__proto__ || Object.getPrototypeOf(ItemsList)).call.apply(_ref, [this].concat(args))), _this), _this.storeHighlightedItemReference = function (highlightedItem) {
+      _this.props.onHighlightedItemChange(highlightedItem === null ? null : highlightedItem.item);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ItemsList, [{
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps) {
+      return (0, _compareObjects2.default)(nextProps, this.props, ['itemProps']);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          items = _props.items,
+          itemProps = _props.itemProps,
+          renderItem = _props.renderItem,
+          renderItemData = _props.renderItemData,
+          sectionIndex = _props.sectionIndex,
+          highlightedItemIndex = _props.highlightedItemIndex,
+          getItemId = _props.getItemId,
+          theme = _props.theme,
+          keyPrefix = _props.keyPrefix;
+      var sectionPrefix = sectionIndex === null ? keyPrefix : keyPrefix + 'section-' + sectionIndex + '-';
+      var isItemPropsFunction = typeof itemProps === 'function';
+      return _react2.default.createElement('ul', _extends({
+        role: 'listbox'
+      }, theme(sectionPrefix + 'items-list', 'itemsList')), items.map(function (item, itemIndex) {
+        var isFirst = itemIndex === 0;
+        var isHighlighted = itemIndex === highlightedItemIndex;
+        var itemKey = sectionPrefix + 'item-' + itemIndex;
+        var itemPropsObj = isItemPropsFunction ? itemProps({
+          sectionIndex: sectionIndex,
+          itemIndex: itemIndex
+        }) : itemProps;
+
+        var allItemProps = _extends({
+          id: getItemId(sectionIndex, itemIndex),
+          'aria-selected': isHighlighted
+        }, theme(itemKey, 'item', isFirst && 'itemFirst', isHighlighted && 'itemHighlighted'), itemPropsObj);
+
+        if (isHighlighted) {
+          allItemProps.ref = _this2.storeHighlightedItemReference;
+        } // `key` is provided by theme()
+
+        /* eslint-disable react/jsx-key */
+
+
+        return _react2.default.createElement(_Item2.default, _extends({}, allItemProps, {
+          sectionIndex: sectionIndex,
+          isHighlighted: isHighlighted,
+          itemIndex: itemIndex,
+          item: item,
+          renderItem: renderItem,
+          renderItemData: renderItemData
+        }));
+        /* eslint-enable react/jsx-key */
+      }));
+    }
+  }]);
+
+  return ItemsList;
+}(_react.Component);
+
+ItemsList.propTypes = {
+  items: _propTypes2.default.array.isRequired,
+  itemProps: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.func]),
+  renderItem: _propTypes2.default.func.isRequired,
+  renderItemData: _propTypes2.default.object.isRequired,
+  sectionIndex: _propTypes2.default.number,
+  highlightedItemIndex: _propTypes2.default.number,
+  onHighlightedItemChange: _propTypes2.default.func.isRequired,
+  getItemId: _propTypes2.default.func.isRequired,
+  theme: _propTypes2.default.func.isRequired,
+  keyPrefix: _propTypes2.default.string.isRequired
+};
+ItemsList.defaultProps = {
+  sectionIndex: null
+};
+exports.default = ItemsList;
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var _createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(15);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _compareObjects = __webpack_require__(59);
+
+var _compareObjects2 = _interopRequireDefault(_compareObjects);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Item = function (_Component) {
+  _inherits(Item, _Component);
+
+  function Item() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Item);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Item.__proto__ || Object.getPrototypeOf(Item)).call.apply(_ref, [this].concat(args))), _this), _this.storeItemReference = function (item) {
+      if (item !== null) {
+        _this.item = item;
+      }
+    }, _this.onMouseEnter = function (event) {
+      var _this$props = _this.props,
+          sectionIndex = _this$props.sectionIndex,
+          itemIndex = _this$props.itemIndex;
+
+      _this.props.onMouseEnter(event, {
+        sectionIndex: sectionIndex,
+        itemIndex: itemIndex
+      });
+    }, _this.onMouseLeave = function (event) {
+      var _this$props2 = _this.props,
+          sectionIndex = _this$props2.sectionIndex,
+          itemIndex = _this$props2.itemIndex;
+
+      _this.props.onMouseLeave(event, {
+        sectionIndex: sectionIndex,
+        itemIndex: itemIndex
+      });
+    }, _this.onMouseDown = function (event) {
+      var _this$props3 = _this.props,
+          sectionIndex = _this$props3.sectionIndex,
+          itemIndex = _this$props3.itemIndex;
+
+      _this.props.onMouseDown(event, {
+        sectionIndex: sectionIndex,
+        itemIndex: itemIndex
+      });
+    }, _this.onClick = function (event) {
+      var _this$props4 = _this.props,
+          sectionIndex = _this$props4.sectionIndex,
+          itemIndex = _this$props4.itemIndex;
+
+      _this.props.onClick(event, {
+        sectionIndex: sectionIndex,
+        itemIndex: itemIndex
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Item, [{
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps) {
+      return (0, _compareObjects2.default)(nextProps, this.props, ['renderItemData']);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          isHighlighted = _props.isHighlighted,
+          item = _props.item,
+          renderItem = _props.renderItem,
+          renderItemData = _props.renderItemData,
+          restProps = _objectWithoutProperties(_props, ['isHighlighted', 'item', 'renderItem', 'renderItemData']);
+
+      delete restProps.sectionIndex;
+      delete restProps.itemIndex;
+
+      if (typeof restProps.onMouseEnter === 'function') {
+        restProps.onMouseEnter = this.onMouseEnter;
+      }
+
+      if (typeof restProps.onMouseLeave === 'function') {
+        restProps.onMouseLeave = this.onMouseLeave;
+      }
+
+      if (typeof restProps.onMouseDown === 'function') {
+        restProps.onMouseDown = this.onMouseDown;
+      }
+
+      if (typeof restProps.onClick === 'function') {
+        restProps.onClick = this.onClick;
+      }
+
+      return _react2.default.createElement('li', _extends({
+        role: 'option'
+      }, restProps, {
+        ref: this.storeItemReference
+      }), renderItem(item, _extends({
+        isHighlighted: isHighlighted
+      }, renderItemData)));
+    }
+  }]);
+
+  return Item;
+}(_react.Component);
+
+Item.propTypes = {
+  sectionIndex: _propTypes2.default.number,
+  isHighlighted: _propTypes2.default.bool.isRequired,
+  itemIndex: _propTypes2.default.number.isRequired,
+  item: _propTypes2.default.any.isRequired,
+  renderItem: _propTypes2.default.func.isRequired,
+  renderItemData: _propTypes2.default.object.isRequired,
+  onMouseEnter: _propTypes2.default.func,
+  onMouseLeave: _propTypes2.default.func,
+  onMouseDown: _propTypes2.default.func,
+  onClick: _propTypes2.default.func
+};
+exports.default = Item;
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var defaultTheme = exports.defaultTheme = {
+  container: 'react-autosuggest__container',
+  containerOpen: 'react-autosuggest__container--open',
+  input: 'react-autosuggest__input',
+  inputOpen: 'react-autosuggest__input--open',
+  inputFocused: 'react-autosuggest__input--focused',
+  suggestionsContainer: 'react-autosuggest__suggestions-container',
+  suggestionsContainerOpen: 'react-autosuggest__suggestions-container--open',
+  suggestionsList: 'react-autosuggest__suggestions-list',
+  suggestion: 'react-autosuggest__suggestion',
+  suggestionFirst: 'react-autosuggest__suggestion--first',
+  suggestionHighlighted: 'react-autosuggest__suggestion--highlighted',
+  sectionContainer: 'react-autosuggest__section-container',
+  sectionContainerFirst: 'react-autosuggest__section-container--first',
+  sectionTitle: 'react-autosuggest__section-title'
+};
+
+var mapToAutowhateverTheme = exports.mapToAutowhateverTheme = function mapToAutowhateverTheme(theme) {
+  var result = {};
+
+  for (var key in theme) {
+    switch (key) {
+      case 'suggestionsContainer':
+        result['itemsContainer'] = theme[key];
+        break;
+
+      case 'suggestionsContainerOpen':
+        result['itemsContainerOpen'] = theme[key];
+        break;
+
+      case 'suggestion':
+        result['item'] = theme[key];
+        break;
+
+      case 'suggestionFirst':
+        result['itemFirst'] = theme[key];
+        break;
+
+      case 'suggestionHighlighted':
+        result['itemHighlighted'] = theme[key];
+        break;
+
+      case 'suggestionsList':
+        result['itemsList'] = theme[key];
+        break;
+
+      default:
+        result[key] = theme[key];
+    }
+  }
+
+  return result;
+};
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * Hangul.js
+ * https://github.com/e-/Hangul.js
+ *
+ * Copyright 2017, Jaemin Jo
+ * under the MIT license.
+ */
+(function () {
+  'use strict';
+
+  var CHO = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'],
+      JUNG = ['ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', ['ㅗ', 'ㅏ'], ['ㅗ', 'ㅐ'], ['ㅗ', 'ㅣ'], 'ㅛ', 'ㅜ', ['ㅜ', 'ㅓ'], ['ㅜ', 'ㅔ'], ['ㅜ', 'ㅣ'], 'ㅠ', 'ㅡ', ['ㅡ', 'ㅣ'], 'ㅣ'],
+      JONG = ['', 'ㄱ', 'ㄲ', ['ㄱ', 'ㅅ'], 'ㄴ', ['ㄴ', 'ㅈ'], ['ㄴ', 'ㅎ'], 'ㄷ', 'ㄹ', ['ㄹ', 'ㄱ'], ['ㄹ', 'ㅁ'], ['ㄹ', 'ㅂ'], ['ㄹ', 'ㅅ'], ['ㄹ', 'ㅌ'], ['ㄹ', 'ㅍ'], ['ㄹ', 'ㅎ'], 'ㅁ', 'ㅂ', ['ㅂ', 'ㅅ'], 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'],
+      HANGUL_OFFSET = 0xAC00,
+      CONSONANTS = ['ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'],
+      COMPLETE_CHO = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'],
+      COMPLETE_JUNG = ['ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ'],
+      COMPLETE_JONG = ['', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'],
+      COMPLEX_CONSONANTS = [['ㄱ', 'ㅅ', 'ㄳ'], ['ㄴ', 'ㅈ', 'ㄵ'], ['ㄴ', 'ㅎ', 'ㄶ'], ['ㄹ', 'ㄱ', 'ㄺ'], ['ㄹ', 'ㅁ', 'ㄻ'], ['ㄹ', 'ㅂ', 'ㄼ'], ['ㄹ', 'ㅅ', 'ㄽ'], ['ㄹ', 'ㅌ', 'ㄾ'], ['ㄹ', 'ㅍ', 'ㄿ'], ['ㄹ', 'ㅎ', 'ㅀ'], ['ㅂ', 'ㅅ', 'ㅄ']],
+      COMPLEX_VOWELS = [['ㅗ', 'ㅏ', 'ㅘ'], ['ㅗ', 'ㅐ', 'ㅙ'], ['ㅗ', 'ㅣ', 'ㅚ'], ['ㅜ', 'ㅓ', 'ㅝ'], ['ㅜ', 'ㅔ', 'ㅞ'], ['ㅜ', 'ㅣ', 'ㅟ'], ['ㅡ', 'ㅣ', 'ㅢ']],
+      CONSONANTS_HASH,
+      CHO_HASH,
+      JUNG_HASH,
+      JONG_HASH,
+      COMPLEX_CONSONANTS_HASH,
+      COMPLEX_VOWELS_HASH;
+
+  function _makeHash(array) {
+    var length = array.length,
+        hash = {
+      0: 0
+    };
+
+    for (var i = 0; i < length; i++) {
+      if (array[i]) hash[array[i].charCodeAt(0)] = i;
+    }
+
+    return hash;
+  }
+
+  CONSONANTS_HASH = _makeHash(CONSONANTS);
+  CHO_HASH = _makeHash(COMPLETE_CHO);
+  JUNG_HASH = _makeHash(COMPLETE_JUNG);
+  JONG_HASH = _makeHash(COMPLETE_JONG);
+
+  function _makeComplexHash(array) {
+    var length = array.length,
+        hash = {},
+        code1,
+        code2;
+
+    for (var i = 0; i < length; i++) {
+      code1 = array[i][0].charCodeAt(0);
+      code2 = array[i][1].charCodeAt(0);
+
+      if (typeof hash[code1] === 'undefined') {
+        hash[code1] = {};
+      }
+
+      hash[code1][code2] = array[i][2].charCodeAt(0);
+    }
+
+    return hash;
+  }
+
+  COMPLEX_CONSONANTS_HASH = _makeComplexHash(COMPLEX_CONSONANTS);
+  COMPLEX_VOWELS_HASH = _makeComplexHash(COMPLEX_VOWELS);
+
+  function _isConsonant(c) {
+    return typeof CONSONANTS_HASH[c] !== 'undefined';
+  }
+
+  function _isCho(c) {
+    return typeof CHO_HASH[c] !== 'undefined';
+  }
+
+  function _isJung(c) {
+    return typeof JUNG_HASH[c] !== 'undefined';
+  }
+
+  function _isJong(c) {
+    return typeof JONG_HASH[c] !== 'undefined';
+  }
+
+  function _isHangul(c
+  /* code number */
+  ) {
+    return 0xAC00 <= c && c <= 0xd7a3;
+  }
+
+  function _isJungJoinable(a, b) {
+    return COMPLEX_VOWELS_HASH[a] && COMPLEX_VOWELS_HASH[a][b] ? COMPLEX_VOWELS_HASH[a][b] : false;
+  }
+
+  function _isJongJoinable(a, b) {
+    return COMPLEX_CONSONANTS_HASH[a] && COMPLEX_CONSONANTS_HASH[a][b] ? COMPLEX_CONSONANTS_HASH[a][b] : false;
+  }
+
+  var disassemble = function (string, grouped) {
+    if (string === null) {
+      throw new Error('Arguments cannot be null');
+    }
+
+    if (typeof string === 'object') {
+      string = string.join('');
+    }
+
+    var result = [],
+        length = string.length,
+        cho,
+        jung,
+        jong,
+        code,
+        r;
+
+    for (var i = 0; i < length; i++) {
+      var temp = [];
+      code = string.charCodeAt(i);
+
+      if (_isHangul(code)) {
+        // 완성된 한글이면
+        code -= HANGUL_OFFSET;
+        jong = code % 28;
+        jung = (code - jong) / 28 % 21;
+        cho = parseInt((code - jong) / 28 / 21);
+        temp.push(CHO[cho]);
+
+        if (typeof JUNG[jung] === 'object') {
+          temp = temp.concat(JUNG[jung]);
+        } else {
+          temp.push(JUNG[jung]);
+        }
+
+        if (jong > 0) {
+          if (typeof JONG[jong] === 'object') {
+            temp = temp.concat(JONG[jong]);
+          } else {
+            temp.push(JONG[jong]);
+          }
+        }
+      } else if (_isConsonant(code)) {
+        //자음이면
+        if (_isCho(code)) {
+          r = CHO[CHO_HASH[code]];
+        } else {
+          r = JONG[JONG_HASH[code]];
+        }
+
+        if (typeof r === 'string') {
+          temp.push(r);
+        } else {
+          temp = temp.concat(r);
+        }
+      } else if (_isJung(code)) {
+        r = JUNG[JUNG_HASH[code]];
+
+        if (typeof r === 'string') {
+          temp.push(r);
+        } else {
+          temp = temp.concat(r);
+        }
+      } else {
+        temp.push(string.charAt(i));
+      }
+
+      if (grouped) result.push(temp);else result = result.concat(temp);
+    }
+
+    return result;
+  };
+
+  var disassembleToString = function (str) {
+    if (typeof str !== 'string') {
+      return '';
+    }
+
+    str = disassemble(str);
+    return str.join('');
+  };
+
+  var assemble = function (array) {
+    if (typeof array === 'string') {
+      array = disassemble(array);
+    }
+
+    var result = [],
+        length = array.length,
+        code,
+        stage = 0,
+        complete_index = -1,
+        //완성된 곳의 인덱스
+    previous_code;
+
+    function _makeHangul(index) {
+      // complete_index + 1부터 index까지를 greedy하게 한글로 만든다.
+      var code,
+          cho,
+          jung1,
+          jung2,
+          jong1 = 0,
+          jong2,
+          hangul = '';
+
+      if (complete_index + 1 > index) {
+        return;
+      }
+
+      for (var step = 1;; step++) {
+        if (step === 1) {
+          cho = array[complete_index + step].charCodeAt(0);
+
+          if (_isJung(cho)) {
+            // 첫번째 것이 모음이면 1) ㅏ같은 경우이거나 2) ㅙ같은 경우이다
+            if (complete_index + step + 1 <= index && _isJung(jung1 = array[complete_index + step + 1].charCodeAt(0))) {
+              //다음것이 있고 모음이면
+              result.push(String.fromCharCode(_isJungJoinable(cho, jung1)));
+              complete_index = index;
+              return;
+            } else {
+              result.push(array[complete_index + step]);
+              complete_index = index;
+              return;
+            }
+          } else if (!_isCho(cho)) {
+            result.push(array[complete_index + step]);
+            complete_index = index;
+            return;
+          }
+
+          hangul = array[complete_index + step];
+        } else if (step === 2) {
+          jung1 = array[complete_index + step].charCodeAt(0);
+
+          if (_isCho(jung1)) {
+            //두번째 또 자음이 오면 ㄳ 에서 ㅅ같은 경우이다
+            cho = _isJongJoinable(cho, jung1);
+            hangul = String.fromCharCode(cho);
+            result.push(hangul);
+            complete_index = index;
+            return;
+          } else {
+            hangul = String.fromCharCode((CHO_HASH[cho] * 21 + JUNG_HASH[jung1]) * 28 + HANGUL_OFFSET);
+          }
+        } else if (step === 3) {
+          jung2 = array[complete_index + step].charCodeAt(0);
+
+          if (_isJungJoinable(jung1, jung2)) {
+            jung1 = _isJungJoinable(jung1, jung2);
+          } else {
+            jong1 = jung2;
+          }
+
+          hangul = String.fromCharCode((CHO_HASH[cho] * 21 + JUNG_HASH[jung1]) * 28 + JONG_HASH[jong1] + HANGUL_OFFSET);
+        } else if (step === 4) {
+          jong2 = array[complete_index + step].charCodeAt(0);
+
+          if (_isJongJoinable(jong1, jong2)) {
+            jong1 = _isJongJoinable(jong1, jong2);
+          } else {
+            jong1 = jong2;
+          }
+
+          hangul = String.fromCharCode((CHO_HASH[cho] * 21 + JUNG_HASH[jung1]) * 28 + JONG_HASH[jong1] + HANGUL_OFFSET);
+        } else if (step === 5) {
+          jong2 = array[complete_index + step].charCodeAt(0);
+          jong1 = _isJongJoinable(jong1, jong2);
+          hangul = String.fromCharCode((CHO_HASH[cho] * 21 + JUNG_HASH[jung1]) * 28 + JONG_HASH[jong1] + HANGUL_OFFSET);
+        }
+
+        if (complete_index + step >= index) {
+          result.push(hangul);
+          complete_index = index;
+          return;
+        }
+      }
+    }
+
+    for (var i = 0; i < length; i++) {
+      code = array[i].charCodeAt(0);
+
+      if (!_isCho(code) && !_isJung(code) && !_isJong(code)) {
+        //초, 중, 종성 다 아니면
+        _makeHangul(i - 1);
+
+        _makeHangul(i);
+
+        stage = 0;
+        continue;
+      } //console.log(stage, array[i]);
+
+
+      if (stage === 0) {
+        // 초성이 올 차례
+        if (_isCho(code)) {
+          // 초성이 오면 아무 문제 없다.
+          stage = 1;
+        } else if (_isJung(code)) {
+          // 중성이오면 ㅐ 또는 ㅘ 인것이다. 바로 구분을 못한다. 따라서 특수한 stage인 stage4로 이동
+          stage = 4;
+        }
+      } else if (stage == 1) {
+        //중성이 올 차례
+        if (_isJung(code)) {
+          //중성이 오면 문제없음 진행.
+          stage = 2;
+        } else {
+          //아니고 자음이오면 ㄻ같은 경우가 있고 ㄹㅋ같은 경우가 있다.
+          if (_isJongJoinable(previous_code, code)) {
+            // 합쳐질 수 있다면 ㄻ 같은 경우인데 이 뒤에 모음이 와서 ㄹ마 가 될수도 있고 초성이 올 수도 있다. 따라서 섣불리 완성할 수 없다. 이땐 stage5로 간다.
+            stage = 5;
+          } else {
+            //합쳐질 수 없다면 앞 글자 완성 후 여전히 중성이 올 차례
+            _makeHangul(i - 1);
+          }
+        }
+      } else if (stage == 2) {
+        //종성이 올 차례
+        if (_isJong(code)) {
+          //종성이 오면 다음엔 자음 또는 모음이 온다.
+          stage = 3;
+        } else if (_isJung(code)) {
+          //그런데 중성이 오면 앞의 모음과 합칠 수 있는지 본다.
+          if (_isJungJoinable(previous_code, code)) {//합칠 수 있으면 여전히 종성이 올 차례고 그대로 진행
+          } else {
+            // 합칠 수 없다면 오타가 생긴 경우
+            _makeHangul(i - 1);
+
+            stage = 4;
+          }
+        } else {
+          // 받침이 안되는 자음이 오면 ㄸ 같은 이전까지 완성하고 다시시작
+          _makeHangul(i - 1);
+
+          stage = 1;
+        }
+      } else if (stage == 3) {
+        // 종성이 하나 온 상태.
+        if (_isJong(code)) {
+          // 또 종성이면 합칠수 있는지 본다.
+          if (_isJongJoinable(previous_code, code)) {//합칠 수 있으면 계속 진행. 왜냐하면 이번에 온 자음이 다음 글자의 초성이 될 수도 있기 때문
+          } else {
+            //없으면 한글자 완성
+            _makeHangul(i - 1);
+
+            stage = 1; // 이 종성이 초성이 되고 중성부터 시작
+          }
+        } else if (_isCho(code)) {
+          // 초성이면 한글자 완성.
+          _makeHangul(i - 1);
+
+          stage = 1; //이 글자가 초성이되므로 중성부터 시작
+        } else if (_isJung(code)) {
+          // 중성이면 이전 종성은 이 중성과 합쳐지고 앞 글자는 받침이 없다.
+          _makeHangul(i - 2);
+
+          stage = 2;
+        }
+      } else if (stage == 4) {
+        // 중성이 하나 온 상태
+        if (_isJung(code)) {
+          //중성이 온 경우
+          if (_isJungJoinable(previous_code, code)) {
+            //이전 중성과 합쳐질 수 있는 경우
+            _makeHangul(i);
+
+            stage = 0;
+          } else {
+            //중성이 왔지만 못합치는 경우. ㅒㅗ 같은
+            _makeHangul(i - 1);
+          }
+        } else {
+          // 아니면 자음이 온 경우.
+          _makeHangul(i - 1);
+
+          stage = 1;
+        }
+      } else if (stage == 5) {
+        // 초성이 연속해서 두개 온 상태 ㄺ
+        if (_isJung(code)) {
+          //이번에 중성이면 ㄹ가
+          _makeHangul(i - 2);
+
+          stage = 2;
+        } else {
+          _makeHangul(i - 1);
+
+          stage = 1;
+        }
+      }
+
+      previous_code = code;
+    }
+
+    _makeHangul(i - 1);
+
+    return result.join('');
+  };
+
+  var search = function (a, b) {
+    var ad = disassemble(a).join(''),
+        bd = disassemble(b).join('');
+    return ad.indexOf(bd);
+  };
+
+  var rangeSearch = function (haystack, needle) {
+    var hex = disassemble(haystack).join(''),
+        nex = disassemble(needle).join(''),
+        grouped = disassemble(haystack, true),
+        re = new RegExp(nex, 'gi'),
+        indices = [],
+        result;
+    if (!needle.length) return [];
+
+    while (result = re.exec(hex)) {
+      indices.push(result.index);
+    }
+
+    function findStart(index) {
+      for (var i = 0, length = 0; i < grouped.length; ++i) {
+        length += grouped[i].length;
+        if (index < length) return i;
+      }
+    }
+
+    function findEnd(index) {
+      for (var i = 0, length = 0; i < grouped.length; ++i) {
+        length += grouped[i].length;
+        if (index + nex.length <= length) return i;
+      }
+    }
+
+    return indices.map(function (i) {
+      return [findStart(i), findEnd(i)];
+    });
+  };
+
+  function Searcher(string) {
+    this.string = string;
+    this.disassembled = disassemble(string).join('');
+  }
+
+  Searcher.prototype.search = function (string) {
+    return disassemble(string).join('').indexOf(this.disassembled);
+  };
+
+  var endsWithConsonant = function (string) {
+    if (typeof string === 'object') {
+      string = string.join('');
+    }
+
+    var code = string.charCodeAt(string.length - 1);
+
+    if (_isHangul(code)) {
+      // 완성된 한글이면
+      code -= HANGUL_OFFSET;
+      var jong = code % 28;
+
+      if (jong > 0) {
+        return true;
+      }
+    } else if (_isConsonant(code)) {
+      //자음이면
+      return true;
+    }
+
+    return false;
+  };
+
+  var hangul = {
+    disassemble: disassemble,
+    d: disassemble,
+    // alias for disassemble
+    disassembleToString: disassembleToString,
+    ds: disassembleToString,
+    // alias for disassembleToString
+    assemble: assemble,
+    a: assemble,
+    // alias for assemble
+    search: search,
+    rangeSearch: rangeSearch,
+    Searcher: Searcher,
+    endsWithConsonant: endsWithConsonant,
+    isHangul: function (c) {
+      if (typeof c === 'string') c = c.charCodeAt(0);
+      return _isHangul(c);
+    },
+    isComplete: function (c) {
+      if (typeof c === 'string') c = c.charCodeAt(0);
+      return _isHangul(c);
+    },
+    isConsonant: function (c) {
+      if (typeof c === 'string') c = c.charCodeAt(0);
+      return _isConsonant(c);
+    },
+    isVowel: function (c) {
+      if (typeof c === 'string') c = c.charCodeAt(0);
+      return _isJung(c);
+    },
+    isCho: function (c) {
+      if (typeof c === 'string') c = c.charCodeAt(0);
+      return _isCho(c);
+    },
+    isJong: function (c) {
+      if (typeof c === 'string') c = c.charCodeAt(0);
+      return _isJong(c);
+    },
+    isHangulAll: function (str) {
+      if (typeof str !== 'string') return false;
+
+      for (var i = 0; i < str.length; i++) {
+        if (!_isHangul(str.charCodeAt(i))) return false;
+      }
+
+      return true;
+    },
+    isCompleteAll: function (str) {
+      if (typeof str !== 'string') return false;
+
+      for (var i = 0; i < str.length; i++) {
+        if (!_isHangul(str.charCodeAt(i))) return false;
+      }
+
+      return true;
+    },
+    isConsonantAll: function (str) {
+      if (typeof str !== 'string') return false;
+
+      for (var i = 0; i < str.length; i++) {
+        if (!_isConsonant(str.charCodeAt(i))) return false;
+      }
+
+      return true;
+    },
+    isVowelAll: function (str) {
+      if (typeof str !== 'string') return false;
+
+      for (var i = 0; i < str.length; i++) {
+        if (!_isJung(str.charCodeAt(i))) return false;
+      }
+
+      return true;
+    },
+    isChoAll: function (str) {
+      if (typeof str !== 'string') return false;
+
+      for (var i = 0; i < str.length; i++) {
+        if (!_isCho(str.charCodeAt(i))) return false;
+      }
+
+      return true;
+    },
+    isJongAll: function (str) {
+      if (typeof str !== 'string') return false;
+
+      for (var i = 0; i < str.length; i++) {
+        if (!_isJong(str.charCodeAt(i))) return false;
+      }
+
+      return true;
+    }
+  };
+
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+      return hangul;
+    }).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else {}
+})();
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50);
+/* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autosuggest__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(63);
+/* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hangul_js__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var cities = [{
+  cityId: 0,
+  cityName: '서울'
+}, {
+  cityId: 1,
+  cityName: '서산'
+}, {
+  cityId: 2,
+  cityName: '부산'
+}];
+
+var getSuggestions = function getSuggestions(value) {
+  //sanitize values
+  var inputValue = hangul_js__WEBPACK_IMPORTED_MODULE_2__["disassemble"](value.trim());
+  var inputLen = inputValue.length;
+  return inputLen === 0 ? [] : cities.filter(function (city) {
+    return JSON.stringify(hangul_js__WEBPACK_IMPORTED_MODULE_2__["disassemble"](city.cityName).slice(0, inputLen)) === JSON.stringify(inputValue);
+  });
+};
+
+var LocationAutoSuggest =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(LocationAutoSuggest, _React$Component);
+
+  function LocationAutoSuggest() {
+    var _this;
+
+    _classCallCheck(this, LocationAutoSuggest);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationAutoSuggest).call(this));
+
+    _defineProperty(_assertThisInitialized(_this), "onSuggestionsFetchRequested", function (_ref) {
+      var value = _ref.value;
+
+      _this.setState({
+        suggestions: getSuggestions(value)
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSuggestionsClearRequested", function () {
+      _this.setState({
+        suggestions: []
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getSuggestionValue", function (value) {
+      return value.cityName;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderSuggestion", function (suggestions) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, suggestions.cityName);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (_, _ref2) {
+      var newValue = _ref2.newValue;
+
+      _this.setState({
+        value: newValue
+      });
+    });
+
+    _this.state = {
+      value: '',
+      suggestions: []
+    };
+    return _this;
+  } // AutoSuggest component callback function
+
+
+  _createClass(LocationAutoSuggest, [{
+    key: "render",
+    value: function render() {
+      var id = this.props.id;
+      var _this$state = this.state,
+          value = _this$state.value,
+          suggestions = _this$state.suggestions;
+      var inputProps = {
+        placeholder: '도시, 터미널 및 공항',
+        value: value,
+        onChange: this.onChange
+      };
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        id: id,
+        suggestions: suggestions,
+        onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
+        onSuggestionsClearRequested: this.onSuggestionsClearRequested,
+        getSuggestionValue: this.getSuggestionValue,
+        renderSuggestion: this.renderSuggestion,
+        inputProps: inputProps
+      });
+    }
+  }]);
+
+  return LocationAutoSuggest;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (LocationAutoSuggest);
 
 /***/ })
 /******/ ]);
