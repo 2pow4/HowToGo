@@ -1,8 +1,8 @@
 import React from "react";
-import ReactMapGL from "react-map-gl"
+import ReactMapGL, {NavigationControl} from "react-map-gl"
 
 const  TOKEN = "pk.eyJ1IjoieXVqZW9uZzIiLCJhIjoiY2swamRhMDNjMDlvNTNkbmoycjZudWRtdiJ9.kihZ3dv0cUG6FuvlPCw3qQ"
-const  MAP_STYLE = 'mapbox://styles/yujeong2/ck0l1sppb4xhg1cqxgdbdykh9'
+const  MAP_STYLE = 'mapbox://styles/yujeong2/ck1amg72r0r981cpa7g8wqj72'
 
 
 class Map extends React.Component{
@@ -12,9 +12,9 @@ class Map extends React.Component{
             viewport: {
                 width: 400,
                 height: 400,
-                latitude: 36.0824,
-                longitude: 128.0882,
-                zoom: 5.8
+                latitude: 36.1824,
+                longitude: 127.6,
+                zoom: 5.6
             },
             srcPos: {
                 srcLng: 126.9783,
@@ -26,7 +26,7 @@ class Map extends React.Component{
             }
         }
     }
-dk 
+    
     componentDidMount(){
         const map = this.reactMap.getMap();
         map.on('load', () => {
@@ -111,10 +111,13 @@ dk
                     {...viewport}
                     mapboxApiAccessToken={TOKEN}
                     onViewportChange={newViewport => {
-                        this.setState({viewport: newViewport})
-                    }}
+                        this.setState({viewport: newViewport}) }}
                     mapStyle={MAP_STYLE}
-                />
+                >
+                    <div style={{position: 'absolute', left: 5, bottom: 33}}>
+                        <NavigationControl />
+                    </div>
+                </ReactMapGL>
             </div>
         )
     }

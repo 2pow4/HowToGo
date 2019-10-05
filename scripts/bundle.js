@@ -8460,20 +8460,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 var TOKEN = "pk.eyJ1IjoieXVqZW9uZzIiLCJhIjoiY2swamRhMDNjMDlvNTNkbmoycjZudWRtdiJ9.kihZ3dv0cUG6FuvlPCw3qQ";
-var MAP_STYLE = 'mapbox://styles/yujeong2/ck0l1sppb4xhg1cqxgdbdykh9';
+var MAP_STYLE = 'mapbox://styles/yujeong2/ck1amg72r0r981cpa7g8wqj72';
 
 var Map =
 /*#__PURE__*/
@@ -8486,16 +8484,13 @@ function (_React$Component) {
     _classCallCheck(this, Map);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Map).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_this), "dk", void 0);
-
     _this.state = {
       viewport: {
         width: 400,
         height: 400,
-        latitude: 36.0824,
-        longitude: 128.0882,
-        zoom: 5.8
+        latitude: 36.1824,
+        longitude: 127.6,
+        zoom: 5.6
       },
       srcPos: {
         srcLng: 126.9783,
@@ -8599,7 +8594,13 @@ function (_React$Component) {
           });
         },
         mapStyle: MAP_STYLE
-      })));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          position: 'absolute',
+          left: 5,
+          bottom: 33
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_map_gl__WEBPACK_IMPORTED_MODULE_1__["NavigationControl"], null))));
     }
   }]);
 
