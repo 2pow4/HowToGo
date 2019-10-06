@@ -1,6 +1,6 @@
 {
   "name": "minju-youtube-clone",
-  "version": "1.0.0",
+  "version": "1.16.0",
   "main": "index.js",
   "repository": "https://github.com/2pow4/HowToGo.git",
   "author": "kmju1997 <kmju1997@gmail.com>",
@@ -42,6 +42,7 @@
     "react": "^16.9.0",
     "react-autosuggest": "^9.4.3",
     "react-calendar": "^2.19.2",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-hook-form": "^3.23.18"
   }
 }
