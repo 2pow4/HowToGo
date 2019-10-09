@@ -1,0 +1,7 @@
+.react-calendar-notvisible {
+    display: none
+};
+
+.react-calendar-visible {
+    display: flex
+}
