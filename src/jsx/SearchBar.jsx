@@ -20,10 +20,12 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}> 
           {/* departure destination part */}
-          <LocationAutoSuggest id='departure'/>
-          <LocationAutoSuggest id='destination'/>
+          <LocationAutoSuggest name='departure' id='departure'/> 
+          {errors.departure.length > 0 && <span className='error'>{errors.departure}</span>}
+          <LocationAutoSuggest name='destination' id='destination'/> 
+          {errors.departure.length > 0 && <span className='error'>{errors.destination}</span>}
           <div>
             <button>
               날짜

@@ -12,6 +12,9 @@ const cities = [
   }, {
     cityId: 2,
     cityName: '부산'
+  }, {
+    cityId: 3,
+    cityName: '부천'
   }
 ];
 
@@ -20,14 +23,15 @@ const getSuggestions = (value) => {
   const inputValue = Hangul.disassemble(value.trim());
   const inputLen = inputValue.length
 
+  // TODO: enhance result search -> when city suggestion have only city get locations
   return inputLen === 0
     ? []
     : cities.filter(city => JSON.stringify(Hangul.disassemble(city.cityName).slice(0, inputLen)) === JSON.stringify(inputValue));
 }
 
 class LocationAutoSuggest extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       value: '',
       suggestions: []
@@ -50,28 +54,31 @@ class LocationAutoSuggest extends React.Component {
     </div>
   );
 
-  onChange = (_, { newValue }) => {
-    this.setState({
-      value: newValue
-    });
+  onChange = (_, {newValue}) => {
+    this.setState({value: newValue});
   };
   render() {
-    const {id} = this.props;
+    const {id, name} = this.props;
     const {value, suggestions} = this.state;
     const inputProps = {
       placeholder: '도시, 터미널 및 공항',
       value,
+      name: name,
       onChange: this.onChange
     };
 
-    return (<AutoSuggest
-      id={id}
-      suggestions={suggestions}
-      onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-      onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-      getSuggestionValue={this.getSuggestionValue}
-      renderSuggestion={this.renderSuggestion}
-      inputProps={inputProps}/>);
+    return (
+      <div>
+        <AutoSuggest
+          id={id}
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={this.getSuggestionValue}
+          renderSuggestion={this.renderSuggestion}
+          inputProps={inputProps}/>
+      </div>
+    );
   }
 
 }
