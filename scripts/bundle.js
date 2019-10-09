@@ -8396,7 +8396,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
 /* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_calendar__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(64);
+/* harmony import */ var _LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(50);
+/* harmony import */ var _css_SearchBar_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(65);
+/* harmony import */ var _css_SearchBar_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_SearchBar_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8421,6 +8423,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var SearchBar =
 /*#__PURE__*/
 function (_React$Component) {
@@ -8434,40 +8437,106 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchBar).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (event) {
-      console.log("submit!");
+      console.log(event.target);
+      event.preventDefault(); // switch (name) {
+      //   case 'destination':
+      //     errors.destination = value.length == 0
+      //       ? '도착지를 입력하세요.'
+      //       : '';
+      //     break;
+      //   case 'departure':
+      //     errors.departure = value.length == 0
+      //       ? '출발지를 입력하세요.'
+      //       : '';
+      //     break;
+      //   default:
+      //     break;
+      // }
+      // this.setState({errors})
+      // route, axios
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onDateChange", function (date) {
-      return _this.setState({
-        date: date
+    _defineProperty(_assertThisInitialized(_this), "onDateChange", function (value) {
+      _this.setState({
+        date: value,
+        calendarAvailable: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onCalendarAvailable", function (event) {
+      _this.state.calendarAvailable === true ? _this.setState({
+        calendarAvailable: false
+      }) : _this.setState({
+        calendarAvailable: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onIncreaseNumber", function (event) {
+      _this.setState({
+        numOfPassengers: _this.state.numOfPassengers + 1
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onDecreaseNumber", function (event) {
+      _this.setState({
+        numOfPassengers: _this.state.numOfPassengers <= 1 ? 1 : _this.state.numOfPassengers - 1
       });
     });
 
     _this.state = {
       // Calendar state
-      date: new Date()
+      date: new Date(),
+      calendarAvailable: false,
+      numOfPassengers: 1,
+      errors: {
+        destination: "",
+        departure: ""
+      }
     };
     return _this;
-  }
+  } // Submit form data
+
 
   _createClass(SearchBar, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      var _this$state = this.state,
+          errors = _this$state.errors,
+          date = _this$state.date,
+          calendarAvailable = _this$state.calendarAvailable,
+          numOfPassengers = _this$state.numOfPassengers;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "departure",
         id: "departure"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "error"
+      }, errors.departure), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        name: "destination",
         id: "destination"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\uB0A0\uC9DC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      }), errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "error"
+      }, errors.destination), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.onCalendarAvailable
+      }, this.state.date.toDateString().slice(0, 10).replace(' ', ', ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        className: "".concat(calendarAvailable ? "react-calendar-visible" : "react-calendar-notvisible"),
         onChange: this.onDateChange,
-        value: this.state.date
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\uC99D\uAC00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "\uAC10\uC18C")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        name: "date",
+        value: date
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.onIncreaseNumber
+      }, "\uC99D\uAC00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: numOfPassengers,
+        name: "numOfPassengers",
+        readOnly: true
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.onDecreaseNumber
+      }, "\uAC10\uC18C")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Search"
-      })));
+      }));
     }
   }]);
 
@@ -14913,15 +14982,156 @@ module.exports = function (list, options) {
 
 /***/ }),
 /* 50 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
+/* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autosuggest__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(64);
+/* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hangul_js__WEBPACK_IMPORTED_MODULE_2__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var cities = [{
+  cityId: 0,
+  cityName: '서울'
+}, {
+  cityId: 1,
+  cityName: '서산'
+}, {
+  cityId: 2,
+  cityName: '부산'
+}, {
+  cityId: 3,
+  cityName: '부천'
+}];
+
+var getSuggestions = function getSuggestions(value) {
+  //sanitize values
+  var inputValue = hangul_js__WEBPACK_IMPORTED_MODULE_2__["disassemble"](value.trim());
+  var inputLen = inputValue.length; // TODO: enhance result search -> when city suggestion have only city get locations
+
+  return inputLen === 0 ? [] : cities.filter(function (city) {
+    return JSON.stringify(hangul_js__WEBPACK_IMPORTED_MODULE_2__["disassemble"](city.cityName).slice(0, inputLen)) === JSON.stringify(inputValue);
+  });
+};
+
+var LocationAutoSuggest =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(LocationAutoSuggest, _React$Component);
+
+  function LocationAutoSuggest(props) {
+    var _this;
+
+    _classCallCheck(this, LocationAutoSuggest);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationAutoSuggest).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_this), "onSuggestionsFetchRequested", function (_ref) {
+      var value = _ref.value;
+
+      _this.setState({
+        suggestions: getSuggestions(value)
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onSuggestionsClearRequested", function () {
+      _this.setState({
+        suggestions: []
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getSuggestionValue", function (value) {
+      return value.cityName;
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "renderSuggestion", function (suggestions) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, suggestions.cityName);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (_, _ref2) {
+      var newValue = _ref2.newValue;
+
+      _this.setState({
+        value: newValue
+      });
+    });
+
+    _this.state = {
+      value: '',
+      suggestions: []
+    };
+    return _this;
+  } // AutoSuggest component callback function
+
+
+  _createClass(LocationAutoSuggest, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          id = _this$props.id,
+          name = _this$props.name;
+      var _this$state = this.state,
+          value = _this$state.value,
+          suggestions = _this$state.suggestions;
+      var inputProps = {
+        placeholder: '도시, 터미널 및 공항',
+        value: value,
+        name: name,
+        onChange: this.onChange
+      };
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        id: id,
+        suggestions: suggestions,
+        onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
+        onSuggestionsClearRequested: this.onSuggestionsClearRequested,
+        getSuggestionValue: this.getSuggestionValue,
+        renderSuggestion: this.renderSuggestion,
+        inputProps: inputProps
+      }));
+    }
+  }]);
+
+  return LocationAutoSuggest;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (LocationAutoSuggest);
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(51).default;
+module.exports = __webpack_require__(52).default;
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14971,15 +15181,15 @@ var _propTypes = __webpack_require__(15);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _arrays = __webpack_require__(52);
+var _arrays = __webpack_require__(53);
 
 var _arrays2 = _interopRequireDefault(_arrays);
 
-var _reactAutowhatever = __webpack_require__(53);
+var _reactAutowhatever = __webpack_require__(54);
 
 var _reactAutowhatever2 = _interopRequireDefault(_reactAutowhatever);
 
-var _theme = __webpack_require__(62);
+var _theme = __webpack_require__(63);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : {
@@ -15780,7 +15990,7 @@ var _initialiseProps = function _initialiseProps() {
 exports.default = Autosuggest;
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15813,16 +16023,16 @@ function shallowEqualArrays(arrA, arrB) {
 module.exports = shallowEqualArrays;
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(54).default;
+module.exports = __webpack_require__(55).default;
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15910,19 +16120,19 @@ var _propTypes = __webpack_require__(15);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _sectionIterator = __webpack_require__(55);
+var _sectionIterator = __webpack_require__(56);
 
 var _sectionIterator2 = _interopRequireDefault(_sectionIterator);
 
-var _reactThemeable = __webpack_require__(56);
+var _reactThemeable = __webpack_require__(57);
 
 var _reactThemeable2 = _interopRequireDefault(_reactThemeable);
 
-var _SectionTitle = __webpack_require__(58);
+var _SectionTitle = __webpack_require__(59);
 
 var _SectionTitle2 = _interopRequireDefault(_SectionTitle);
 
-var _ItemsList = __webpack_require__(60);
+var _ItemsList = __webpack_require__(61);
 
 var _ItemsList2 = _interopRequireDefault(_ItemsList);
 
@@ -16355,7 +16565,7 @@ Autowhatever.defaultProps = {
 exports.default = Autowhatever;
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16505,7 +16715,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16569,7 +16779,7 @@ function _toConsumableArray(arr) {
   }
 }
 
-var _objectAssign = __webpack_require__(57);
+var _objectAssign = __webpack_require__(58);
 
 var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
@@ -16605,7 +16815,7 @@ exports['default'] = function (input) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16651,7 +16861,7 @@ module.exports = Object.assign || function (target, source) {
 };
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16687,7 +16897,7 @@ var _propTypes = __webpack_require__(15);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _compareObjects = __webpack_require__(59);
+var _compareObjects = __webpack_require__(60);
 
 var _compareObjects2 = _interopRequireDefault(_compareObjects);
 
@@ -16771,7 +16981,7 @@ SectionTitle.propTypes = {
 exports.default = SectionTitle;
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16844,7 +17054,7 @@ function compareObjects(objA, objB) {
 }
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16894,11 +17104,11 @@ var _propTypes = __webpack_require__(15);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Item = __webpack_require__(61);
+var _Item = __webpack_require__(62);
 
 var _Item2 = _interopRequireDefault(_Item);
 
-var _compareObjects = __webpack_require__(59);
+var _compareObjects = __webpack_require__(60);
 
 var _compareObjects2 = _interopRequireDefault(_compareObjects);
 
@@ -17036,7 +17246,7 @@ ItemsList.defaultProps = {
 exports.default = ItemsList;
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17086,7 +17296,7 @@ var _propTypes = __webpack_require__(15);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _compareObjects = __webpack_require__(59);
+var _compareObjects = __webpack_require__(60);
 
 var _compareObjects2 = _interopRequireDefault(_compareObjects);
 
@@ -17257,7 +17467,7 @@ Item.propTypes = {
 exports.default = Item;
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17321,7 +17531,7 @@ var mapToAutowhateverTheme = exports.mapToAutowhateverTheme = function mapToAuto
 };
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -17895,138 +18105,35 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 })();
 
 /***/ }),
-/* 64 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50);
-/* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autosuggest__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(63);
-/* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hangul_js__WEBPACK_IMPORTED_MODULE_2__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var content = __webpack_require__(66);
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+var options = {}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+options.insert = "head";
+options.singleton = false;
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+var update = __webpack_require__(49)(content, options);
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+if (content.locals) {
+  module.exports = content.locals;
+}
 
 
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
 
+exports = module.exports = __webpack_require__(48)(false);
+// Module
+exports.push([module.i, ".react-calendar-notvisible {\n    display: none\n};\n\n.react-calendar-visible {\n    display: flex\n}", ""]);
 
-var cities = [{
-  cityId: 0,
-  cityName: '서울'
-}, {
-  cityId: 1,
-  cityName: '서산'
-}, {
-  cityId: 2,
-  cityName: '부산'
-}];
-
-var getSuggestions = function getSuggestions(value) {
-  //sanitize values
-  var inputValue = hangul_js__WEBPACK_IMPORTED_MODULE_2__["disassemble"](value.trim());
-  var inputLen = inputValue.length;
-  return inputLen === 0 ? [] : cities.filter(function (city) {
-    return JSON.stringify(hangul_js__WEBPACK_IMPORTED_MODULE_2__["disassemble"](city.cityName).slice(0, inputLen)) === JSON.stringify(inputValue);
-  });
-};
-
-var LocationAutoSuggest =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(LocationAutoSuggest, _React$Component);
-
-  function LocationAutoSuggest() {
-    var _this;
-
-    _classCallCheck(this, LocationAutoSuggest);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(LocationAutoSuggest).call(this));
-
-    _defineProperty(_assertThisInitialized(_this), "onSuggestionsFetchRequested", function (_ref) {
-      var value = _ref.value;
-
-      _this.setState({
-        suggestions: getSuggestions(value)
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onSuggestionsClearRequested", function () {
-      _this.setState({
-        suggestions: []
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "getSuggestionValue", function (value) {
-      return value.cityName;
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "renderSuggestion", function (suggestions) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, suggestions.cityName);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (_, _ref2) {
-      var newValue = _ref2.newValue;
-
-      _this.setState({
-        value: newValue
-      });
-    });
-
-    _this.state = {
-      value: '',
-      suggestions: []
-    };
-    return _this;
-  } // AutoSuggest component callback function
-
-
-  _createClass(LocationAutoSuggest, [{
-    key: "render",
-    value: function render() {
-      var id = this.props.id;
-      var _this$state = this.state,
-          value = _this$state.value,
-          suggestions = _this$state.suggestions;
-      var inputProps = {
-        placeholder: '도시, 터미널 및 공항',
-        value: value,
-        onChange: this.onChange
-      };
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        id: id,
-        suggestions: suggestions,
-        onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
-        onSuggestionsClearRequested: this.onSuggestionsClearRequested,
-        getSuggestionValue: this.getSuggestionValue,
-        renderSuggestion: this.renderSuggestion,
-        inputProps: inputProps
-      });
-    }
-  }]);
-
-  return LocationAutoSuggest;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (LocationAutoSuggest);
 
 /***/ })
 /******/ ]);

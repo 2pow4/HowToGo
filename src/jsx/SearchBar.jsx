@@ -11,12 +11,39 @@ class SearchBar extends React.Component {
       date: new Date(),
       calendarAvailable: false,
       numOfPassengers: 1,
+      errors: {
+          destination: ``,
+          departure: ``
       }
     }
   }
 
-  handleSubmit = (event) => {
-    console.log("submit!")
+  // Submit form data
+  handleSubmit = event => {
+    console.log(event.target);
+
+    event.preventDefault();
+    
+    // switch (name) {
+    //   case 'destination':
+    //     errors.destination = value.length == 0
+    //       ? '도착지를 입력하세요.'
+    //       : '';
+    //     break;
+
+    //   case 'departure':
+    //     errors.departure = value.length == 0
+    //       ? '출발지를 입력하세요.'
+    //       : '';
+    //     break;
+    //   default:
+    //     break;
+
+    // }
+    
+    // this.setState({errors})
+    // route, axios
+
   }
   // Calendar component callback function
   onDateChange = value => {
