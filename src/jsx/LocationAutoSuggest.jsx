@@ -1,6 +1,7 @@
 import React from 'react';
 import AutoSuggest from 'react-autosuggest';
 import * as Hangul from 'hangul-js';
+import '../css/LocationAutoSuggest.css';
 
 const cities = [
   {
@@ -46,6 +47,9 @@ class LocationAutoSuggest extends React.Component {
     this.setState({suggestions: []});
   };
 
+  onSuggestionSelected = (event, {suggestion}) => {
+    this.props.onValueChange(suggestion)
+  }
   getSuggestionValue = value => value.cityName;
 
   renderSuggestion = suggestions => (
@@ -58,7 +62,7 @@ class LocationAutoSuggest extends React.Component {
     this.setState({value: newValue});
   };
   render() {
-    const {id, name} = this.props;
+    const {id, name, className} = this.props;
     const {value, suggestions} = this.state;
     const inputProps = {
       placeholder: '도시, 터미널 및 공항',
@@ -68,14 +72,16 @@ class LocationAutoSuggest extends React.Component {
     };
 
     return (
-      <div>
+      <div className={className}>
         <AutoSuggest
           id={id}
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          onSuggestionSelected={this.onSuggestionSelected}
           getSuggestionValue={this.getSuggestionValue}
           renderSuggestion={this.renderSuggestion}
+          highlightFirstSuggestion={true}
           inputProps={inputProps}/>
       </div>
     );

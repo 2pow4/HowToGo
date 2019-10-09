@@ -8437,23 +8437,23 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SearchBar).call(this, props));
 
     _defineProperty(_assertThisInitialized(_this), "handleSubmit", function (event) {
-      console.log(event.target);
-      event.preventDefault(); // switch (name) {
-      //   case 'destination':
-      //     errors.destination = value.length == 0
-      //       ? '도착지를 입력하세요.'
-      //       : '';
-      //     break;
-      //   case 'departure':
-      //     errors.departure = value.length == 0
-      //       ? '출발지를 입력하세요.'
-      //       : '';
-      //     break;
-      //   default:
-      //     break;
-      // }
-      // this.setState({errors})
-      // route, axios
+      console.log(_this.state.departure, _this.state.destination);
+      event.preventDefault(); // switch (name) {   case 'destination':     errors.destination = value.length
+      // == 0       ? '도착지를 입력하세요.'       : '';     break;   case 'departure':
+      // errors.departure = value.length == 0       ? '출발지를 입력하세요.'       : ''; break;
+      //   default:     break; } this.setState({errors}) route, axios
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onDepChange", function (departure) {
+      _this.setState({
+        departure: departure
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onDestChange", function (destination) {
+      _this.setState({
+        destination: destination
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "onDateChange", function (value) {
@@ -8485,6 +8485,8 @@ function (_React$Component) {
 
     _this.state = {
       // Calendar state
+      departure: "",
+      destination: "",
       date: new Date(),
       calendarAvailable: false,
       numOfPassengers: 1,
@@ -8506,37 +8508,56 @@ function (_React$Component) {
           calendarAvailable = _this$state.calendarAvailable,
           numOfPassengers = _this$state.numOfPassengers;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
+        onSubmit: this.handleSubmit,
+        className: "layout-container-vertical"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "label",
+        className: "layout-content"
+      }, " \uC5B4\uB514\uB85C \uAC00\uC2E4\uB798\uC694? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "layout-container-horizontal"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        name: "departure",
-        id: "departure"
-      }), errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "layout-content",
+        id: "departure",
+        onValueChange: this.onDepChange
+      }), " ", errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "error"
       }, errors.departure), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        name: "destination",
-        id: "destination"
-      }), errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "layout-content",
+        id: "destination",
+        onValueChange: this.onDestChange
+      }), " ", errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "error"
       }, errors.destination), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.onCalendarAvailable
+        onClick: this.onCalendarAvailable,
+        className: "layout-content searchbar-input"
       }, this.state.date.toDateString().slice(0, 10).replace(' ', ', ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_1___default.a, {
-        className: "".concat(calendarAvailable ? "react-calendar-visible" : "react-calendar-notvisible"),
+        className: "".concat(calendarAvailable ? "react-calendar__visible" : "react-calendar__invisible"),
         onChange: this.onDateChange,
         name: "date",
         value: date
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.onIncreaseNumber
-      }, "\uC99D\uAC00"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "layout-content layout-container__passenger"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.onDecreaseNumber,
+        className: "layout-content__passenger"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-minus-circle searchbar-button__passenger"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "layout-content__passenger searchbar-input__passenger",
         type: "text",
-        value: numOfPassengers,
+        value: "".concat(numOfPassengers, "\uBA85"),
         name: "numOfPassengers",
         readOnly: true
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: this.onDecreaseNumber
-      }, "\uAC10\uC18C")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.onIncreaseNumber,
+        className: "layout-content__passenger"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-plus-circle searchbar-button__passenger"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
-        value: "Search"
-      }));
+        value: "Search",
+        className: "layout-content searchbar-button"
+      })));
     }
   }]);
 
@@ -14992,6 +15013,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autosuggest__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(64);
 /* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hangul_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _css_LocationAutoSuggest_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(68);
+/* harmony import */ var _css_LocationAutoSuggest_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_LocationAutoSuggest_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -15011,6 +15034,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -15065,6 +15089,12 @@ function (_React$Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "onSuggestionSelected", function (event, _ref2) {
+      var suggestion = _ref2.suggestion;
+
+      _this.props.onValueChange(suggestion);
+    });
+
     _defineProperty(_assertThisInitialized(_this), "getSuggestionValue", function (value) {
       return value.cityName;
     });
@@ -15073,8 +15103,8 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, suggestions.cityName);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (_, _ref2) {
-      var newValue = _ref2.newValue;
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (_, _ref3) {
+      var newValue = _ref3.newValue;
 
       _this.setState({
         value: newValue
@@ -15094,7 +15124,8 @@ function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           id = _this$props.id,
-          name = _this$props.name;
+          name = _this$props.name,
+          className = _this$props.className;
       var _this$state = this.state,
           value = _this$state.value,
           suggestions = _this$state.suggestions;
@@ -15104,13 +15135,17 @@ function (_React$Component) {
         name: name,
         onChange: this.onChange
       };
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: className
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default.a, {
         id: id,
         suggestions: suggestions,
         onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
         onSuggestionsClearRequested: this.onSuggestionsClearRequested,
+        onSuggestionSelected: this.onSuggestionSelected,
         getSuggestionValue: this.getSuggestionValue,
         renderSuggestion: this.renderSuggestion,
+        highlightFirstSuggestion: true,
         inputProps: inputProps
       }));
     }
@@ -18131,8 +18166,50 @@ if (content.locals) {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(48)(false);
+// Imports
+exports.i(__webpack_require__(67), "");
 // Module
-exports.push([module.i, ".react-calendar-notvisible {\n    display: none\n};\n\n.react-calendar-visible {\n    display: flex\n}", ""]);
+exports.push([module.i, "#label {\n    padding-top: 10px;\n    font-size: 22px;\n    vertical-align: middle;\n    text-align: center;\n}\n\n.react-calendar__invisible {\n    display: none\n}\n\n.react-calendar__visible {\n    position: absolute;\n    top: 52px;\n    left: 45%;\n    border-radius: 4px;\n    border: 1px solid #eee;\n    z-index: 2;\n\n    box-shadow: 9px 10px 27px -12px #888888;\n}\n\n.react-calendar__tile--active {\n    background-color: #FF99AF;\n}\n\n.layout-container-vertical{\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center; \n    justify-content: center;\n\n    background-color: #eee;\n    border-radius: 8px;\n    padding: 15x;\n    max-width: 1136px;\n\n    box-shadow: 2px;\n}\n.layout-container-horizontal { \n    position: relative;\n    display: flex;\n    justify-content: center;\n    align-items: center; \n\n    background-color: #eee;\n    border-radius: 8px;\n}\n\n.layout-container__passenger {\n    display: flex;\n    background-color: #fff;\n    border: 1px solid #eee;\n    border-radius: 4px;\n    transition:border .2s ease;\n}\n\n.layout-container__passenger:hover{\n    border: 1px solid #FF99AF;\n}\n.layout-container__passenger:hover i{\n    color: #FF99AF;\n}\n\n.layout-content{\n    position: relative;\n    margin: 10px 10px;\n\n}\n\n.layout-content__passenger{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-left: 5px;\n    margin-right: 5px;\n}\n\n.searchbar-button{\n    width: 100px;\n    height: 40px;\n    border: 1px solid #eee;\n    border-radius: 4px;\n    font-size: 20px;\n    color: #fff;\n    background-color: #FF99AF;\n}\n\n.searchbar-button:focus{\n    outline: none;\n}\n.searchbar-button__passenger{\n    font-size: 20px;\n    color: #bbb;\n    transition:color .2s ease;\n}\n\n.searchbar-input{\n    height: 20px;\n    width: 160px;\n    padding: 10px 20px;\n    font-family: Helvetica, sans-serif;\n    font-weight: 300;\n    font-size: 16px;\n    background-color: #fff;\n    border: 1px solid #eee;\n    border-radius: 4px;\n\n    transition:border .2s ease;\n}\n\n.searchbar-input:hover{\n    border: 1px solid #FF99AF; \n}\n\n.searchbar-input__passenger{\n    height: 20px;\n    width: 30px;\n    padding: 10px 20px;\n    font-family: Helvetica, sans-serif;\n    font-weight: 300;\n    font-size: 16px;\n    text-align: center;\n    border: none;\n    outline: none;\n}\n\n.searchbar-input__passenger:focus{\n    outline: none;\n}", ""]);
+
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(48)(false);
+// Module
+exports.push([module.i, "div, input{\n    font-family: Helvetica, sans-serif;\n}\n\nform {\n    margin: auto;\n    box-shadow: 9px 10px 27px -12px #888888;\n}", ""]);
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(69);
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(49)(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(48)(false);
+// Module
+exports.push([module.i, ".react-autosuggest__container {\n    position: relative;\n  }\n  \n.react-autosuggest__input {\nheight: 20px;\nwidth: 200px;\npadding: 10px 20px;\nfont-weight: 300;\nfont-size: 16px;\nborder: 1px solid #eee;\nborder-radius: 4px;\n\ntransition:border .2s ease;\n}\n.react-autosuggest__input:hover{\nborder: 1px solid #FF99AF;  \n}\n\n.react-autosuggest__input--focused {\noutline: none;\n}\n\n.react-autosuggest__input--open {\nborder-bottom-left-radius: 0;\nborder-bottom-right-radius: 0;\n}\n\n.react-autosuggest__suggestions-container {\ndisplay: none;\n}\n\n.react-autosuggest__suggestions-container--open {\ndisplay: block;\nposition: absolute;\ntop: 42px;\nwidth: 240px;\nborder: 1px solid #FF99AF;\nbackground-color: #fff;\nfont-family: Helvetica, sans-serif;\nfont-weight: 300;\nfont-size: 16px;\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\nz-index: 2;\n}\n\n.react-autosuggest__suggestions-list {\nmargin: 0;\npadding: 0;\nlist-style-type: none;\n}\n\n.react-autosuggest__suggestion {\ncursor: pointer;\npadding: 10px 20px;\n}\n\n.react-autosuggest__suggestion--highlighted {\nbackground-color: #FDCED5;\n}\n", ""]);
 
 
 /***/ })

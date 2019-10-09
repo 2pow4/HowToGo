@@ -1,0 +1,8 @@
+div, input{
+    font-family: Helvetica, sans-serif;
+}
+
+form {
+    margin: auto;
+    box-shadow: 9px 10px 27px -12px #888888;
+}
