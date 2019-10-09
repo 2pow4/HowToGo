@@ -1,13 +1,17 @@
 import React from 'react';
 import Calendar from 'react-calendar';
 import LocationAutoSuggest from './LocationAutoSuggest';
+import '../css/SearchBar.css';
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       // Calendar state
-      date: new Date()
+      date: new Date(),
+      calendarAvailable: false,
+      numOfPassengers: 1,
+      }
     }
   }
 
@@ -15,11 +19,34 @@ class SearchBar extends React.Component {
     console.log("submit!")
   }
   // Calendar component callback function
-  onDateChange = date => this.setState({date});
+  onDateChange = value => {
+    this.setState({date: value, calendarAvailable: false});
+  }
+
+  onCalendarAvailable = event => {
+    this.state.calendarAvailable === true
+      ? this.setState({calendarAvailable: false})
+      : this.setState({calendarAvailable: true})
+  }
+
+  // Passenger component callback function
+  onIncreaseNumber = event => {
+    this.setState({
+      numOfPassengers: this.state.numOfPassengers + 1
+    })
+  }
+  onDecreaseNumber = event => {
+    this.setState({
+      numOfPassengers: this.state.numOfPassengers <= 1
+        ? 1
+        : this.state.numOfPassengers - 1
+    })
+  }
 
   render() {
+    const {errors, date, calendarAvailable, numOfPassengers} = this.state;
+
     return (
-      <div>
         <form onSubmit={this.handleSubmit}> 
           {/* departure destination part */}
           <LocationAutoSuggest name='departure' id='departure'/> 
@@ -27,22 +54,37 @@ class SearchBar extends React.Component {
           <LocationAutoSuggest name='destination' id='destination'/> 
           {errors.departure.length > 0 && <span className='error'>{errors.destination}</span>}
           <div>
-            <button>
-              날짜
-            </button>
             {/* date part */}
-            <Calendar onChange={this.onDateChange} value={this.state.date}/>
+            <div onClick={this.onCalendarAvailable}>
+              {this
+                .state
+                .date
+                .toDateString()
+                .slice(0, 10)
+                .replace(' ', ', ')}
+            </div>
+            <Calendar
+              className={`${calendarAvailable
+              ? `react-calendar-visible`
+              : `react-calendar-notvisible`}`}
+              onChange={this.onDateChange}
+              name='date'
+              value={date}/>
           </div>
           <div>
-            <button>
+            {/* number of passenger part */}
+            <div onClick={this.onIncreaseNumber}>
               증가
-            </button>
-            <input type="text"/>
-            <button>감소</button>
+            </div>
+            <input
+              type="text"
+              value={numOfPassengers}
+              name="numOfPassengers"
+              readOnly/>
+            <div onClick={this.onDecreaseNumber}>감소</div>
           </div>
-          <input type="submit" value="Search"/>
+          <input type='submit' value='Search'/>
         </form>
-      </div>
     )
   }
 }
