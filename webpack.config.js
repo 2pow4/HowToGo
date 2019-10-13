@@ -4,8 +4,8 @@ module.exports = {
   entry: "./src/jsx/index.jsx",
   output: {
     filename: "bundle.js",
-    path: path.resolve(`${__dirname}/scripts`),
-    publicPath: '/scripts'
+    path: path.resolve(`${__dirname}/public/scripts`),
+    publicPath: '/'
   },
   mode: "none",
   module: {
