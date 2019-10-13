@@ -14,28 +14,21 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: "/node_modules",
         use: ['babel-loader']
-      },
+      }, 
       {
         test: /\.css$/,
         use: [
-            { loader: "style-loader" },
-            { loader: "css-loader" },
-          ]
-      },
-      {
-        test: /\.css$/,
-        loader: "css-loader",
-        options: {
-          modules: {
-            localIdentName: "[name]__[local]___[hash:base64:5]",
-          },
-        }
-      }
+          {
+            loader: "style-loader"
+          }, {
+            loader: "css-loader"
+          }
+        ]
+      }, 
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx']
   }
-  
 
 }

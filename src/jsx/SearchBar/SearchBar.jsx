@@ -1,7 +1,7 @@
 import React from 'react';
 import Calendar from 'react-calendar';
 import LocationAutoSuggest from './LocationAutoSuggest';
-import '../css/SearchBar.css';
+import '../../css/SearchBar.css';
 
 class SearchBar extends React.Component {
   constructor(props) {

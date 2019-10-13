@@ -1,8 +1,8 @@
 import React from "react";
 import ReactMapGL, {NavigationControl} from "react-map-gl"
 
-const  TOKEN = "pk.eyJ1IjoieXVqZW9uZzIiLCJhIjoiY2swamRhMDNjMDlvNTNkbmoycjZudWRtdiJ9.kihZ3dv0cUG6FuvlPCw3qQ"
-const  MAP_STYLE = 'mapbox://styles/yujeong2/ck1amg72r0r981cpa7g8wqj72'
+const TOKEN = "pk.eyJ1IjoieXVqZW9uZzIiLCJhIjoiY2swamRhMDNjMDlvNTNkbmoycjZudWRtdiJ9.kihZ3dv0cUG6FuvlPCw3qQ"
+const MAP_STYLE = 'mapbox://styles/yujeong2/ck1amg72r0r981cpa7g8wqj72'
 
 
 class Map extends React.Component{
