@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="css/modal.css">
+    </head>
+    <body>
+        <div id="main">
+            <button id="btn" onclick="clickButton()">항공권 예매하기</button>
+            <div id="popupBox" class="popup">
+                    <span id="close">&times;</span>
+                <div id="topBar"><h3 class="topBarTitle">예약하러 가볼까요?</h1></div>
+                    <hr style="width: 300px; color: gray; border: thin solid">
+                <div id="middleBar">
+                    <div class="departureTime">출발지<br>출발시간</div>
+                    <div class="airPlane" style="padding-top:30px;"><img src="img/airplane.png"></div>
+                    <div class="arrivalTime">도착지<br>도착시간</div>
+                </div>
+                <div id="bottomBar">
+                    <div class="price">가격 </div>
+                    <button class="movePage" onclick="window.location.href='https://www.koreanair.com/content/koreanair/korea/ko.html/'">예약 페이지로 이동</button>
+                </div>
+            </div>
+        </div>
+        <div id="cover" class="cover"> </div>
+        <script src="js/jQuery.js"></script>
+        <script src="js/modal.js"></script>
+    </body>
+</html>

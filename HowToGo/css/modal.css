@@ -1,0 +1,119 @@
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#main{
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    height: 540px;
+    background-image: url("/img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#btn{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+
+
+#popupBox{
+    width: 320px;
+    height: 280px;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    margin: 100px auto;
+    display: none;
+    z-index: 1000;
+    position: relative;
+    font-weight: bold;
+  }
+
+#close{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 25px;
+    float: right;
+    color: #4f4f4f;
+    cursor: pointer;
+}
+
+#topBar{
+    width: 320px;
+    height: 40px;
+    margin-left: 15px;
+}
+
+.topBarTitle{
+    text-align: center;
+    vertical-align: middle;
+    
+
+}
+#middleBar{
+    width: 320px;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 110px 100px 110px;
+    vertical-align: middle;
+}
+
+.departureTime{
+    width: 100px;
+    height: 120px;
+    padding-top: 40px;
+}
+
+.airplane{
+    width: 100px;
+    height: 120px;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+.arrivalTime{
+    width: 100px;
+    height: 120px;
+    padding-top: 40px;
+}
+
+#bottomBar{
+    width: 320px;
+    height: 100px;
+}
+.price{
+    width: 320px;
+    height: 30px;
+}
+
+.movePage{
+    width: 280px;
+    height: 40px;
+    border: none;
+    background-color: aqua;   
+}
+
+.cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+  }
+  
