@@ -1,3 +1,5 @@
+.vscode
+
 # MacOS metadata file
 .DS_store
 
@@ -6,5 +8,6 @@ node_modules
 
 # yarn error log
 yarn-error.log
+
 
 # test commit
