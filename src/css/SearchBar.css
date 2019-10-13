@@ -1,0 +1,134 @@
+@import url("./main.css");
+
+
+#label {
+    padding-top: 10px;
+    font-size: 22px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.react-calendar__invisible {
+    display: none
+}
+
+.react-calendar__visible {
+    position: absolute;
+    top: 52px;
+    left: 45%;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    z-index: 2;
+
+    box-shadow: 9px 10px 27px -12px #888888;
+}
+
+.react-calendar__tile--active {
+    background-color: #FF99AF;
+}
+
+.layout-container-vertical{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+
+    background-color: #eee;
+    border-radius: 8px;
+    padding: 15x;
+    max-width: 1136px;
+
+    box-shadow: 2px;
+}
+.layout-container-horizontal { 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+    background-color: #eee;
+    border-radius: 8px;
+}
+
+.layout-container__passenger {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    transition:border .2s ease;
+}
+
+.layout-container__passenger:hover{
+    border: 1px solid #FF99AF;
+}
+.layout-container__passenger:hover i{
+    color: #FF99AF;
+}
+
+.layout-content{
+    position: relative;
+    margin: 10px 10px;
+
+}
+
+.layout-content__passenger{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.searchbar-button{
+    width: 100px;
+    height: 40px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #FF99AF;
+}
+
+.searchbar-button:focus{
+    outline: none;
+}
+.searchbar-button__passenger{
+    font-size: 20px;
+    color: #bbb;
+    transition:color .2s ease;
+}
+
+.searchbar-input{
+    height: 20px;
+    width: 160px;
+    padding: 10px 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+
+    transition:border .2s ease;
+}
+
+.searchbar-input:hover{
+    border: 1px solid #FF99AF; 
+}
+
+.searchbar-input__passenger{
+    height: 20px;
+    width: 30px;
+    padding: 10px 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+.searchbar-input__passenger:focus{
+    outline: none;
+}

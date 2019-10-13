@@ -4,3 +4,7 @@
 # modules 
 node_modules
 
+# yarn error log
+yarn-error.log
+
+# test commit
