@@ -32,11 +32,19 @@
     "jest": "^24.8.0",
     "react-addons-test-utils": "^15.6.2",
     "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.9"
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "css-loader": "^3.2.0",
+    "immutable": "^4.0.0-rc.12",
+    "mapbox-gl": "^1.4.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-hooks-lib": "0.0.20",
+    "react-map-gl": "^5.0.10",
+    "react-mapbox-gl": "^4.6.0",
+    "react-scripts": "^3.1.1",
+    "style-loader": "^1.0.0"
   }
 }
