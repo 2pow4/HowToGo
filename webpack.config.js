@@ -24,6 +24,14 @@ module.exports = {
             loader: "css-loader"
           }
         ]
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'file-loader',
+        options: {
+          publicPath: '/scripts/',
+          name: '[name].[ext]',
+        },
       }, 
     ]
   },

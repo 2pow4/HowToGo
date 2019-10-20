@@ -8397,6 +8397,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
 /* harmony import */ var _Map_Map_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
 /* harmony import */ var _SearchBar_SearchBar_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(121);
+/* harmony import */ var _NavBar_NavBar_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(175);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8420,6 +8421,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -8434,9 +8436,9 @@ function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavBar_NavBar_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/home"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBar_SearchBar_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/results"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map_Map_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
     }
@@ -28105,8 +28107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(122);
 /* harmony import */ var react_calendar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_calendar__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(155);
-/* harmony import */ var _css_SearchBar_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(172);
-/* harmony import */ var _css_SearchBar_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_SearchBar_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _css_searchbar_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(172);
+/* harmony import */ var _css_searchbar_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_searchbar_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -33791,8 +33793,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_autosuggest__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(169);
 /* harmony import */ var hangul_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hangul_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _css_LocationAutoSuggest_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(170);
-/* harmony import */ var _css_LocationAutoSuggest_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_LocationAutoSuggest_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _css_locationautosuggest_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(170);
+/* harmony import */ var _css_locationautosuggest_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_locationautosuggest_css__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36987,8 +36989,104 @@ exports.push([module.i, "#label {\n    padding-top: 10px;\n    font-size: 22px;\
 
 exports = module.exports = __webpack_require__(153)(false);
 // Module
-exports.push([module.i, "div, input{\n    font-family: Helvetica, sans-serif;\n}\n\nform {\n    margin: auto;\n    box-shadow: 9px 10px 27px -12px #888888;\n}", ""]);
+exports.push([module.i, "html,body{ \n    margin: 0; \n    padding: 0; \n    height: 100%; \n    width: 100%; \n}\n\ndiv, input{\n    font-family: Helvetica, sans-serif;\n}\n\nform {\n    margin: auto;\n    box-shadow: 9px 10px 27px -12px #888888;\n}\n\n:root {\n    --perrywinkle: #9d8ae0;\n    --pale-salmon: #feb6ae;\n    --light-peach: #febead;\n    --white: #ffffff;\n    --black: #000000;\n    --gray: #bbbbbb;\n    --light-gray: #efefef;\n  }", ""]);
 
+
+/***/ }),
+/* 175 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_navbar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(176);
+/* harmony import */ var _css_navbar_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_navbar_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _asset_logo_howtogo_1_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(178);
+/* harmony import */ var _asset_logo_howtogo_1_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_asset_logo_howtogo_1_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _asset_logo_howtogo_1_2x_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(179);
+/* harmony import */ var _asset_logo_howtogo_1_2x_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_asset_logo_howtogo_1_2x_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _asset_logo_howtogo_1_3x_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(180);
+/* harmony import */ var _asset_logo_howtogo_1_3x_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_asset_logo_howtogo_1_3x_png__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+console.log(_asset_logo_howtogo_1_png__WEBPACK_IMPORTED_MODULE_2___default.a);
+
+var NavBar = function NavBar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "layout-container-horizontal-space"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/home",
+    className: "logo"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _asset_logo_howtogo_1_png__WEBPACK_IMPORTED_MODULE_2___default.a,
+    alt: "logo",
+    srcSet: "".concat(_asset_logo_howtogo_1_2x_png__WEBPACK_IMPORTED_MODULE_3___default.a, " 2x, ").concat(_asset_logo_howtogo_1_3x_png__WEBPACK_IMPORTED_MODULE_4___default.a, " 3x"),
+    className: "howtogo1"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "layout-vertical"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-info-circle info info-icon info-content"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "info info-text info-content"
+  }, "who we are?"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NavBar);
+
+/***/ }),
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(177);
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(154)(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(153)(false);
+// Imports
+exports.i(__webpack_require__(174), "");
+// Module
+exports.push([module.i, "nav {\n  padding-top: 15px;\n  padding-bottom: 15px;\n\n  box-shadow: 0 5px 5px -5px #aaaaaa;\n}\n.howtogo1 {\n  width: 60px;\n  height: 45px;\n  object-fit: contain;\n}\n\n.layout-container-horizontal-space{\n  margin: auto;\n  width: 80%;\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n}\n\n.layout-vertical{\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; \n}\n\n.info-content{\n  margin: 2px;\n}\n\n.info{\n  color: var(--perrywinkle);\n}\n\n.info-icon {\n  font-size: 21px;\n}\n\n.info-text {\n    font-family: Montserrat;\n    font-size: 10px;\n    font-weight: bold;\n    font-stretch: normal;\n    font-style: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    text-align: center;\n  }", ""]);
+
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports) {
+
+module.exports = "/scripts/howtogo-1.png";
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports) {
+
+module.exports = "/scripts/howtogo-1@2x.png";
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports) {
+
+module.exports = "/scripts/howtogo-1@3x.png";
 
 /***/ })
 /******/ ]);
