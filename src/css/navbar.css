@@ -1,0 +1,51 @@
+@import './main.css';
+nav {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  box-shadow: 0 5px 5px -5px #aaaaaa;
+}
+.howtogo1 {
+  width: 60px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.layout-container-horizontal-space{
+  margin: auto;
+  width: 80%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.layout-vertical{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.info-content{
+  margin: 2px;
+}
+
+.info{
+  color: var(--perrywinkle);
+}
+
+.info-icon {
+  font-size: 21px;
+}
+
+.info-text {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
