@@ -69,23 +69,23 @@ class SearchBar extends React.Component {
     const {errors, date, calendarAvailable, numOfPassengers} = this.state;
 
     return (
-        <form onSubmit={this.handleSubmit} className='layout-container-vertical'>
+        <form onSubmit={this.handleSubmit} className='llayout-vertical-center container'>
           {/* departure destination part */}
-          <div id='label' className='layout-content'> 어디로 가실래요? </div>
-          <div className='layout-container-horizontal'>
+          <div id='label' className='content'> 어디로 가실래요? </div>
+          <div className='layout-horizontal-center container'>
           <LocationAutoSuggest
-            className='layout-content'
+            className='content'
             id='departure'
             onValueChange={this.onDepChange}/> {errors.departure.length > 0 && <span className='error'>{errors.departure}</span>}
           <LocationAutoSuggest
-            className='layout-content'
+            className='content'
             id='destination'
             onValueChange={this.onDestChange}/> {errors.departure.length > 0 && <span className='error'>{errors.destination}</span>}
           <div>
             {/* date part */}
             <div
               onClick={this.onCalendarAvailable}
-              className='layout-content searchbar-input'>
+              className='content searchbar-input'>
               {this
                 .state
                 .date
@@ -101,25 +101,25 @@ class SearchBar extends React.Component {
               name='date'
               value={date}/>
           </div>
-          <div className='layout-content layout-container__passenger'>
+          <div className='content container__passenger'>
             {/* number of passenger part */}
-            <div onClick={this.onDecreaseNumber} className='layout-content__passenger'>
+            <div onClick={this.onDecreaseNumber} className='content__passenger layout-horizontal-center'>
               <i className="fas fa-minus-circle searchbar-button__passenger"></i>
             </div>
             <input
-              className='layout-content__passenger searchbar-input__passenger'
+              className='content__passenger searchbar-input__passenger'
               type="text"
               value={`${numOfPassengers}명`}
               name="numOfPassengers"
               readOnly/>
-            <div onClick={this.onIncreaseNumber} className='layout-content__passenger'>
+            <div onClick={this.onIncreaseNumber} className='content__passenger layout-horizontal-center'>
               <i className="fas fa-plus-circle searchbar-button__passenger"></i>
             </div>
           </div>
           <input
             type='submit'
             value='Search'
-            className='layout-content searchbar-button'/>
+            className='content searchbar-button'/>
         </div>
         </form>
       

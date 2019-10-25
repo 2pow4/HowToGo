@@ -14,6 +14,7 @@ form {
     box-shadow: 9px 10px 27px -12px #888888;
 }
 
+
 :root {
     --perrywinkle: #9d8ae0;
     --pale-salmon: #feb6ae;
@@ -22,4 +23,30 @@ form {
     --black: #000000;
     --gray: #bbbbbb;
     --light-gray: #efefef;
+  }
+
+  /* layout css */
+
+  .layout-horizontal-space{
+    margin: auto;
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .layout-horizontal-center{
+    margin: auto;
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .layout-vertical-center{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
   }

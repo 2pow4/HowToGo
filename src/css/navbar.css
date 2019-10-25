@@ -11,22 +11,6 @@ nav {
   object-fit: contain;
 }
 
-.layout-container-horizontal-space{
-  margin: auto;
-  width: 80%;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-
-.layout-vertical{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
-}
-
 .info-content{
   margin: 2px;
 }

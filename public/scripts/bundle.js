@@ -8438,7 +8438,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavBar_NavBar_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/home"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SearchBar_SearchBar_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/results"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Map_Map_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
     }
@@ -28219,54 +28219,54 @@ function (_React$Component) {
           numOfPassengers = _this$state.numOfPassengers;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
-        className: "layout-container-vertical"
+        className: "llayout-vertical-center container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "label",
-        className: "layout-content"
+        className: "content"
       }, " \uC5B4\uB514\uB85C \uAC00\uC2E4\uB798\uC694? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "layout-container-horizontal"
+        className: "layout-horizontal-center container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        className: "layout-content",
+        className: "content",
         id: "departure",
         onValueChange: this.onDepChange
       }), " ", errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "error"
       }, errors.departure), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LocationAutoSuggest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        className: "layout-content",
+        className: "content",
         id: "destination",
         onValueChange: this.onDestChange
       }), " ", errors.departure.length > 0 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "error"
       }, errors.destination), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.onCalendarAvailable,
-        className: "layout-content searchbar-input"
+        className: "content searchbar-input"
       }, this.state.date.toDateString().slice(0, 10).replace(' ', ', ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_calendar__WEBPACK_IMPORTED_MODULE_1___default.a, {
         className: "".concat(calendarAvailable ? "react-calendar__visible" : "react-calendar__invisible"),
         onChange: this.onDateChange,
         name: "date",
         value: date
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "layout-content layout-container__passenger"
+        className: "content container__passenger"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.onDecreaseNumber,
-        className: "layout-content__passenger"
+        className: "content__passenger layout-horizontal-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-minus-circle searchbar-button__passenger"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "layout-content__passenger searchbar-input__passenger",
+        className: "content__passenger searchbar-input__passenger",
         type: "text",
         value: "".concat(numOfPassengers, "\uBA85"),
         name: "numOfPassengers",
         readOnly: true
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.onIncreaseNumber,
-        className: "layout-content__passenger"
+        className: "content__passenger layout-horizontal-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-plus-circle searchbar-button__passenger"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Search",
-        className: "layout-content searchbar-button"
+        className: "content searchbar-button"
       })));
     }
   }]);
@@ -36980,7 +36980,7 @@ exports = module.exports = __webpack_require__(153)(false);
 // Imports
 exports.i(__webpack_require__(174), "");
 // Module
-exports.push([module.i, "#label {\n    padding-top: 10px;\n    font-size: 22px;\n    vertical-align: middle;\n    text-align: center;\n}\n\n.react-calendar__invisible {\n    display: none\n}\n\n.react-calendar__visible {\n    position: absolute;\n    top: 52px;\n    left: 45%;\n    border-radius: 4px;\n    border: 1px solid #eee;\n    z-index: 2;\n\n    box-shadow: 9px 10px 27px -12px #888888;\n}\n\n.react-calendar__tile--active {\n    background-color: #FF99AF;\n}\n\n.layout-container-vertical{\n    position: relative;\n    display: flex;\n    flex-direction: column;\n    align-items: center; \n    justify-content: center;\n\n    background-color: #eee;\n    border-radius: 8px;\n    padding: 15x;\n    max-width: 1136px;\n\n    box-shadow: 2px;\n}\n.layout-container-horizontal { \n    position: relative;\n    display: flex;\n    justify-content: center;\n    align-items: center; \n\n    background-color: #eee;\n    border-radius: 8px;\n}\n\n.layout-container__passenger {\n    display: flex;\n    background-color: #fff;\n    border: 1px solid #eee;\n    border-radius: 4px;\n    transition:border .2s ease;\n}\n\n.layout-container__passenger:hover{\n    border: 1px solid #FF99AF;\n}\n.layout-container__passenger:hover i{\n    color: #FF99AF;\n}\n\n.layout-content{\n    position: relative;\n    margin: 10px 10px;\n\n}\n\n.layout-content__passenger{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin-left: 5px;\n    margin-right: 5px;\n}\n\n.searchbar-button{\n    width: 100px;\n    height: 40px;\n    border: 1px solid #eee;\n    border-radius: 4px;\n    font-size: 20px;\n    color: #fff;\n    background-color: #FF99AF;\n}\n\n.searchbar-button:focus{\n    outline: none;\n}\n.searchbar-button__passenger{\n    font-size: 20px;\n    color: #bbb;\n    transition:color .2s ease;\n}\n\n.searchbar-input{\n    height: 20px;\n    width: 160px;\n    padding: 10px 20px;\n    font-family: Helvetica, sans-serif;\n    font-weight: 300;\n    font-size: 16px;\n    background-color: #fff;\n    border: 1px solid #eee;\n    border-radius: 4px;\n\n    transition:border .2s ease;\n}\n\n.searchbar-input:hover{\n    border: 1px solid #FF99AF; \n}\n\n.searchbar-input__passenger{\n    height: 20px;\n    width: 30px;\n    padding: 10px 20px;\n    font-family: Helvetica, sans-serif;\n    font-weight: 300;\n    font-size: 16px;\n    text-align: center;\n    border: none;\n    outline: none;\n}\n\n.searchbar-input__passenger:focus{\n    outline: none;\n}", ""]);
+exports.push([module.i, "#label {\n    padding-top: 10px;\n    font-size: 22px;\n    vertical-align: middle;\n    text-align: center;\n}\n\n.react-calendar__invisible {\n    display: none\n}\n\n.react-calendar__visible {\n    position: absolute;\n    top: 52px;\n    left: 45%;\n    border-radius: 4px;\n    border: 1px solid #eee;\n    z-index: 2;\n\n    box-shadow: 9px 10px 27px -12px #888888;\n}\n\n.react-calendar__tile--active {\n    background-color: #FF99AF;\n}\n\n.container{ \n    background-color: #eee;\n    padding: 15x;\n    max-width: 1136px;\n    border-radius: 8px;\n    box-shadow: 2px;\n}\n\n.container__passenger {\n    display: flex;\n    background-color: #fff;\n    border: 1px solid #eee;\n    border-radius: 4px;\n    transition:border .2s ease;\n}\n\n.container__passenger:hover{\n    border: 1px solid #FF99AF;\n}\n.container__passenger:hover i{\n    color: #FF99AF;\n}\n\n.content{\n    position: relative;\n    margin: 10px 10px;\n\n}\n\n.content__passenger{\n    margin-left: 5px;\n    margin-right: 5px;\n}\n\n.searchbar-button{\n    width: 100px;\n    height: 40px;\n    border: 1px solid #eee;\n    border-radius: 4px;\n    font-size: 20px;\n    color: #fff;\n    background-color: #FF99AF;\n}\n\n.searchbar-button:focus{\n    outline: none;\n}\n.searchbar-button__passenger{\n    font-size: 20px;\n    color: #bbb;\n    transition:color .2s ease;\n}\n\n.searchbar-input{\n    height: 20px;\n    width: 160px;\n    padding: 10px 20px;\n    font-family: Helvetica, sans-serif;\n    font-weight: 300;\n    font-size: 16px;\n    background-color: #fff;\n    border: 1px solid #eee;\n    border-radius: 4px;\n\n    transition:border .2s ease;\n}\n\n.searchbar-input:hover{\n    border: 1px solid #FF99AF; \n}\n\n.searchbar-input__passenger{\n    height: 20px;\n    width: 30px;\n    padding: 10px 20px;\n    font-family: Helvetica, sans-serif;\n    font-weight: 300;\n    font-size: 16px;\n    text-align: center;\n    border: none;\n    outline: none;\n}\n\n.searchbar-input__passenger:focus{\n    outline: none;\n}", ""]);
 
 
 /***/ }),
@@ -36989,7 +36989,7 @@ exports.push([module.i, "#label {\n    padding-top: 10px;\n    font-size: 22px;\
 
 exports = module.exports = __webpack_require__(153)(false);
 // Module
-exports.push([module.i, "html,body{ \n    margin: 0; \n    padding: 0; \n    height: 100%; \n    width: 100%; \n}\n\ndiv, input{\n    font-family: Helvetica, sans-serif;\n}\n\nform {\n    margin: auto;\n    box-shadow: 9px 10px 27px -12px #888888;\n}\n\n:root {\n    --perrywinkle: #9d8ae0;\n    --pale-salmon: #feb6ae;\n    --light-peach: #febead;\n    --white: #ffffff;\n    --black: #000000;\n    --gray: #bbbbbb;\n    --light-gray: #efefef;\n  }", ""]);
+exports.push([module.i, "html,body{ \n    margin: 0; \n    padding: 0; \n    height: 100%; \n    width: 100%; \n}\n\ndiv, input{\n    font-family: Helvetica, sans-serif;\n}\n\nform {\n    margin: auto;\n    box-shadow: 9px 10px 27px -12px #888888;\n}\n\n\n:root {\n    --perrywinkle: #9d8ae0;\n    --pale-salmon: #feb6ae;\n    --light-peach: #febead;\n    --white: #ffffff;\n    --black: #000000;\n    --gray: #bbbbbb;\n    --light-gray: #efefef;\n  }\n\n  /* layout css */\n\n  .layout-horizontal-space{\n    margin: auto;\n    width: 80%;\n    position: relative;\n    display: flex;\n    justify-content: space-between;\n  }\n\n  .layout-horizontal-center{\n    margin: auto;\n    width: 80%;\n    position: relative;\n    display: flex;\n    justify-content: center;\n  }\n  \n  .layout-vertical-center{\n    position: relative;\n    display: flex;\n    justify-content: center;\n    align-items: center; \n    flex-direction: column;\n  }", ""]);
 
 
 /***/ }),
@@ -37017,7 +37017,7 @@ console.log(_asset_logo_howtogo_1_png__WEBPACK_IMPORTED_MODULE_2___default.a);
 
 var NavBar = function NavBar() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "layout-container-horizontal-space"
+    className: "layout-horizontal-space"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/home",
     className: "logo"
@@ -37027,7 +37027,7 @@ var NavBar = function NavBar() {
     srcSet: "".concat(_asset_logo_howtogo_1_2x_png__WEBPACK_IMPORTED_MODULE_3___default.a, " 2x, ").concat(_asset_logo_howtogo_1_3x_png__WEBPACK_IMPORTED_MODULE_4___default.a, " 3x"),
     className: "howtogo1"
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "layout-vertical"
+    className: "layout-vertical-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-info-circle info info-icon info-content"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -37067,7 +37067,7 @@ exports = module.exports = __webpack_require__(153)(false);
 // Imports
 exports.i(__webpack_require__(174), "");
 // Module
-exports.push([module.i, "nav {\n  padding-top: 15px;\n  padding-bottom: 15px;\n\n  box-shadow: 0 5px 5px -5px #aaaaaa;\n}\n.howtogo1 {\n  width: 60px;\n  height: 45px;\n  object-fit: contain;\n}\n\n.layout-container-horizontal-space{\n  margin: auto;\n  width: 80%;\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n}\n\n.layout-vertical{\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center; \n}\n\n.info-content{\n  margin: 2px;\n}\n\n.info{\n  color: var(--perrywinkle);\n}\n\n.info-icon {\n  font-size: 21px;\n}\n\n.info-text {\n    font-family: Montserrat;\n    font-size: 10px;\n    font-weight: bold;\n    font-stretch: normal;\n    font-style: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    text-align: center;\n  }", ""]);
+exports.push([module.i, "nav {\n  padding-top: 15px;\n  padding-bottom: 15px;\n\n  box-shadow: 0 5px 5px -5px #aaaaaa;\n}\n.howtogo1 {\n  width: 60px;\n  height: 45px;\n  object-fit: contain;\n}\n\n.info-content{\n  margin: 2px;\n}\n\n.info{\n  color: var(--perrywinkle);\n}\n\n.info-icon {\n  font-size: 21px;\n}\n\n.info-text {\n    font-family: Montserrat;\n    font-size: 10px;\n    font-weight: bold;\n    font-stretch: normal;\n    font-style: normal;\n    line-height: normal;\n    letter-spacing: normal;\n    text-align: center;\n  }", ""]);
 
 
 /***/ }),

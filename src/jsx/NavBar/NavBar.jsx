@@ -9,7 +9,7 @@ console.log(Logo_1)
 const NavBar = () => {
   return (
     <nav>
-      <div className='layout-container-horizontal-space'>
+      <div className='layout-horizontal-space'>
       <div>
       <a href='/home' className='logo'>
         <img
@@ -20,7 +20,7 @@ const NavBar = () => {
         />
       </a>
       </div>
-      <div className='layout-vertical'>
+      <div className='layout-vertical-center'>
         <i className="fas fa-info-circle info info-icon info-content"></i>
         <div className="info info-text info-content">who we are?</div>
       </div>
