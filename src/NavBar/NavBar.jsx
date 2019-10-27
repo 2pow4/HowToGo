@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../css/navbar.css';
-import Logo_1 from '../../../asset/logo/howtogo-1.png';
-import Logo_2x from '../../../asset/logo/howtogo-1@2x.png';
-import Logo_3x from '../../../asset/logo/howtogo-1@3x.png';
+import './navbar.css';
+import Logo_1 from '../../asset/logo/howtogo-1.png';
+import Logo_2x from '../../asset/logo/howtogo-1@2x.png';
+import Logo_3x from '../../asset/logo/howtogo-1@3x.png';
 
 console.log(Logo_1)
 
