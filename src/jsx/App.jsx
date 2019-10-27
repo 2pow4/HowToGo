@@ -14,7 +14,7 @@ class App extends React.Component {
         <NavBar/>
         <Switch>
           <Route path="/home">
-            {/*<SearchBar/>*/}
+            <SearchBar/>
           </Route>
           <Route path="/results">
             <Map/>
