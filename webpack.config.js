@@ -32,6 +32,18 @@ module.exports = {
           publicPath: '/scripts/',
           name: '[name].[ext]',
         },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '/scripts/',
+              name: '[name].[ext]',
+            }
+          }
+        ]
       }, 
     ]
   },
