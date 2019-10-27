@@ -1,7 +1,7 @@
 import React from 'react';
 import AutoSuggest from 'react-autosuggest';
 import * as Hangul from 'hangul-js';
-import '../../css/locationautosuggest.css';
+import './locationautosuggest.css';
 
 const cities = [
   {
