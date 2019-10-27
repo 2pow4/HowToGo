@@ -69,57 +69,57 @@ class SearchBar extends React.Component {
     const {errors, date, calendarAvailable, numOfPassengers} = this.state;
 
     return (
-        <form onSubmit={this.handleSubmit} className='llayout-vertical-center container'>
+        <form onSubmit={this.handleSubmit} className='layout-vertical-center container'>
           {/* departure destination part */}
           <div id='label' className='content'> 어디로 가실래요? </div>
           <div className='layout-horizontal-center container'>
-          <LocationAutoSuggest
-            className='content'
-            id='departure'
-            onValueChange={this.onDepChange}/> {errors.departure.length > 0 && <span className='error'>{errors.departure}</span>}
-          <LocationAutoSuggest
-            className='content'
-            id='destination'
-            onValueChange={this.onDestChange}/> {errors.departure.length > 0 && <span className='error'>{errors.destination}</span>}
-          <div>
-            {/* date part */}
-            <div
-              onClick={this.onCalendarAvailable}
-              className='content searchbar-input'>
-              {this
-                .state
-                .date
-                .toDateString()
-                .slice(0, 10)
-                .replace(' ', ', ')}
+            <LocationAutoSuggest
+              className='content'
+              id='departure'
+              onValueChange={this.onDepChange}/> {errors.departure.length > 0 && <span className='error'>{errors.departure}</span>}
+            <LocationAutoSuggest
+              className='content'
+              id='destination'
+              onValueChange={this.onDestChange}/> {errors.departure.length > 0 && <span className='error'>{errors.destination}</span>}
+            <div>
+              {/* date part */}
+              <div
+                onClick={this.onCalendarAvailable}
+                className='content searchbar-input'>
+                {this
+                  .state
+                  .date
+                  .toDateString()
+                  .slice(0, 10)
+                  .replace(' ', ', ')}
+              </div>
+              <Calendar
+                className={`${calendarAvailable
+                ? `react-calendar__visible`
+                : `react-calendar__invisible`}`}
+                onChange={this.onDateChange}
+                name='date'
+                value={date}/>
             </div>
-            <Calendar
-              className={`${calendarAvailable
-              ? `react-calendar__visible`
-              : `react-calendar__invisible`}`}
-              onChange={this.onDateChange}
-              name='date'
-              value={date}/>
-          </div>
-          <div className='content container__passenger'>
-            {/* number of passenger part */}
-            <div onClick={this.onDecreaseNumber} className='content__passenger layout-horizontal-center'>
-              <i className="fas fa-minus-circle searchbar-button__passenger"></i>
+            <div className='content container__passenger'>
+              {/* number of passenger part */}
+              <div onClick={this.onDecreaseNumber} className='content__passenger layout-horizontal-center'>
+                <i className="fas fa-minus-circle searchbar-button__passenger"></i>
+              </div>
+              <input
+                className='content__passenger searchbar-input__passenger'
+                type="text"
+                value={`${numOfPassengers}명`}
+                name="numOfPassengers"
+                readOnly/>
+              <div onClick={this.onIncreaseNumber} className='content__passenger layout-horizontal-center'>
+                <i className="fas fa-plus-circle searchbar-button__passenger"></i>
+              </div>
             </div>
             <input
-              className='content__passenger searchbar-input__passenger'
-              type="text"
-              value={`${numOfPassengers}명`}
-              name="numOfPassengers"
-              readOnly/>
-            <div onClick={this.onIncreaseNumber} className='content__passenger layout-horizontal-center'>
-              <i className="fas fa-plus-circle searchbar-button__passenger"></i>
-            </div>
-          </div>
-          <input
-            type='submit'
-            value='Search'
-            className='content searchbar-button'/>
+              type='submit'
+              value='Search'
+              className='content searchbar-button'/>
         </div>
         </form>
       
