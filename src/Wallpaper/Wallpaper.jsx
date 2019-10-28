@@ -18,4 +18,4 @@ const Wallpaper = () => {
 
 }
 
-export default Wallpaper
+export default Wallpaper;
