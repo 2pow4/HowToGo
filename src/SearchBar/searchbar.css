@@ -2,8 +2,9 @@
 
 
 #label {
-    padding-top: 15px;
-    font-size: 22px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 30px;
     vertical-align: middle;
     text-align: center;
 }
@@ -14,7 +15,7 @@
 
 .react-calendar__visible {
     position: absolute;
-    top: 52px;
+    top: 60px;
     left: 45%;
     border-radius: 4px;
     border: 1px solid #eee;
@@ -24,19 +25,19 @@
 }
 
 .react-calendar__tile--active {
-    background-color: solid #feb6ae;
+    background-color: var(--pale-salmon);
 }
 
 .container{ 
     max-width: 1132px;
-    height: 141px;
+    height: 180px;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 15x;
 }
 
 .container__passenger {
-    height: 40px;
+    height: 50px;
     display: flex;
     background-color: #fff;
     border: 1px solid #eee;
@@ -64,8 +65,9 @@
 
 .searchbar-button{
     font-family: 'Montserrat';
-    width: 200px;
-    height: 40px;
+    height: 50px;
+
+    padding: 10px;
     border-radius: 10px;  
     border: none;
     font-size: 15px;
@@ -86,8 +88,7 @@
 .searchbar-input{
     height: 20px;
     width: 160px;
-    padding: 10px 20px;
-    font-weight: 300;
+    padding: 15px 20px;
     font-size: 16px;
     background-color: #fff;
     border: 1px solid #eee;
@@ -101,7 +102,6 @@
 }
 
 .searchbar-input__passenger{
-    height: 20px;
     width: 30px;
     padding: 10px 20px;
     font-weight: 300;
