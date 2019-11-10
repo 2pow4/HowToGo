@@ -14,8 +14,8 @@ input {
 }
 
 form {
-  top: 120px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 9px 10px 27px -12px #888888;
 }
 
@@ -78,4 +78,18 @@ form {
   justify-content: flex-start;
   align-self: auto;
   flex-direction: column;
+}
+
+.layout-vertical-space {
+  position: relative;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-self: auto;
+  flex-direction: column;
+}
+
+.content__wallpaper {
+  margin-top: 55px;
+  margin-bottom: 55px;
 }
