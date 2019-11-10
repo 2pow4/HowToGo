@@ -6,22 +6,22 @@ import Wallpaper from "./Wallpaper/Wallpaper.jsx";
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
   render() {
     return (
       <Router>
-        <NavBar/>
+        <NavBar />
         <Switch>
           <Route path="/home">
-            <Wallpaper/>
+            <Wallpaper />
           </Route>
           <Route path="/results">
-            <Map/>
+            <Map />
           </Route>
         </Switch>
       </Router>
-    )
+    );
   }
 }
 

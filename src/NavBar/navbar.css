@@ -1,4 +1,4 @@
-@import '../../main.css';
+@import "../../main.css";
 
 .howtogo1 {
   width: 60px;
@@ -6,11 +6,11 @@
   object-fit: contain;
 }
 
-.info-content{
+.info-content {
   margin: 2px;
 }
 
-.info{
+.info {
   color: var(--perrywinkle);
 }
 
@@ -19,12 +19,12 @@
 }
 
 .info-text {
-    font-family: Montserrat;
-    font-size: 10px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}

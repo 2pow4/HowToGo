@@ -1,116 +1,113 @@
 @import url("../../main.css");
 
-
 #label {
-    padding-top: 30px;
-    font-weight: bold;
-    font-size: 30px;
-    vertical-align: middle;
-    text-align: center;
+  padding-top: 30px;
+  font-weight: bold;
+  font-size: 30px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .react-calendar__invisible {
-    display: none
+  display: none;
 }
 
 .react-calendar__visible {
-    position: absolute;
-    top: 60px;
-    left: 45%;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    z-index: 2;
+  position: absolute;
+  top: 60px;
+  left: 45%;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  z-index: 2;
 
-    box-shadow: 9px 10px 27px -12px #888888;
+  box-shadow: 9px 10px 27px -12px #888888;
 }
 
 .react-calendar__tile--active {
-    background-color: var(--pale-salmon);
+  background-color: var(--pale-salmon);
 }
 
-.container{ 
-    max-width: 1132px;
-    height: 180px;
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 15x;
+.container {
+  max-width: 1132px;
+  height: 180px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 15x;
 }
 
 .container__passenger {
-    height: 50px;
-    display: flex;
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    transition:border .2s ease;
+  height: 50px;
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  transition: border 0.2s ease;
 }
 
-.container__passenger:hover{
-    border: 1px solid var(--pale-salmon);
+.container__passenger:hover {
+  border: 1px solid var(--pale-salmon);
 }
-.container__passenger:hover i{
-    color: var(--pale-salmon);
-}
-
-.content{
-    position: relative;
-    margin: 10px 10px;
-
+.container__passenger:hover i {
+  color: var(--pale-salmon);
 }
 
-.content__passenger{
-    margin-left: 5px;
-    margin-right: 5px;
+.content {
+  position: relative;
+  margin: 10px 10px;
 }
 
-.searchbar-button{
-    font-family: 'Montserrat';
-    height: 50px;
-
-    padding: 10px;
-    border-radius: 10px;  
-    border: none;
-    font-size: 15px;
-    color: #fff;
-    background-color: var(--perrywinkle);
+.content__passenger {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
+.searchbar-button {
+  font-family: "Montserrat";
+  height: 50px;
 
-.searchbar-button:focus{
-    outline: none;
-}
-.searchbar-button__passenger{
-    font-size: 20px;
-    color: var(--light-gray);
-    transition:color .2s ease;
-}
-
-.searchbar-input{
-    height: 20px;
-    width: 160px;
-    padding: 15px 20px;
-    font-size: 16px;
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 4px;
-
-    transition:border .2s ease;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  color: #fff;
+  background-color: var(--perrywinkle);
 }
 
-.searchbar-input:hover{
-    border: 1px solid var(--pale-salmon); 
+.searchbar-button:focus {
+  outline: none;
+}
+.searchbar-button__passenger {
+  font-size: 20px;
+  color: var(--light-gray);
+  transition: color 0.2s ease;
 }
 
-.searchbar-input__passenger{
-    width: 30px;
-    padding: 10px 20px;
-    font-weight: 300;
-    font-size: 16px;
-    text-align: center;
-    border: none;
-    outline: none;
+.searchbar-input {
+  height: 20px;
+  width: 160px;
+  padding: 15px 20px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+
+  transition: border 0.2s ease;
 }
 
-.searchbar-input__passenger:focus{
-    outline: none;
+.searchbar-input:hover {
+  border: 1px solid var(--pale-salmon);
+}
+
+.searchbar-input__passenger {
+  width: 30px;
+  padding: 10px 20px;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.searchbar-input__passenger:focus {
+  outline: none;
 }
