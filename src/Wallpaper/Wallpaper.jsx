@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar.jsx";
+import Guide from "../Guide/Guide.jsx";
 
 const wallpaperContext = require.context('../../asset/wallpaper', false, /\.(png|jpe?g)$/)
 
@@ -18,9 +19,9 @@ const Wallpaper = () => {
           wallpapers[Math.floor(Math.random() * wallpapers.length)] +
           ")"
       }}
+      class="layout-vertical-center"
     >
       <SearchBar />
-      
     </div>
   );
 };

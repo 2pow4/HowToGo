@@ -69,7 +69,7 @@ class SearchBar extends React.Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="layout-vertical-center container"
+        className="layout-vertical-center container content__wallpaper"
       >
         {/* departure destination part */}
         <div id="label" className="content">
