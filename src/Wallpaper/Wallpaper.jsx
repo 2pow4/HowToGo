@@ -1,17 +1,28 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 
-import wallpaper0 from '../../asset/wallpaper/wallpaper0.png';
+const wallpaperContext = require.context('../../asset/wallpaper', false, /\.(png|jpe?g)$/)
+
+let wallpapers = []
+wallpaperContext.keys().map((items) =>
+  wallpapers.push(items.replace('./', '/scripts/'))
+)
 
 const Wallpaper = () => {
-
-    const wallpapers = [wallpaper0, wallpaper1, wallpaper2, wallpaper3, wallpaper4]    
-    return (
-        <div id='wallpaper' style={{'backgroundImage': 'url(' + wallpapers[Math.floor(Math.random()*wallpapers.length)] + ')'}}>
-            <SearchBar/>
-        </div>
-    )
-
-}
+  return (
+    <div
+      id="wallpaper"
+      style={{
+        backgroundImage:
+          "url(" +
+          wallpapers[Math.floor(Math.random() * wallpapers.length)] +
+          ")"
+      }}
+    >
+      <SearchBar />
+      
+    </div>
+  );
+};
 
 export default Wallpaper;
