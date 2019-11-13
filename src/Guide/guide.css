@@ -25,7 +25,7 @@
 
 #description {
     color: var(--white);
-    text-shadow: 1px 1px 2px var(--black);
+    text-shadow: 1px 1px 2px var(--light-black);
     font-size: 25px;
     font-weight: bold;
 }

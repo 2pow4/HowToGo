@@ -29,7 +29,7 @@ form {
 #wallpaper {
   margin: 1px auto;
   width: 100%;
-  height: 700px;
+  height: 710px;
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: 100% 100%;
@@ -41,6 +41,7 @@ form {
   --light-peach: #febead;
   --white: #ffffff;
   --black: #000000;
+  --light-black: #555555;
   --gray: #bbbbbb;
   --light-gray: #efefef;
 }
