@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Map from './Map/Map.jsx'
 import NavBar from  "./NavBar/NavBar.jsx";
 import Wallpaper from "./Wallpaper/Wallpaper.jsx";
+import Footer from "./Footer/Footer.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends React.Component {
             <Map />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     );
   }
