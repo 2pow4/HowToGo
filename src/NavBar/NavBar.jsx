@@ -4,11 +4,9 @@ import Logo_1 from '../../asset/logo/howtogo-1.png';
 import Logo_2x from '../../asset/logo/howtogo-1@2x.png';
 import Logo_3x from '../../asset/logo/howtogo-1@3x.png';
 
-console.log(Logo_1)
-
 const NavBar = () => {
   return (
-    <nav>
+    <div id='navbar'>
       <div className='layout-horizontal-space'>
       <div>
       <a href='/home' className='logo'>
@@ -25,7 +23,7 @@ const NavBar = () => {
         <div className="info info-text info-content">who we are?</div>
       </div>
       </div>
-    </nav>
+    </div>
   )
 }
 

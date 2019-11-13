@@ -9,6 +9,8 @@ node_modules
 # yarn error log
 yarn-error.log
 
-
-# test commit
+# rendering script file
 /public/scripts
+
+# font render error log file
+/asset/S-Core-Dream-light/debug.log

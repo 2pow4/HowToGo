@@ -2,8 +2,9 @@
 
 
 #label {
-    padding-top: 10px;
-    font-size: 22px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 30px;
     vertical-align: middle;
     text-align: center;
 }
@@ -14,7 +15,7 @@
 
 .react-calendar__visible {
     position: absolute;
-    top: 52px;
+    top: 60px;
     left: 45%;
     border-radius: 4px;
     border: 1px solid #eee;
@@ -24,18 +25,19 @@
 }
 
 .react-calendar__tile--active {
-    background-color: #FF99AF;
+    background-color: var(--pale-salmon);
 }
 
 .container{ 
-    background-color: #eee;
+    max-width: 1132px;
+    height: 180px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 15x;
-    max-width: 1136px;
-    border-radius: 8px;
-    box-shadow: 2px;
 }
 
 .container__passenger {
+    height: 50px;
     display: flex;
     background-color: #fff;
     border: 1px solid #eee;
@@ -44,10 +46,10 @@
 }
 
 .container__passenger:hover{
-    border: 1px solid #FF99AF;
+    border: 1px solid var(--pale-salmon);
 }
 .container__passenger:hover i{
-    color: #FF99AF;
+    color: var(--pale-salmon);
 }
 
 .content{
@@ -62,30 +64,31 @@
 }
 
 .searchbar-button{
-    width: 100px;
-    height: 40px;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    font-size: 20px;
+    font-family: 'Montserrat';
+    height: 50px;
+
+    padding: 10px;
+    border-radius: 10px;  
+    border: none;
+    font-size: 15px;
     color: #fff;
-    background-color: #FF99AF;
+    background-color: var(--perrywinkle);
 }
+
 
 .searchbar-button:focus{
     outline: none;
 }
 .searchbar-button__passenger{
     font-size: 20px;
-    color: #bbb;
+    color: var(--light-gray);
     transition:color .2s ease;
 }
 
 .searchbar-input{
     height: 20px;
     width: 160px;
-    padding: 10px 20px;
-    font-family: Helvetica, sans-serif;
-    font-weight: 300;
+    padding: 15px 20px;
     font-size: 16px;
     background-color: #fff;
     border: 1px solid #eee;
@@ -95,14 +98,12 @@
 }
 
 .searchbar-input:hover{
-    border: 1px solid #FF99AF; 
+    border: 1px solid var(--pale-salmon); 
 }
 
 .searchbar-input__passenger{
-    height: 20px;
     width: 30px;
     padding: 10px 20px;
-    font-family: Helvetica, sans-serif;
     font-weight: 300;
     font-size: 16px;
     text-align: center;

@@ -72,7 +72,7 @@ class SearchBar extends React.Component {
         <form onSubmit={this.handleSubmit} className='layout-vertical-center container'>
           {/* departure destination part */}
           <div id='label' className='content'> 어디로 가실래요? </div>
-          <div className='layout-horizontal-center container'>
+          <div className='layout-horizontal-center'>
             <LocationAutoSuggest
               className='content'
               id='departure'
