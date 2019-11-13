@@ -22,6 +22,7 @@ const Wallpaper = () => {
       class="layout-vertical-center"
     >
       <SearchBar />
+      <Guide />
     </div>
   );
 };
