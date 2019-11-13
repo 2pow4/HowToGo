@@ -12,13 +12,13 @@ const Guide = () => {
           <FaBusAlt className="icons" />
         </div>
         <div>
-          <GoDash className="icons" />
+          <GoDash className="icons icons-dash" />
         </div>
         <div>
           <IoIosTrain className="icons icons-bigger" />
         </div>
         <div>
-          <GoDash className="icons" />
+          <GoDash className="icons icons-dash" />
         </div>
         <div>
           <IoIosAirplane className="icons icons-bigger" />
