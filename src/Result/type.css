@@ -1,0 +1,23 @@
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.type {overflow: hidden;}
+.type li {float: left; width: 33.3%}
+.type li:nth-child(2){width: 33.3%}
+
+.type .tab_type {
+    display: block;
+    padding: 6px 0;
+    text-align: center;
+    color: #ffffff;
+    background-color: #feb6ae;
+    text-decoration-line: none;
+}
+
+.type .tab_type.on {
+    background-color: #9d8ae0;
+    text-decoration-line: none;
+}
