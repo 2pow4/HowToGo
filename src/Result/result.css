@@ -1,0 +1,13 @@
+.result-box{
+    width: 600px;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+
+.item {
+    margin: 30px 10px;
+}

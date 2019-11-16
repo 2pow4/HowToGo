@@ -2,7 +2,7 @@
     "resultList" : [
         {
             "date": "2019-11-20",
-            "vehicle_type": "bus",
+            "type": "bus",
             "cost": 15000,
             "departure_time": "10:20",
             "departure_city": "서울",
@@ -13,7 +13,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "bus",
+            "type": "bus",
             "cost": 12000,
             "departure_time": "12:30",
             "departure_city": "서울",
@@ -24,7 +24,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "bus",
+            "type": "bus",
             "cost": 15000,
             "departure_time": "15:00",
             "departure_city": "서울",
@@ -35,7 +35,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "train",
+            "type": "train",
             "cost": 20000,
             "departure_time": "9:20",
             "departure_city": "서울",
@@ -46,7 +46,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "train",
+            "type": "train",
             "cost": 22000,
             "departure_time": "10:00",
             "departure_city": "서울",
@@ -57,7 +57,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "train",
+            "type": "train",
             "cost": 22000,
             "departure_time": "12:00",
             "departure_city": "서울",
@@ -68,29 +68,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "bus",
-            "cost": 30000,
-            "departure_time": "10:20",
-            "departure_city": "서울",
-            "departure_location": "남부터미널",
-            "arrival_time": "12:40",
-            "arrival_city": "대전",
-            "arrival_location": "버스터미널"
-        },
-        {
-            "date": "2019-11-20",
-            "vehicle_type": "bus",
-            "cost": 30000,
-            "departure_time": "10:20",
-            "departure_city": "서울",
-            "departure_location": "남부터미널",
-            "arrival_time": "12:40",
-            "arrival_city": "대전",
-            "arrival_location": "버스터미널"
-        },
-        {
-            "date": "2019-11-20",
-            "vehicle_type": "plane",
+            "type": "plane",
             "cost": 50000,
             "departure_time": "11:30",
             "departure_city": "서울",
@@ -101,7 +79,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "plane",
+            "type": "plane",
             "cost": 43000,
             "departure_time": "14:15",
             "departure_city": "서울",
@@ -112,7 +90,7 @@
         },
         {
             "date": "2019-11-20",
-            "vehicle_type": "plane",
+            "type": "plane",
             "cost": 46000,
             "departure_time": "18:45",
             "departure_city": "서울",
