@@ -1,0 +1,31 @@
+.icons {
+    color: var(--white); 
+    text-shadow: 1px 1px 2px var(--black); 
+    width: 80px;
+    height: 80px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.icons-dash {
+    width: 60px;
+    height: 60px;
+}
+
+.icons-bigger {
+    width: 100px;
+    height: 100px;
+}
+
+.content__guide {
+    margin-top: 10px;
+    margin-bottom: 10px;    
+}
+
+#description {
+    color: var(--white);
+    text-shadow: 1px 1px 2px var(--light-black);
+    font-size: 25px;
+    font-weight: bold;
+}
