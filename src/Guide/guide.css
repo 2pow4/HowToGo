@@ -1,26 +1,17 @@
 .icons {
-    color: var(--white); 
     text-shadow: 1px 1px 2px var(--black); 
-    width: 80px;
-    height: 80px;
-
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.icons-dash {
-    width: 60px;
-    height: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .icons-bigger {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
 }
 
-.content__guide {
-    margin-top: 10px;
-    margin-bottom: 10px;    
+.icons-smaller {
+    width: 60px;
+    height: 60px;
 }
 
 #description {
