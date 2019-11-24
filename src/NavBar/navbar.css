@@ -1,8 +1,8 @@
 @import "../../main.css";
 
 .howtogo1 {
-  width: 60px;
-  height: 45px;
+  width: 75px;
+  height: 55px;
   object-fit: contain;
 }
 
@@ -15,12 +15,12 @@
 }
 
 .info-icon {
-  font-size: 21px;
+  font-size: 30px;
 }
 
 .info-text {
   font-family: Montserrat;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
