@@ -2,40 +2,42 @@ import React from "react";
 import AutoSuggest from "react-autosuggest";
 import * as Hangul from "hangul-js";
 import "./locationautosuggest.css";
+import cities from "./cities";
+import locations from "./locations";
 
-const cities = [
-  {
-    cityId: 0,
-    cityName: "서울"
-  },
-  {
-    cityId: 1,
-    cityName: "서산"
-  },
-  {
-    cityId: 2,
-    cityName: "부산"
-  },
-  {
-    cityId: 3,
-    cityName: "부천"
-  }
-];
+const isLocation = value => ( value.hasOwnProperty('locationId') ? true : false )
 
+// suggestion logic 
 const getSuggestions = value => {
   //sanitize values
   const inputValue = Hangul.disassemble(value.trim());
   const inputLen = inputValue.length;
 
   // TODO: enhance result search -> when city suggestion have only city get locations
-  return inputLen === 0
-    ? []
-    : cities.filter(
-        city =>
-          JSON.stringify(
-            Hangul.disassemble(city.cityName).slice(0, inputLen)
-          ) === JSON.stringify(inputValue)
-      );
+  let suggestions = []
+  if (inputLen > 0) {
+    const suggestionCities = cities.filter(city =>
+      JSON.stringify(
+        Hangul.disassemble(city.cityName).slice(0, inputLen)
+      ) === JSON.stringify(inputValue))
+
+    const suggestionLocations = locations.filter(location =>
+      JSON.stringify(
+        Hangul.disassemble(location.locationName).slice(0, inputLen)
+      ) === JSON.stringify(inputValue))
+    
+    if (suggestionCities.length > 1){
+      suggestions = suggestionCities.concat(suggestionLocations) 
+    }
+    else if (suggestionCities.length == 1 ){
+      const targetLocations = locations.filter(location => location.cityId == suggestionCities[0].cityId)
+      suggestions = suggestionCities.concat(targetLocations)  
+    }
+    else {
+      suggestions = suggestionLocations.length > 0 ? suggestionLocations : []
+    }
+  } 
+  return suggestions   
 };
 
 class LocationAutoSuggest extends React.Component {
@@ -58,9 +60,9 @@ class LocationAutoSuggest extends React.Component {
   onSuggestionSelected = (event, { suggestion }) => {
     this.props.onValueChange(suggestion);
   };
-  getSuggestionValue = value => value.cityName;
+  getSuggestionValue = value => isLocation(value) ? value.locationName : value.cityName;
 
-  renderSuggestion = suggestions => <div>{suggestions.cityName}</div>;
+  renderSuggestion = suggestions => <div>{ isLocation(suggestions) ? `${suggestions.locationName} - ${suggestions.cityName}`: suggestions.cityName}</div>;
 
   onChange = (_, { newValue }) => {
     this.setState({ value: newValue });
