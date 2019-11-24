@@ -53,6 +53,7 @@
     "react-calendar": "^2.19.2",
     "react-dom": "^16.9.0",
     "react-hooks-lib": "0.0.20",
+    "react-icons": "^3.8.0",
     "react-map-gl": "^5.0.10",
     "react-mapbox-gl": "^4.6.0",
     "react-moment": "^0.9.6",

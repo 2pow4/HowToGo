@@ -1,71 +1,75 @@
-import React from 'react';
-import AutoSuggest from 'react-autosuggest';
-import * as Hangul from 'hangul-js';
-import './locationautosuggest.css';
+import React from "react";
+import AutoSuggest from "react-autosuggest";
+import * as Hangul from "hangul-js";
+import "./locationautosuggest.css";
 
 const cities = [
   {
     cityId: 0,
-    cityName: '서울'
-  }, {
+    cityName: "서울"
+  },
+  {
     cityId: 1,
-    cityName: '서산'
-  }, {
+    cityName: "서산"
+  },
+  {
     cityId: 2,
-    cityName: '부산'
-  }, {
+    cityName: "부산"
+  },
+  {
     cityId: 3,
-    cityName: '부천'
+    cityName: "부천"
   }
 ];
 
-const getSuggestions = (value) => {
+const getSuggestions = value => {
   //sanitize values
   const inputValue = Hangul.disassemble(value.trim());
-  const inputLen = inputValue.length
+  const inputLen = inputValue.length;
 
   // TODO: enhance result search -> when city suggestion have only city get locations
   return inputLen === 0
     ? []
-    : cities.filter(city => JSON.stringify(Hangul.disassemble(city.cityName).slice(0, inputLen)) === JSON.stringify(inputValue));
-}
+    : cities.filter(
+        city =>
+          JSON.stringify(
+            Hangul.disassemble(city.cityName).slice(0, inputLen)
+          ) === JSON.stringify(inputValue)
+      );
+};
 
 class LocationAutoSuggest extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      value: '',
+      value: "",
       suggestions: []
-    }
+    };
   }
   // AutoSuggest component callback function
-  onSuggestionsFetchRequested = ({value}) => {
-    this.setState({suggestions: getSuggestions(value)})
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({ suggestions: getSuggestions(value) });
   };
 
   onSuggestionsClearRequested = () => {
-    this.setState({suggestions: []});
+    this.setState({ suggestions: [] });
   };
 
-  onSuggestionSelected = (event, {suggestion}) => {
-    this.props.onValueChange(suggestion)
-  }
+  onSuggestionSelected = (event, { suggestion }) => {
+    this.props.onValueChange(suggestion);
+  };
   getSuggestionValue = value => value.cityName;
 
-  renderSuggestion = suggestions => (
-    <div>
-      {suggestions.cityName}
-    </div>
-  );
+  renderSuggestion = suggestions => <div>{suggestions.cityName}</div>;
 
-  onChange = (_, {newValue}) => {
-    this.setState({value: newValue});
+  onChange = (_, { newValue }) => {
+    this.setState({ value: newValue });
   };
   render() {
-    const {id, name, className} = this.props;
-    const {value, suggestions} = this.state;
+    const { id, name, className } = this.props;
+    const { value, suggestions } = this.state;
     const inputProps = {
-      placeholder: '도시, 터미널 및 공항',
+      placeholder: "도시, 터미널 및 공항",
       value,
       name: name,
       onChange: this.onChange
@@ -82,11 +86,11 @@ class LocationAutoSuggest extends React.Component {
           getSuggestionValue={this.getSuggestionValue}
           renderSuggestion={this.renderSuggestion}
           highlightFirstSuggestion={true}
-          inputProps={inputProps}/>
+          inputProps={inputProps}
+        />
       </div>
     );
   }
-
 }
 
 export default LocationAutoSuggest;

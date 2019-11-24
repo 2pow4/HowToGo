@@ -1,21 +1,16 @@
-@import '../../main.css';
-nav {
-  padding-top: 15px;
-  padding-bottom: 15px;
+@import "../../main.css";
 
-  box-shadow: 0 5px 5px -5px #aaaaaa;
-}
 .howtogo1 {
   width: 60px;
   height: 45px;
   object-fit: contain;
 }
 
-.info-content{
+.info-content {
   margin: 2px;
 }
 
-.info{
+.info {
   color: var(--perrywinkle);
 }
 
@@ -24,12 +19,12 @@ nav {
 }
 
 .info-text {
-    font-family: Montserrat;
-    font-size: 10px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-  }
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
