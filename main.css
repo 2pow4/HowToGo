@@ -19,6 +19,14 @@ form {
   box-shadow: 9px 10px 27px -12px #888888;
 }
 
+footer {
+  background-color: var(--perrywinkle);
+  height: 120px;
+  box-shadow: 0 -2px 4px 0 #999999;
+  z-index: 100;
+  margin-top: 1px;
+}
+
 #navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -91,6 +99,6 @@ form {
 }
 
 .content__wallpaper {
-  margin-top: 55px;
-  margin-bottom: 55px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

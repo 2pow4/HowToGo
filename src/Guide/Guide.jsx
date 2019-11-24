@@ -1,30 +1,22 @@
 import "./guide.css";
 import React from "react";
-import { FaBusAlt } from "react-icons/fa";
-import { IoIosTrain, IoIosAirplane } from "react-icons/io";
-import { GoDash } from "react-icons/go";
+import { FaBus, FaPlane, FaTrain, FaEllipsisH} from "react-icons/fa";
+import { MdTrain } from "react-icons/md"
+import { IconContext } from "react-icons";
 
 const Guide = () => {
   return (
     <div class="layout-vertical-center content__wallpaper">
-      <div class="layout-horizontal-center content__guide">
-        <div>
-          <FaBusAlt className="icons" />
-        </div>
-        <div>
-          <GoDash className="icons icons-dash" />
-        </div>
-        <div>
-          <IoIosTrain className="icons icons-bigger" />
-        </div>
-        <div>
-          <GoDash className="icons icons-dash" />
-        </div>
-        <div>
-          <IoIosAirplane className="icons icons-bigger" />
-        </div>
+      <div class="layout-horizontal-center">
+        <IconContext.Provider
+          value={{ color: "white", size: "140px", className: "icons" }}
+        >
+          <div className="layout-horizontal-center">
+            <FaBus/> <FaEllipsisH className="icons-smaller"/> <MdTrain className="icons-bigger"/>  <FaEllipsisH className="icons-smaller"/> <FaPlane />
+          </div>
+        </IconContext.Provider>
       </div>
-      <div id="description" class="content__guide">
+      <div id="description">
         세 가지 교통수단을 한 눈에 비교하세요!
       </div>
     </div>

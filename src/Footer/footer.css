@@ -1,0 +1,23 @@
+.text {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--white);
+}
+
+.text-small {
+  font-size: 3px;
+}
+
+.content__footer {
+  margin: 3px;
+}
+
+.icons__footer {
+    margin-left: 2px;
+    margin-right: 2px;
+}
