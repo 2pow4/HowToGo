@@ -19,7 +19,7 @@ const Wallpaper = () => {
           wallpapers[Math.floor(Math.random() * wallpapers.length)] +
           ")"
       }}
-      class="layout-vertical-center"
+      className="layout-vertical-center"
     >
       <SearchBar />
       <Guide />
