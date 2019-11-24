@@ -27,7 +27,7 @@
   background-color: var(--pale-salmon);
 }
 
-.container {
+.container__searchbar {
   max-width: 1132px;
   height: 180px;
   border-radius: 15px;
@@ -52,7 +52,7 @@
   color: var(--pale-salmon);
 }
 
-.content {
+.content__searchbar {
   position: relative;
   margin: 10px 10px;
 }
@@ -100,7 +100,7 @@
 }
 
 .searchbar-input__passenger {
-  width: 30px;
+  width: 35px;
   padding: 10px 20px;
   font-weight: 300;
   font-size: 16px;
