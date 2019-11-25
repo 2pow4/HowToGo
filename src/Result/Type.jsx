@@ -5,14 +5,14 @@ import './type.css'
 
 const Type = (props) => (
     <ul className="type">
-        <li>
-            <Link to="/results?type=bus" className={props.type == 'bus' ? 'tab_type on' : 'tab_type'}> Bus </Link>
+        <li className={props.type === 'bus' ? 'tab_type_on' : 'tab_type_off'}>
+            <Link to="/results?type=bus" > Bus </Link>
         </li>
-        <li>
-            <Link to="/results?type=train" className={props.type == 'train' ? 'tab_type on' : 'tab_type'}> Train </Link>
+        <li className={props.type === 'train' ? 'tab_type_on' : 'tab_type_off'}>
+            <Link to="/results?type=train" > Train </Link>
         </li>
-        <li>
-            <Link to="/results?type=plane" className={props.type == 'plane' ? 'tab_type on' : 'tab_type'}> Plane </Link>
+        <li className={props.type === 'plane' ? 'tab_type_on' : 'tab_type_off'}>
+            <Link to="/results?type=plane" > Plane </Link>
         </li>
     </ul>
 )

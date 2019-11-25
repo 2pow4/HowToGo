@@ -8,7 +8,7 @@ ul, li {
 .type li {float: left; width: 33.3%}
 .type li:nth-child(2){width: 33.3%}
 
-.type .tab_type {
+.tab_type_off {
     display: block;
     padding: 6px 0;
     text-align: center;
@@ -17,7 +17,11 @@ ul, li {
     text-decoration-line: none;
 }
 
-.type .tab_type.on {
-    background-color: #9d8ae0;
+.tab_type_on {
+    display: block;
+    padding: 6px 0;
+    text-align: center;
+    color: #ffffff;
+    background: #9d8ae0;
     text-decoration-line: none;
 }

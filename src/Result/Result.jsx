@@ -32,6 +32,8 @@ class Result extends React.Component {
         let query = new URLSearchParams(this.props.location.search);
         let type = query.get('type');
 
+        console.log(type)
+
         if(prevType !== type){
             this.setState({
                 type

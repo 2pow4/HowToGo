@@ -7,13 +7,33 @@ const Item = (props) => {
         <ul>
             {props.list.map((item, index) => (
                 <li key = {index}>
-                    <div className="result-item">
-                        {item.type}
-                        {item.departure_location}
-                        {item.departure_time}
-                        {item.arrival_location}
-                        {item.arrival_time}
-                        {item.cost}
+                    <div className="container__result">
+                        <div className="ratio-3 container__dep-arr">
+                            <div className="ratio-2 content__dep">
+                                <div>
+                                    <div className="content__time">
+                                        {item.departure_time}
+                                    </div>
+                                    <div>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    {item.departure_location}
+                                </div>
+                            </div>
+                            <div className="ratio-3 content__arr">
+                                <div className="content__time">
+                                    {item.arrival_time}
+                                </div>
+                                <div>
+                                    {item.arrival_location}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="ratio-1 content__cost">
+                            {item.cost}원
+                        </div>
                     </div>
                 </li>
             ))}
