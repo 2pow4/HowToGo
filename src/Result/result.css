@@ -11,3 +11,16 @@
 .item {
     margin: 30px 10px;
 }
+
+.sort-container {
+    margin-top: 15px;
+    margin-left: 440px;
+}
+
+.sort-text {
+    margin-left: 11px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #573cbb;
+    background-color: transparent;
+}

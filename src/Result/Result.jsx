@@ -5,6 +5,7 @@ import "./result.css"
 
 import Type from "./Type.jsx"
 import Item from "./Item.jsx";
+import SortedBy from "./Select.jsx"
 
 class Result extends React.Component {
 
@@ -17,7 +18,7 @@ class Result extends React.Component {
         this.state = {
             type: type || "bus",
             resultList : [],
-            sortedBy: "departure_time"
+            selectedOption: "departure_time"
         };
     }
 
@@ -53,30 +54,19 @@ class Result extends React.Component {
             })
     }
 
-    handleChange = (event) => {
-        this.setState({
-            sortedBy: event.target.value
-        })
-    }
 
     render(){
         return(
             <div className="result-box">
                 <Type />
-                <div>
-                    Sorted by
-                    <form>
-                        <select id="sort" onChange={this.handleChange} value={this.state.sortedBy}>
-                            <option value="departure_time">출발시간</option>
-                            <option value="expected_time">소요시간</option>
-                            <option value="cost">비용</option>
-                        </select>
-                    </form>
+                <div className="sort-container">
+                    <span className="sort-text"> Sorted By </span>
+                    <SortedBy />
                 </div>
                 <div className="item-container">
                 {
                     this.state.resultList.length > 0 ? (
-                        this.state.sortedBy == 'cost' ? (
+                        this.state.selectedOption == 'cost' ? (
                         <Item className="item" list={
                             this.state.resultList
                             .filter( item => (
@@ -87,7 +77,7 @@ class Result extends React.Component {
                             )} 
                         />
                         ) : (
-                            this.state.sortedBy == 'departure_time' ? (
+                            this.state.selectedOption == 'departure_time' ? (
                                 <Item className="item" list={
                                     this.state.resultList
                                     .filter( item => (

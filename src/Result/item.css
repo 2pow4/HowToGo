@@ -1,13 +1,21 @@
 @import url("../../main.css");
 
+span {
+    height: 1px;
+    background-color: #8a8a8a;
+    border: none;
+    margin: auto 4px;
+}
+
 .container__result {
-    width: 100%;
+    width: 580px;
     height: 130px;
     background-color: #f9f8fc;
     border-radius: 20px;
     box-shadow: 1px 1px 5px #c8c8c8;
-    margin: 10px 5px;
     display: flex;
+    padding-left: 10px;
+    margin: 10px 5px;
 }
 
 .container__dep-arr {
@@ -15,29 +23,27 @@
 }
 
 .content__cost {
-    padding: 55px 20px;
-    text-align: center;
+    padding: 50px 20px;
+    text-align: right;
     font-size: 140%;
-    color: #ff416a;
+    color: #332563;
     font-weight: 600;
 }
 
 .content__dep {
-    padding: 40px 10px;
+    padding: 40px 0px;
+}
+
+.content__dep-time {
+    display: flex;
 }
 
 .content__arr {
-    padding: 40px 10px;
+    padding: 40px 0px;
 }
 
 .content__time {
     font-size: 130%;
     color: #332563;
     font-weight: 800;
-}
-
-span {
-    background-color: #5a5a5a;
-    width: 150px;
-    height: 3px;
 }
