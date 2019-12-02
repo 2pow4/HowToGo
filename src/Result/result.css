@@ -1,33 +1,32 @@
-.result-box{
-    width: 700px;
-    background-color: #f6f3ff;
+.result-box {
+  width: 700px;
+  background-color: #f6f3ff;
 }
 
 .item-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .item {
-    margin: 30px 10px;
+  margin: 30px 10px;
 }
 
 .sort-container {
-    margin-top: 15px;
-    margin-left: 500px;
+  margin-top: 15px;
+  margin-left: 500px;
 }
 
 .sort-text {
-    margin-left: 11px;
-    font-weight: 600;
-    font-size: 14px;
-    color: #573cbb;
-    background-color: transparent;
+  margin-left: 11px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #573cbb;
+  background-color: transparent;
 }
 
 hr {
-    width: 600px;
-    border: solid 1.5px #c5c2cf;
-
+  width: 600px;
+  border: solid 1.5px #c5c2cf;
 }
