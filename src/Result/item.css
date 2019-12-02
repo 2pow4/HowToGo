@@ -10,12 +10,12 @@ span {
 .container__result {
     width: 580px;
     height: 130px;
-    background-color: #f9f8fc;
+    background-color: white;
     border-radius: 20px;
     box-shadow: 1px 1px 5px #c8c8c8;
     display: flex;
     padding-left: 10px;
-    margin: 10px 5px;
+    margin: 10px 48.5px;
 }
 
 .container__dep-arr {

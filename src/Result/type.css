@@ -4,17 +4,19 @@ ul, li {
     list-style: none;
 }
 
-.type {overflow: hidden;}
-.type li {float: left; width: 33.3%}
-.type li:nth-child(2){width: 33.3%}
+.type {overflow: hidden;
+    margin-left: 90px;
+    padding: 0;
+    list-style: none;    
+}
+
+.type li {float: left; width: 200px}
+.type li:nth-child(2){width: 200px}
 
 .tab_type_off {
     display: block;
-    padding: 6px 0;
-    text-align: center;
-    color: #ffffff;
-    background-color: #feb6ae;
-    text-decoration-line: none;
+    background-color: transparent;
+    height: 90px;
 }
 
 .tab_type_on {
@@ -24,4 +26,17 @@ ul, li {
     color: #ffffff;
     background: #9d8ae0;
     text-decoration-line: none;
+}
+
+.link {
+    text-decoration-line: none;
+    font-size: 120%;
+    color: #332563;
+    font-weight: 800;
+    padding-left: 5px;
+}
+
+.type-icon {
+    padding-left: 12px;
+    padding-top: 50px;
 }

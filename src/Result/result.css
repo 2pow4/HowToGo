@@ -1,5 +1,6 @@
 .result-box{
-    width: 600px;
+    width: 700px;
+    background-color: #f6f3ff;
 }
 
 .item-container {
@@ -14,7 +15,7 @@
 
 .sort-container {
     margin-top: 15px;
-    margin-left: 440px;
+    margin-left: 500px;
 }
 
 .sort-text {
@@ -23,4 +24,10 @@
     font-size: 14px;
     color: #573cbb;
     background-color: transparent;
+}
+
+hr {
+    width: 600px;
+    border: solid 1.5px #c5c2cf;
+
 }
