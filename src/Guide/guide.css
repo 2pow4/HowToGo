@@ -1,22 +1,22 @@
 .icons {
-    text-shadow: 1px 1px 2px var(--black); 
-    margin-left: 20px;
-    margin-right: 20px;
+  text-shadow: 1px 1px 2px var(--black);
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .icons-bigger {
-    width: 160px;
-    height: 160px;
+  width: 160px;
+  height: 160px;
 }
 
 .icons-smaller {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
-#description {
-    color: var(--white);
-    text-shadow: 1px 1px 2px var(--light-black);
-    font-size: 25px;
-    font-weight: bold;
+#guide {
+  color: var(--white);
+  text-shadow: 1px 1px 2px var(--light-black);
+  font-size: 25px;
+  font-weight: bold;
 }
