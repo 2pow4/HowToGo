@@ -69,7 +69,7 @@ class SearchBar extends React.Component {
     return (
       <form
         onSubmit={this.handleSubmit}
-        className="layout-vertical-center container content__wallpaper"
+        className="layout-vertical-center container__searchbar content__wallpaper"
       >
         {/* departure destination part */}
         <div id="label" className="content">
@@ -78,7 +78,7 @@ class SearchBar extends React.Component {
         </div>
         <div className="layout-horizontal-center">
           <LocationAutoSuggest
-            className="content"
+            className="content__searchbar"
             id="departure"
             onValueChange={this.onDepChange}
           />{" "}
@@ -86,7 +86,7 @@ class SearchBar extends React.Component {
             <span className="error">{errors.departure}</span>
           )}
           <LocationAutoSuggest
-            className="content"
+            className="content__searchbar"
             id="destination"
             onValueChange={this.onDestChange}
           />{" "}
@@ -97,7 +97,7 @@ class SearchBar extends React.Component {
             {/* date part */}
             <div
               onClick={this.onCalendarAvailable}
-              className="content searchbar-input"
+              className="content__searchbar searchbar-input"
             >
               {this.state.date
                 .toDateString()
@@ -115,7 +115,7 @@ class SearchBar extends React.Component {
               value={date}
             />
           </div>
-          <div className="content container__passenger">
+          <div className="content__searchbar container__passenger">
             {/* number of passenger part */}
             <div
               onClick={this.onDecreaseNumber}
@@ -140,7 +140,7 @@ class SearchBar extends React.Component {
           <input
             type="submit"
             value="Search"
-            className="content searchbar-button"
+            className="content__searchbar searchbar-button"
           />
         </div>
       </form>

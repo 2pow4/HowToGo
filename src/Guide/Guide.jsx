@@ -6,8 +6,8 @@ import { IconContext } from "react-icons";
 
 const Guide = () => {
   return (
-    <div class="layout-vertical-center content__wallpaper">
-      <div class="layout-horizontal-center">
+    <div className="layout-vertical-center content__wallpaper">
+      <div className="layout-horizontal-center">
         <IconContext.Provider
           value={{ color: "white", size: "140px", className: "icons" }}
         >
