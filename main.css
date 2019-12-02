@@ -1,3 +1,4 @@
+  
 @import url("asset/S-Core-Dream-light/s-core-dream.css");
 
 html,
@@ -101,4 +102,16 @@ footer {
 .content__wallpaper {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.ratio-1 {
+  flex: 1;
+}
+
+.ratio-2 {
+  flex: 2;
+}
+
+.ratio-3 {
+  flex: 3;
 }

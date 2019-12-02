@@ -1,0 +1,49 @@
+@import url("../../main.css");
+
+span {
+    height: 1px;
+    background-color: #8a8a8a;
+    border: none;
+    margin: auto 4px;
+}
+
+.container__result {
+    width: 580px;
+    height: 130px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px #c8c8c8;
+    display: flex;
+    padding-left: 10px;
+    margin: 10px 48.5px;
+}
+
+.container__dep-arr {
+    display: flex;
+}
+
+.content__cost {
+    padding: 50px 20px;
+    text-align: right;
+    font-size: 140%;
+    color: #332563;
+    font-weight: 600;
+}
+
+.content__dep {
+    padding: 40px 0px;
+}
+
+.content__dep-time {
+    display: flex;
+}
+
+.content__arr {
+    padding: 40px 0px;
+}
+
+.content__time {
+    font-size: 130%;
+    color: #332563;
+    font-weight: 800;
+}

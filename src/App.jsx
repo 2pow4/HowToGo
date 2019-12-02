@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Result from './Result/Result.jsx';
 import Map from './Map/Map.jsx'
 import NavBar from  "./NavBar/NavBar.jsx";
 import Wallpaper from "./Wallpaper/Wallpaper.jsx";
@@ -18,7 +19,8 @@ class App extends React.Component {
             <Wallpaper />
           </Route>
           <Route path="/results">
-            <Map />
+            <Result/>
+            <Map/>
           </Route>
         </Switch>
         <Footer />
