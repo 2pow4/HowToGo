@@ -1,8 +1,8 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar.jsx";
-import Guide from "../Guide/Guide.jsx";
+import SearchBar from "../SearchBar/SearchBar";
+import Guide from "../Guide/Guide";
 
-const wallpaperContext = require.context('../../asset/wallpaper', false, /\.(png|jpe?g)$/)
+const wallpaperContext = require.context('../../../asset/wallpaper', false, /\.(png|jpe?g)$/)
 
 let wallpapers = []
 wallpaperContext.keys().map((items) =>
