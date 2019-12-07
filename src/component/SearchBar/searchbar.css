@@ -1,7 +1,8 @@
 @import url("../../../main.css");
 
 #label {
-  padding-top: 30px;
+  padding-top: 25px;
+  padding-bottom: 10px;
   font-weight: bold;
   font-size: 30px;
   vertical-align: middle;
@@ -25,11 +26,11 @@
 
 .react-calendar__tile--active {
   background-color: var(--pale-salmon);
+  margin-top: 3px;
 }
 
 .container__searchbar {
   max-width: 1132px;
-  height: 180px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.7);
   padding-left: 15px;
@@ -72,6 +73,19 @@
   font-size: 15px;
   color: #fff;
   background-color: var(--perrywinkle);
+}
+
+.searchbar-main {
+  margin-left: auto;
+  margin-right: auto;
+  height: 180px;
+  box-shadow: 9px 10px 27px -12px var(--dark-gray);
+}
+
+.searchbar-result {
+  background-color: var(--pale-purple);
+  z-index: 0;
+  margin-top: 3px;
 }
 
 .searchbar-button:focus {

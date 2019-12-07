@@ -10,8 +10,8 @@ class Map extends React.Component{
         super(props)
         this.state = {
             viewport: {
-                width: 400,
-                height: 400,
+                width: 500,
+                height: 550,
                 latitude: 36.1824,
                 longitude: 127.6,
                 zoom: 5.6
@@ -105,8 +105,10 @@ class Map extends React.Component{
         const {viewport} = this.state;
 
         return(
-            <div> 
+            <div className='map'> 
                 <ReactMapGL
+                    width={500}
+                    height={550}
                     ref={(reactMap) => this.reactMap = reactMap} 
                     {...viewport}
                     mapboxApiAccessToken={TOKEN}
