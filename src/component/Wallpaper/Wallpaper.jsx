@@ -21,7 +21,7 @@ const Wallpaper = () => {
       }}
       className="layout-vertical-center"
     >
-      <SearchBar />
+      <SearchBar searchbarType='main'/>
       <Guide />
     </div>
   );
