@@ -19,6 +19,7 @@ const customStyles = {
   control: (base, state) => ({
     ...base,
     width: 150,
+    height: 20,
     background: "transparent",
     border: state.isFocused ? 0 : 0,
     boxShadow: state.isFocused ? 0 : 0,
@@ -28,7 +29,7 @@ const customStyles = {
   }),
   menu: (base, state) => ({
     ...base,
-    width: 150
+    width: 150,
   })
 };
 
