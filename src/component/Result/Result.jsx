@@ -61,9 +61,9 @@ class Result extends React.Component {
     return (
       <div className="result-box">
         <Type />
-        <hr />
-        <div className="sort-container">
-          <span className="sort-text"> Sorted By </span>
+        <hr/>
+        <div className="layout-vertical-right sort-container">
+          <div className="sort-text"> Sorted By </div>
           <SortedBy handleSelected={this.handleSelected} />
         </div>
         <div className="item-container">
