@@ -98,6 +98,17 @@
             "arrival_time": "19:30",
             "arrival_city": "대전",
             "arrival_location": "대전공항"
+        },
+        {
+            "date": "2019-11-20",
+            "type": "bus",
+            "cost": 13000,
+            "departure_time": "9:20",
+            "departure_city": "서울",
+            "departure_location": "남부터미널",
+            "arrival_time": "12:40",
+            "arrival_city": "대전",
+            "arrival_location": "버스터미널"
         }
     ]
 }
