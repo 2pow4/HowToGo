@@ -9,41 +9,53 @@ span {
 
 .container__result {
   width: 580px;
-  height: 130px;
+  height: 110px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 1px 1px 5px #c8c8c8;
   display: flex;
-  padding-left: 10px;
-  margin: 10px 48.5px;
+  margin: 5px;
 }
 
 .container__dep-arr {
   display: flex;
+  margin: 25px;
 }
 
 .content__cost {
-  padding: 50px 20px;
-  text-align: right;
+  padding-top: 42px;
+  text-align: center;
+  vertical-align: middle;
   font-size: 140%;
   color: #332563;
   font-weight: 600;
-}
-
-.content__dep {
-  padding: 40px 0px;
 }
 
 .content__dep-time {
   display: flex;
 }
 
-.content__arr {
-  padding: 40px 0px;
-}
-
 .content__time {
   font-size: 130%;
   color: #332563;
   font-weight: 800;
+}
+
+.content__elapse-time{
+  font-size: 100%;
+  color: var(--light-black);
+  text-align: center;
+  margin: 5px;
+}
+
+.ratio-1 {
+  flex: 1;
+}
+
+.ratio-2 {
+  flex: 2;
+}
+
+.ratio-3 {
+  flex: 3;
 }
