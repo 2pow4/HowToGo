@@ -101,7 +101,6 @@ class Result extends React.Component {
                       moment(b.departure_time, "HH:mm"),
                       "minutes"
                     );
-                    console.log(intervalA, intervalB);
                     return intervalA - intervalB;
                   })}
               />

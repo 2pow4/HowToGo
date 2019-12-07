@@ -1,10 +1,9 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Result from './Result/Result.jsx';
-import Map from './Map/Map.jsx'
-import NavBar from  "./NavBar/NavBar.jsx";
-import Wallpaper from "./Wallpaper/Wallpaper.jsx";
-import Footer from "./Footer/Footer.jsx";
+import NavBar from  "./component/NavBar/NavBar";
+import Footer from "./component/Footer/Footer";
+import HomePage from "./page/HomePage/HomePage";
+import ResultPage from "./page/ResultPage/ResultPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,13 +14,8 @@ class App extends React.Component {
       <Router>
         <NavBar />
         <Switch>
-          <Route path="/home">
-            <Wallpaper />
-          </Route>
-          <Route path="/results">
-            <Result/>
-            <Map/>
-          </Route>
+          <Route path="/home" component={HomePage}/>
+          <Route path="/results" component={ResultPage}/>
         </Switch>
         <Footer />
       </Router>
