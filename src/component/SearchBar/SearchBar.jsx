@@ -65,85 +65,97 @@ class SearchBar extends React.Component {
 
   render() {
     const { errors, date, calendarAvailable, numOfPassengers } = this.state;
-
-    return (
-      <form
-        onSubmit={this.handleSubmit}
-        className="layout-vertical-center container__searchbar content__wallpaper"
-      >
-        {/* departure destination part */}
+    const searchbarType = this.props.searchbarType;
+    const mainLable =
+      searchbarType === "main" ? (
         <div id="label" className="content">
           {" "}
           어디로 가실래요?{" "}
         </div>
-        <div className="layout-horizontal-center">
-          <LocationAutoSuggest
-            className="content__searchbar"
-            id="departure"
-            onValueChange={this.onDepChange}
-          />{" "}
-          {errors.departure.length > 0 && (
-            <span className="error">{errors.departure}</span>
-          )}
-          <LocationAutoSuggest
-            className="content__searchbar"
-            id="destination"
-            onValueChange={this.onDestChange}
-          />{" "}
-          {errors.departure.length > 0 && (
-            <span className="error">{errors.destination}</span>
-          )}
-          <div>
-            {/* date part */}
-            <div
-              onClick={this.onCalendarAvailable}
-              className="content__searchbar searchbar-input"
-            >
-              {this.state.date
-                .toDateString()
-                .slice(0, 10)
-                .replace(" ", ", ")}
+      ) : (
+        ""
+      );
+
+    return (
+      <div
+        className={
+          searchbarType === "main"
+            ? `layout-vertical-center searchbar-${searchbarType} container__searchbar content__wallpaper`
+            : `layout-vertical-center searchbar-${searchbarType}`
+        }
+      >
+        {mainLable}
+        <form onSubmit={this.handleSubmit} className="content">
+          {/* departure destination part */}
+          <div className="layout-horizontal-center">
+            <LocationAutoSuggest
+              className="content__searchbar"
+              id="departure"
+              onValueChange={this.onDepChange}
+            />{" "}
+            {errors.departure.length > 0 && (
+              <span className="error">{errors.departure}</span>
+            )}
+            <LocationAutoSuggest
+              className="content__searchbar"
+              id="destination"
+              onValueChange={this.onDestChange}
+            />{" "}
+            {errors.departure.length > 0 && (
+              <span className="error">{errors.destination}</span>
+            )}
+            <div>
+              {/* date part */}
+              <div
+                onClick={this.onCalendarAvailable}
+                className="content__searchbar searchbar-input"
+              >
+                {this.state.date
+                  .toDateString()
+                  .slice(0, 10)
+                  .replace(" ", ", ")}
+              </div>
+              <Calendar
+                className={`${
+                  calendarAvailable
+                    ? `react-calendar__visible`
+                    : `react-calendar__invisible`
+                }`}
+                onChange={this.onDateChange}
+                name="date"
+                value={date}
+              />
             </div>
-            <Calendar
-              className={`${
-                calendarAvailable
-                  ? `react-calendar__visible`
-                  : `react-calendar__invisible`
-              }`}
-              onChange={this.onDateChange}
-              name="date"
-              value={date}
-            />
-          </div>
-          <div className="content__searchbar container__passenger">
-            {/* number of passenger part */}
-            <div
-              onClick={this.onDecreaseNumber}
-              className="content__passenger layout-horizontal-center"
-            >
-              <i className="fas fa-minus-circle searchbar-button__passenger"></i>
+            <div className="content__searchbar container__passenger">
+              {/* number of passenger part */}
+              <div
+                onClick={this.onDecreaseNumber}
+                className="content__passenger layout-horizontal-center"
+              >
+                <i className="fas fa-minus-circle searchbar-button__passenger"></i>
+              </div>
+              <input
+                className="content__passenger searchbar-input__passenger"
+                type="text"
+                value={`${numOfPassengers}명`}
+                name="numOfPassengers"
+                readOnly
+              />
+              <div
+                onClick={this.onIncreaseNumber}
+                className="content__passenger layout-horizontal-center"
+              >
+                <i className="fas fa-plus-circle searchbar-button__passenger"></i>
+              </div>
             </div>
             <input
-              className="content__passenger searchbar-input__passenger"
-              type="text"
-              value={`${numOfPassengers}명`}
-              name="numOfPassengers"
-              readOnly
+              type="submit"
+              value="Search"
+              className="content__searchbar searchbar-button"
             />
-            <div
-              onClick={this.onIncreaseNumber}
-              className="content__passenger layout-horizontal-center"
-            >
-              <i className="fas fa-plus-circle searchbar-button__passenger"></i>
-            </div>
           </div>
-          <input
-            type="submit"
-            value="Search"
-            className="content__searchbar searchbar-button"
-          />
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
