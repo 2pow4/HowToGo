@@ -13,7 +13,6 @@ const Item = props => {
           moment(item.departure_time, "HH:mm"),
           "minutes"
         );
-        console.log(elapseTime)
         return (
           <li key={index} className="container__result">
             <div className="ratio-3 container__dep-arr layout-horizontal-center">

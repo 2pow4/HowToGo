@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import moment from "moment";
+
 import { withRouter } from "react-router-dom";
 import "./result.css";
 
@@ -44,6 +45,7 @@ class Result extends React.Component {
     }
   }
 
+// TODO: need to export this 
   _getList() {
     axios
       .get("result_list.json")
@@ -106,7 +108,7 @@ class Result extends React.Component {
               />
             )
           ) : (
-            <span>LOADING</span>
+            <span>LOADING...</span>
           )}
         </div>
       </div>

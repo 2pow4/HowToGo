@@ -15,6 +15,7 @@ class Map extends React.Component {
         longitude: 127.6,
         zoom: 5.6
       },
+      // TODO: 요것들 props로 받기
       srcPos: {
         srcLng: 126.9783,
         srcLat: 37.5667
