@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import moment from "moment";
+
 import { withRouter } from "react-router-dom";
 import "./result.css";
 
@@ -44,6 +45,7 @@ class Result extends React.Component {
     }
   }
 
+// TODO: need to export this 
   _getList() {
     axios
       .get("result_list.json")
@@ -61,9 +63,9 @@ class Result extends React.Component {
     return (
       <div className="result-box">
         <Type />
-        <hr />
-        <div className="sort-container">
-          <span className="sort-text"> Sorted By </span>
+        <hr/>
+        <div className="layout-vertical-right sort-container">
+          <div className="sort-text"> Sorted By </div>
           <SortedBy handleSelected={this.handleSelected} />
         </div>
         <div className="item-container">
@@ -106,7 +108,7 @@ class Result extends React.Component {
               />
             )
           ) : (
-            <span>LOADING</span>
+            <span>LOADING...</span>
           )}
         </div>
       </div>

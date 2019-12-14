@@ -22,6 +22,13 @@ footer {
   margin-top: 1px;
 }
 
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 #navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -45,11 +52,13 @@ footer {
   --light-peach: #febead;
   --white: #ffffff;
   --black: #000000;
-  --light-black: #555555;
+  --light-black: #545454;
   --dark-gray: #999999;
   --gray: #bbbbbb;
   --light-gray: #f7f7f7;
   --pale-purple: #f6f3ff;
+  --dark-purple: #573cbb;
+  --deep-dark-purple: #332563;
 }
 
 /* layout css */
@@ -64,7 +73,6 @@ footer {
 
 .layout-horizontal-center {
   margin: auto;
-  width: 90%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -87,6 +95,16 @@ footer {
   flex-direction: column;
 }
 
+.layout-vertical-right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+  flex-direction: column;
+}
+
 .layout-vertical-space {
   position: relative;
   height: 80%;
@@ -97,18 +115,6 @@ footer {
 }
 
 .content__wallpaper {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.ratio-1 {
-  flex: 1;
-}
-
-.ratio-2 {
-  flex: 2;
-}
-
-.ratio-3 {
-  flex: 3;
+  margin-top: 50px;
+  margin-bottom: 75px;
 }

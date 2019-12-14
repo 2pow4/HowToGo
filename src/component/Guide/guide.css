@@ -5,8 +5,8 @@
 }
 
 .icons-bigger {
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
 }
 
 .icons-smaller {
@@ -15,8 +15,9 @@
 }
 
 #guide {
+  margin-top: 15px;
   color: var(--white);
   text-shadow: 1px 1px 2px var(--light-black);
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
 }

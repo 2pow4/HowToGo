@@ -2,12 +2,16 @@ import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import Guide from "../Guide/Guide";
 
-const wallpaperContext = require.context('../../../asset/wallpaper', false, /\.(png|jpe?g)$/)
+const wallpaperContext = require.context(
+  "../../../asset/wallpaper",
+  false,
+  /\.(png|jpe?g)$/
+);
 
-let wallpapers = []
-wallpaperContext.keys().map((items) =>
-  wallpapers.push(items.replace('./', '/scripts/'))
-)
+let wallpapers = [];
+wallpaperContext
+  .keys()
+  .map(items => wallpapers.push(items.replace("./", "/scripts/")));
 
 const Wallpaper = () => {
   return (
@@ -21,7 +25,7 @@ const Wallpaper = () => {
       }}
       className="layout-vertical-center"
     >
-      <SearchBar searchbarType='main'/>
+      <SearchBar searchbarType="main" />
       <Guide />
     </div>
   );
