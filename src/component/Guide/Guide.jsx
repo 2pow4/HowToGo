@@ -9,7 +9,7 @@ const Guide = () => {
     <div className="layout-vertical-center content__wallpaper">
       <div className="layout-horizontal-center">
         <IconContext.Provider
-          value={{ color: "white", size: "140px", className: "icons" }}
+          value={{ color: "white", size: "80px", className: "icons" }}
         >
           <div className="layout-horizontal-center">
             <FaBus /> <FaEllipsisH className="icons-smaller" />{" "}
