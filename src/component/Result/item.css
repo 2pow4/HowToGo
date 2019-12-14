@@ -27,7 +27,7 @@ span {
   text-align: center;
   vertical-align: middle;
   font-size: 140%;
-  color: #332563;
+  color: var(--deep-dark-purple);
   font-weight: 600;
 }
 
@@ -37,7 +37,7 @@ span {
 
 .content__time {
   font-size: 130%;
-  color: #332563;
+  color: var(--deep-dark-purple);
   font-weight: 800;
 }
 

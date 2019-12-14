@@ -27,7 +27,7 @@
   padding-right: 75px;
   font-weight: 600;
   font-size: 14px;
-  color: #573cbb;
+  color: var(--dark-purple);
   background-color: transparent;
 }
 
