@@ -1,0 +1,27 @@
+@import '../../../main.css';
+
+.description-body {
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+}
+
+.box-left {
+    width: 50%;
+    height: 300px;
+    margin-top: 90px;
+    margin-left: 24px;
+    padding-left: 100px;
+    float: left;
+    font-size:24px;
+}
+
+.box-right {
+    width: 50%;
+    height: 300px;
+    margin-right: 20px;
+    padding-right:100px;
+    float: right;
+    font-size:24px;
+    text-align: right;
+}

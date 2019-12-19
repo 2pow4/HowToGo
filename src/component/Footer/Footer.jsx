@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 
 const Footer = () => {
   return (
-    <footer className="layout-vertical-center">
+    <footer className="layout-vertical-center footer-layout">
       <div className="layout-vertical-center">
         <div className="text content__footer"> COPYRIGHT© 2POW4 </div>
         <div className="text text-small content__footer">contact with</div>
