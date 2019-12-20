@@ -33,7 +33,7 @@ li {
   padding-top: 15px;
   padding-bottom: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  z-index: 0;
   position: relative;
 }
 
@@ -57,6 +57,7 @@ li {
   --gray: #bbbbbb;
   --light-gray: #f7f7f7;
   --pale-purple: #f6f3ff;
+  --light-purple: #E5D9FD;
   --dark-purple: #573cbb;
   --deep-dark-purple: #332563;
 }
