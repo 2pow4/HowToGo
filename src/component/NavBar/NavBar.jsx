@@ -4,13 +4,12 @@ import Logo_1 from "../../../asset/logo/howtogo-1.png";
 import Logo_2x from "../../../asset/logo/howtogo-1@2x.png";
 import Logo_3x from "../../../asset/logo/howtogo-1@3x.png";
 
-
 const NavBar = () => {
   return (
     <div id="navbar">
       <div className="layout-horizontal-space">
         <div>
-          <a href="/home" className="logo">
+          <a href="/home">
             <img
               src={Logo_1}
               alt={"logo"}
@@ -19,10 +18,12 @@ const NavBar = () => {
             />
           </a>
         </div>
-        <div className="layout-vertical-center">
-          <i className="fas fa-info-circle info info-icon info-content"></i>
-          <div className="info info-text info-content">who we are?</div>
-        </div>
+        <a href="https://github.com/2pow4">
+          <div className="layout-vertical-center">
+            <i className="fas fa-info-circle info info-icon info-content"></i>
+            <div className="info info-text info-content">who we are?</div>
+          </div>
+        </a>
       </div>
     </div>
   );

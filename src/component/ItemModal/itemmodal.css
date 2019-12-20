@@ -1,0 +1,59 @@
+@import url("../../../main.css");
+
+.modal {
+    margin: 10px;
+}
+
+.modal-content {
+    margin: 10px;
+}
+
+.modal-dep-arr {
+    margin: 5px;
+}
+.modal-type {
+    margin: 10px;
+}
+
+.modal-location {
+    font-weight: 800;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.modal-icon {
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.modal-cost {
+    font-size: 25px;
+}
+
+.modal-link  {
+    border-radius: 5px;  
+    background-color: var(--perrywinkle);
+
+    padding:10px;   
+    font-size: 25px;
+    color: var(--white)
+}
+
+.modal-link-container {
+    margin-top: 35px;
+}
+/* Modal CSS */
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+    z-index: 2;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}

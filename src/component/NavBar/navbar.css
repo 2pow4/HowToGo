@@ -1,5 +1,9 @@
 @import "../../../main.css";
 
+a {
+  text-decoration: None;
+}
+
 .howtogo1 {
   width: 75px;
   height: 55px;
