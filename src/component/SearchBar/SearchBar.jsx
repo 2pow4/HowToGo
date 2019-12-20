@@ -30,6 +30,7 @@ class SearchBar extends React.Component {
     // == 0       ? '도착지를 입력하세요.'       : '';     break;   case 'departure':
     // errors.departure = value.length == 0       ? '출발지를 입력하세요.'       : ''; break;
     //   default:     break; } this.setState({errors}) route, axios
+    location.href = '/results';
   };
   // AutoSuggest component function
   onDepChange = departure => {
