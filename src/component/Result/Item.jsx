@@ -5,7 +5,6 @@ import { IconContext } from "react-icons";
 import ItemModal from "../ItemModal/ItemModal";
 
 import "./item.css";
-import { NonceProvider } from "react-select/dist/react-select.cjs.dev";
 
 class Item extends React.Component {
   constructor(props) {
