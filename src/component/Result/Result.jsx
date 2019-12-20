@@ -5,9 +5,9 @@ import moment from "moment";
 import { withRouter } from "react-router-dom";
 import "./result.css";
 
-import Type from "./Type.jsx";
-import Item from "./Item.jsx";
-import SortedBy from "./Select.jsx";
+import Type from "./Type";
+import Item from "./Item";
+import SortedBy from "./Select";
 
 class Result extends React.Component {
   constructor(props) {
