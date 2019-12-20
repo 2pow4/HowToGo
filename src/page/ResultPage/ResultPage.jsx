@@ -13,13 +13,13 @@ class ResultPage extends React.Component {
 
   render() {
     return (
-      <>
+      <div>
         <SearchBar searchbarType="result" />
         <div className="result-page layout-horizontal-center">
           <Result />
           <Map />
         </div>
-      </>
+      </div>
     );
   }
 }
