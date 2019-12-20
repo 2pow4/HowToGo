@@ -1,3 +1,4 @@
 .result-page {
     background-color: var(--light-gray);
+    z-index: 0;
 }

@@ -25,7 +25,7 @@
 }
 
 .react-calendar__tile--active {
-  background-color: var(--pale-salmon);
+  background-color: var(--perrywinkle);
   margin-top: 3px;
 }
 
@@ -47,10 +47,10 @@
 }
 
 .container__passenger:hover {
-  border: 1px solid var(--pale-salmon);
+  border: 1px solid var(--light-purple);
 }
 .container__passenger:hover i {
-  color: var(--pale-salmon);
+  color: var(--light-purple);
 }
 
 .content__searchbar {
@@ -84,7 +84,7 @@
 
 .searchbar-result {
   background-color: var(--pale-purple);
-  z-index: 0;
+  z-index: 1;
   margin-top: 3px;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .searchbar-input:hover {
-  border: 1px solid var(--pale-salmon);
+  border: 1px solid var(--light-purple);
 }
 
 .searchbar-input__passenger {
