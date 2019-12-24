@@ -14,3 +14,6 @@ yarn-error.log
 
 # font render error log file
 /asset/S-Core-Dream-light/debug.log
+
+# environment key 
+.env
