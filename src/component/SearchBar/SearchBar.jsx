@@ -2,47 +2,34 @@ import React from "react";
 import Calendar from "react-calendar";
 import LocationAutoSuggest from "./LocationAutoSuggest";
 import "./searchbar.css";
-
+import { Redirect } from "react-router-dom";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       // Calendar state
-      departure: ``,
-      destination: ``,
-      date: new Date(),
       calendarAvailable: false,
-      numOfPassengers: 1,
-      errors: {
-        destination: ``,
-        departure: ``
-      }
+      numOfPassengers: 1
     };
   }
 
-  // Submit form data
+  // Submit data
   handleSubmit = event => {
-    console.log(this.state.departure, this.state.destination);
+    console.log(this.props.departure, this.props.destination);
 
     event.preventDefault();
 
-    // switch (name) {   case 'destination':     errors.destination = value.length
-    // == 0       ? '도착지를 입력하세요.'       : '';     break;   case 'departure':
-    // errors.departure = value.length == 0       ? '출발지를 입력하세요.'       : ''; break;
-    //   default:     break; } this.setState({errors}) route, axios
-    location.href = '/results';
+    // TODO: searchbar type에 따라서 바꿔줘야함, 그리고 type에 따라서 handle해줌
+    // TODO: make query call to /routes
+
+    return <Redirect to="/results" />;
   };
   // AutoSuggest component function
-  onDepChange = departure => {
-    this.setState({ departure });
-  };
 
-  onDestChange = destination => {
-    this.setState({ destination });
-  };
   // Calendar component callback function
-  onDateChange = value => {
-    this.setState({ date: value, calendarAvailable: false });
+  handleDateChange = value => {
+    this.setState({ calendarAvailable: false });
+    this.props.onDateChange(value);
   };
 
   onCalendarAvailable = event => {
@@ -65,7 +52,8 @@ class SearchBar extends React.Component {
   };
 
   render() {
-    const { errors, date, calendarAvailable, numOfPassengers } = this.state;
+    const { date, onDepChange, onDestChange } = this.props;
+    const { calendarAvailable, numOfPassengers } = this.state;
     const searchbarType = this.props.searchbarType;
     const mainLable =
       searchbarType === "main" ? (
@@ -86,32 +74,26 @@ class SearchBar extends React.Component {
         }
       >
         {mainLable}
-        <form onSubmit={this.handleSubmit} className="content">
+        <form className="content">
           {/* departure destination part */}
           <div className="layout-horizontal-center">
             <LocationAutoSuggest
               className="content__searchbar"
               id="departure"
-              onValueChange={this.onDepChange}
+              onValueChange={onDepChange}
             />{" "}
-            {errors.departure.length > 0 && (
-              <span className="error">{errors.departure}</span>
-            )}
             <LocationAutoSuggest
               className="content__searchbar"
               id="destination"
-              onValueChange={this.onDestChange}
+              onValueChange={onDestChange}
             />{" "}
-            {errors.departure.length > 0 && (
-              <span className="error">{errors.destination}</span>
-            )}
             <div>
               {/* date part */}
               <div
                 onClick={this.onCalendarAvailable}
                 className="content__searchbar searchbar-input"
               >
-                {this.state.date
+                {date
                   .toDateString()
                   .slice(0, 10)
                   .replace(" ", ", ")}
@@ -122,7 +104,7 @@ class SearchBar extends React.Component {
                     ? `react-calendar__visible`
                     : `react-calendar__invisible`
                 }`}
-                onChange={this.onDateChange}
+                onChange={this.handleDateChange}
                 name="date"
                 value={date}
               />
@@ -150,9 +132,10 @@ class SearchBar extends React.Component {
               </div>
             </div>
             <input
-              type="submit"
+              type="button"
               value="Search"
               className="content__searchbar searchbar-button"
+              onClick={this.handleSubmit}
             />
           </div>
         </form>

@@ -4,7 +4,7 @@ import Map from "../../component/Map/Map";
 import SearchBar from "../../component/SearchBar/SearchBar";
 import "./resultpage.css";
 
-//axios, 즉 api를 부르고 주입해주는 건 모두 이 레벨 단에서 해야하는게 맞을 듯?
+import HowToGoService from "../../apis/index";
 
 class ResultPage extends React.Component {
   constructor(props) {
@@ -12,9 +12,25 @@ class ResultPage extends React.Component {
   }
 
   render() {
+    const {
+      departure,
+      destination,
+      date,
+      onDateChange,
+      onDepChange,
+      onDestChange
+    } = this.props;
     return (
       <div>
-        <SearchBar searchbarType="result" />
+        <SearchBar
+          searchbarType="result"
+          departure={departure}
+          destination={destination}
+          date={date}
+          onDateChange={onDateChange}
+          onDepChange={onDepChange}
+          onDestChange={onDestChange}
+        />
         <div className="result-page layout-horizontal-center">
           <Result />
           <Map />

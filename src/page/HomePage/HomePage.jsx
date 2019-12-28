@@ -1,12 +1,29 @@
-import React from 'react';
-import Wallpaper from '../../component/Wallpaper/Wallpaper';
-import Description from '../../component/Description/Description';
+import React from "react";
+import Wallpaper from "../../component/Wallpaper/Wallpaper";
+import Description from "../../component/Description/Description";
 
+const HomePage = props => {
+  const {
+    departure,
+    destination,
+    date,
+    onDateChange,
+    onDepChange,
+    onDestChange
+  } = props;
 
-const HomePage = () => (
+  return (
     <>
-        <Wallpaper/>
-        <Description/>
+      <Wallpaper
+        departure={departure}
+        destination={destination}
+        date={date}
+        onDateChange={onDateChange}
+        onDepChange={onDepChange}
+        onDestChange={onDestChange}
+      />
+      <Description />
     </>
-)
-export default HomePage
+  );
+};
+export default HomePage;
